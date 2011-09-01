@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly manifestVersion="1.0" xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
+  <asmv1:assemblyIdentity version="2.5.0.701" name="Edge.UI.Client.exe" publicKeyToken="98bb898f7ed04c02" language="en" processorArchitecture="msil" type="win32" />
+  <description asmv2:publisher="Edge.BI" asmv2:product="Edge.BI Management Pages [QA]" asmv2:supportUrl="https://console.edge-bi.com/seperia/wpf/install.html" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Edge.UI.Client" version="2.8.0.701" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Edge.UI.Client.exe" parameters="" />
+    <hostInBrowser xmlns="urn:schemas-microsoft-com:asm.v3" />
+  </entryPoint>
+  <co.v1:useManifestForTrust xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet class="System.Security.PermissionSet" version="1" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+            If you want to change the Windows User Account Control level replace the 
+            requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" />
+        <requestedExecutionLevel  level="requireAdministrator" />
+        <requestedExecutionLevel  level="highestAvailable" />
+
+            If you want to utilize File and Registry Virtualization for backward 
+            compatibility then delete the requestedExecutionLevel node.
+        -->
+        <requestedExecutionLevel level="asInvoker" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Edge.BusinessObjects.dll" size="26112">
+      <assemblyIdentity name="Edge.BusinessObjects" version="2.1.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>rGzp9KlHssRpkLRCkr8wUDw9Nlc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Edge.Core.dll" size="203776">
+      <assemblyIdentity name="Edge.Core" version="2.1.517.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>p69NenN0tjiTqX3g4Kxl/dpHqws=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Edge.UI.Client.exe" size="79872">
+      <assemblyIdentity name="Edge.UI.Client" version="2.8.0.701" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>lO4NTgBcYaTGNqHVe2DIlORoo/8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Edge.UI.Data.dll" size="583168">
+      <assemblyIdentity name="Edge.UI.Data" version="2.5.0.699" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>2uck6/ICdzfZz83z1Bp0VAKz0QE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Edge.UI.Client.exe.config" size="3477">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>cgaM3dI9jbcP/8JqpKrUCvzmGPc=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=Edge.BI, E=support@edge.bi" issuerKeyHash="991973a050c9a539b91657d426ef4219a2a922c2" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>AvIx7uCqmH6u/LkDgkD6cLY94Jk=</DigestValue></Reference></SignedInfo><SignatureValue>B4qYRZWgQwZlu6xiElXjyqiUgsRwn1SzVjq/jwX9fCxCDVCArEccju7HDQ32NW2BEODFms/2Pa9FUjUzE7/KAoF6gcfpKytLuyV8wDtDD8zQjIj8k+Qao/DFfyYXNPCPnq3uuveSFH0ILNadAOOWrnQESQOIOt8Xt4prf6Qnjeo=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>uP3hJ7wyiBi8rK9q9VR7r2pHfYbCCAWdR4A69w3OCWoDeZJtR+674kOkXLLT/50tPBZsFsOpZKi4AiQIqPObdvjeA6i287bBRS7pPv2n//MjuXV2IjWvL6XVLqdK6Di5cbGN6kqWjJoU1P4BLr5NfLp30ono/eDluVT1AbB/NmM=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="99e03db670fa408203b9fcae7e98aae0ee31f202" Description="" Url=""><as:assemblyIdentity version="2.5.0.701" name="Edge.UI.Client.exe" publicKeyToken="98bb898f7ed04c02" language="en" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Edge.BI, E=support@edge.bi</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>EvzFqFbq0qFFwIdzgrXRAuwxD74=</DigestValue></Reference></SignedInfo><SignatureValue>WRGtIgJ8xWey+dGLOHZcC4gSHwh0feXx36evoxHdpyHjXSJe97LJ/aBA2S0gI9srNf47zHmlhzyoiVlJfFatjAX4XZ8wGqQyCEJvuEsufaaslhLG9+JmUeoVxNscsCC11b98nDD7pfG8tiZfCzhGMNdT0EIO4HkvYkykzw2Ld+g=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>uP3hJ7wyiBi8rK9q9VR7r2pHfYbCCAWdR4A69w3OCWoDeZJtR+674kOkXLLT/50tPBZsFsOpZKi4AiQIqPObdvjeA6i287bBRS7pPv2n//MjuXV2IjWvL6XVLqdK6Di5cbGN6kqWjJoU1P4BLr5NfLp30ono/eDluVT1AbB/NmM=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICSDCCAbWgAwIBAgIQXdpxsEm9sa5E58NLlmUZfzAJBgUrDgMCHQUAMDIxHjAcBgkqhkiG9w0BCQEWD3N1cHBvcnRAZWRnZS5iaTEQMA4GA1UEAxMHRWRnZS5CSTAeFw0wOTEyMzEyMjAwMDBaFw0xMjEyMzEyMjAwMDBaMDIxHjAcBgkqhkiG9w0BCQEWD3N1cHBvcnRAZWRnZS5iaTEQMA4GA1UEAxMHRWRnZS5CSTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAuP3hJ7wyiBi8rK9q9VR7r2pHfYbCCAWdR4A69w3OCWoDeZJtR+674kOkXLLT/50tPBZsFsOpZKi4AiQIqPObdvjeA6i287bBRS7pPv2n//MjuXV2IjWvL6XVLqdK6Di5cbGN6kqWjJoU1P4BLr5NfLp30ono/eDluVT1AbB/NmMCAwEAAaNnMGUwYwYDVR0BBFwwWoAQmh/iu7c+aFzUdF9fgd5jd6E0MDIxHjAcBgkqhkiG9w0BCQEWD3N1cHBvcnRAZWRnZS5iaTEQMA4GA1UEAxMHRWRnZS5CSYIQXdpxsEm9sa5E58NLlmUZfzAJBgUrDgMCHQUAA4GBADfWM4fkmml4+RSB4KJccDiFrPLIMS2itT2/5pEiTnmGdWhoyZHPv4uzaHrD3eVJtwaesTzUBZ/IzFFAZOuXfyCGrKnRyqyTxG7vBkaOslxF1iJmfcE7gEr7YsAimESTzyWyO+XK1T5wcaHi6O+th6TX+/HGP1I0QV0HvwYNygPB</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

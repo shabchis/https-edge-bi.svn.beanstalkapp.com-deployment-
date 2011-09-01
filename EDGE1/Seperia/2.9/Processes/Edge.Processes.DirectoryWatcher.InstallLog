@@ -1,0 +1,13 @@
+﻿Installing assembly 'D:\Edge\Seperia\2.9\Processes\Edge.Processes.DirectoryWatcher.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Edge\Seperia\2.9\Processes\Edge.Processes.DirectoryWatcher.exe
+   logfile = D:\Edge\Seperia\2.9\Processes\Edge.Processes.DirectoryWatcher.InstallLog
+Installing service Edge Directory Watcher...
+Service Edge Directory Watcher has been successfully installed.
+Creating EventLog source Edge Directory Watcher in log Application...
+Committing assembly 'D:\Edge\Seperia\2.9\Processes\Edge.Processes.DirectoryWatcher.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Edge\Seperia\2.9\Processes\Edge.Processes.DirectoryWatcher.exe
+   logfile = D:\Edge\Seperia\2.9\Processes\Edge.Processes.DirectoryWatcher.InstallLog
