@@ -67,6 +67,11 @@ Click <u>run</u> to setup the following packages:
 		window.location="<?php echo $REFURL;?>";
 		return false;
 	});
+	
+	$('a#installbtn').click(function(){
+		$.cookie("edgebi_wpf",'true',{expires: 14});
+		return true;
+	});
 
 		
 		
