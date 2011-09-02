@@ -71,7 +71,7 @@
 			AttachParameter("Slicers", '[C];[Accounts Dim].[Accounts].[Account].&[<%= accountID %>];[H][Accounts Dim]');
 			AttachParameter("Language", "en");
 			AttachParameter("banner", "true");
-			AttachParameter("Flags", "1");
+			AttachParameter("Flags", "2");
 			AttachParameter("User", '<%= role %>');
 			AttachParameter("Buttons", "1,6760,280,420,430,460,470,480,9220,490,500,510");
 			AttachParameter("Menus", "0,2370,300,3800,7310");
