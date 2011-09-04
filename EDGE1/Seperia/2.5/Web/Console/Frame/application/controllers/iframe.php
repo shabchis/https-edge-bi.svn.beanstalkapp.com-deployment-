@@ -19,7 +19,7 @@ class iFrame extends Controller{
 	
 		if ($IsWPFInSTR !== false){
 			
-			if (!isset($_COOKIE['edgebi_wpf'])) 
+			if (!isset($_COOKIE['edgebi_wpf2'])) 
 			{
 			
 				

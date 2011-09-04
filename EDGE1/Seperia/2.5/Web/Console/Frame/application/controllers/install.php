@@ -5,15 +5,15 @@ class Install extends Controller {
 	{
 		
 				 global $APPLICATION_ROOT;
-	 if (!isset($_COOKIE['edgebi_wpf'])) {
-	 	setcookie("edgebi_wpf",'true',time()+60*60*24*14,$APPLICATION_ROOT);
+	 if (!isset($_COOKIE['edgebi_wpf2'])) {
+	 	setcookie("edgebi_wpf2",'true',time()+60*60*24*14,$APPLICATION_ROOT);
 	
 		
 			
 	 }
 	/*else
 		{
-		delete_cookie("edgebi_wpf",null,$APPLICATION_ROOT);
+		delete_cookie("edgebi_wpf2",null,$APPLICATION_ROOT);
 		
 		}
 	

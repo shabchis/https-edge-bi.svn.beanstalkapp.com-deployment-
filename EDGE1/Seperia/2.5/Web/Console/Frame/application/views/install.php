@@ -63,13 +63,13 @@ Click <u>run</u> to setup the following packages:
 <script>
 	
 	$('a#already').click(function(){
-		$.cookie("edgebi_wpf",'true',{expires: 14});
+		$.cookie("edgebi_wpf2",'true',{expires: 14});
 		window.location="<?php echo $REFURL;?>";
 		return false;
 	});
 	
 	$('a#installbtn').click(function(){
-		$.cookie("edgebi_wpf",'true',{expires: 14});
+		$.cookie("edgebi_wpf2",'true',{expires: 14});
 		return true;
 	});
 
