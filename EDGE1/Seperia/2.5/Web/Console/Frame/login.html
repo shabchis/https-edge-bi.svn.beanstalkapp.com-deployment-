@@ -2,19 +2,16 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.cookie.js"></script>
-
-
 	<!--[if IE]>
-		
-		<meta http-equiv="X-UA-Compatible" content="IE=8" />
-		
-					
-		<![endif]-->
-		<script src="assets/js/modernizr-1.6.min.js"></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=8" />
+	<![endif]-->
+	
+	<script src="assets/js/modernizr-1.6.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
-    <title>Login Edge.BI</title>
+	<script type="text/javascript" src="assets/js/jquery.cookie.js"></script>
+	
+    <title>Login to Edge.BI</title>
 	
 <style type="text/css">
 	html{
@@ -161,42 +158,29 @@ input
 </style>
 </head>
 <body>
-<div id="conatainer">
+	<div id="conatainer">
 		<div id="ajaxloader">
-					<img src="assets/img/no-bg.gif" id="ajax" />
-					<b>Loading....</b>
-				</div>		
-<img src="assets/img/edge-logo-login.gif" alt="" />
-</div>
-<div id="login">
+			<img src="assets/img/no-bg.gif" id="ajax" />
+			<b>Loading....</b>
+		</div>		
+		<img src="assets/img/edge-logo-login.gif" alt="" />
+	</div>
 
-<form method="post" action="login">
-    	
-     
-        	<label for="email"><span class="required">Email </span></label>
+	<div id="login">
+		<form method="post" action="login">
+			<label for="email"><span class="required">Email </span></label>
             <input id="email" type="text" name="email" value="Please enter an email" class="required" minlength="2" />
-			
 
-   
-
-        
         	<label for="password"><span class="required">Password  </span></label>
             <input id="password" type="password" name="password" class="text required" minlength="4" maxlength="20"  />
        
-			<label for="rememberme">Remember</label>
+			<label for="rememberme">Remember me</label>
             <input type="checkbox" name="rememberme" id="rememberme" value="Remember me"  />
 
-      
-       
         	<input type="submit" id="submit" value="" name="submit" />
-        
-
- 
-    </form>
-	 <div id="error"></div>
-	
-</div>
-  </div>
+		</form>
+		<div id="error"></div>
+	</div>
 
 </body>
 
@@ -205,19 +189,20 @@ input
 
 
 <script type="text/javascript">
-$("#login").ajaxStart(function(){
+	
+	$("#login").ajaxStart(function(){
 		$("#ajaxloader").fadeIn(500);	
 	});
-	
 	$("#login").ajaxComplete(function(){
 		$("#ajaxloader").fadeOut(500);
 	});
 	$("#login").ajaxError(function(){
 		$("#ajaxloader").fadeOut(500);
 	});
+	
 	var _emptyMessage = "Please enter an email";
-$("#email")
-    .val(_emptyMessage)
+	$("#email")
+		.val(_emptyMessage)
 		.css("color", "#8D8D8D")
 		.focus(function(){
 			$(this).css("color", "black");
@@ -239,49 +224,45 @@ $("#email")
 		var password  = $("#password").val();
 
 		if(email == "" || email == _emptyMessage || password== ""){
-
-
-
-
 			$("#error").html("Please enter an email and password.");
 			return false;
 		}
 
-
 		var form_data = {
 			"email": $('#email').val(),
 			"password": $('#password').val()
-
 		};
 		
 		if ($('#rememberme').attr('checked'))
 			form_data.remember = true;
 
-	$.ajax({
-	url: "login",
-		type: 'POST',
-		data: form_data,
-		success: function(result, status, request)
-		{
-			var urlparts = window.location.href.split("/");
-			delete urlparts[(urlparts.length-1)];
-		    window.location = urlparts.join("/");
-		},
-		error:function(result)
-		{
-			$("#ajaxloader").hide();
+		$.ajax({
+			url: "login",
+			type: 'POST',
+			data: form_data,
+			success: function(result, status, request)
+			{
+				var urlparts = window.location.href.split("/");
+				delete urlparts[(urlparts.length-1)];
+				if (console.log)
+					console.log(urlparts);
+				var hashparts = window.location.href.split("#");
+				if (console.log)
+					console.log(hashparts);
+				
+				window.location = urlparts.join("/") + (hashparts.length > 1 ? '#' + hasparts[1] : '');
+			},
+			error:function(result)
+			{
+				$("#ajaxloader").hide();
 				$("#error").html('Invalid Username/Password').appendTo('#login');
-			
-			
-		},
-		complete:function(result)
-		{
-		}
-	});
+			},
+			complete:function(result)
+			{
+			}
+		});
 	
-	return false;
-});
-
-   
+		return false;
+	});
 
 </script>
