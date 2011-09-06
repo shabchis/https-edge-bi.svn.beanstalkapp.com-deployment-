@@ -7,21 +7,16 @@
 		<title>Edge.BI</title>
 
 		<!--<link rel="stylesheet" href="<?php base_url(); ?>assets/css/style.css" type="text/css" media="screen" />-->
-			<link rel="stylesheet" href="<?php base_url(); ?>assets/css/exstyle.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="<?php base_url(); ?>assets/css/exstyle.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php base_url(); ?>assets/css/960.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php base_url(); ?>assets/css/jquery.jscrollpane.css" type="text/css" media="screen" />
-		
 		<link rel="stylesheet" href="<?php base_url(); ?>assets/css/jquery-ui-1.8.8.custom.css" media="screen"/>  
-			<link rel="stylesheet" href="<?php base_url(); ?>assets/css/anythingslider.css" media="screen"/>  
+		<link rel="stylesheet" href="<?php base_url(); ?>assets/css/anythingslider.css" media="screen"/>  
 	
 		<!--[if IE]>
 		<script src="<?php base_url();?>assets/js/html5shiv.js"></script>
-		<script type="text/javascript" src="https://getfirebug.com/firebug-lite-debug.js"></script>
-		<meta http-equiv="X-UA-Compatible" content="IE=8" />
 		<script src="<?php base_url();?>assets/js/modernizr-1.6.min.js"></script>
-					
 		<![endif]-->
-
 		<script src="<?php base_url();?>assets/js/jquery-1.4.4.js"></script>  
 		<script src="<?php base_url();?>assets/js/json_encoder.js"></script>  
 		<script src="<?php base_url();?>assets/js/selectivizr.js"></script>  
@@ -38,8 +33,6 @@
 		<script src="<?php base_url();?>assets/js/jquery-ui-1.8.8.custom.min.js"></script>
 		<script src="<?php base_url();?>assets/js/jquery.anythingslider.js"></script>
 		<script src="<?php base_url();?>assets/js/jquery.tablesorter.min.js"></script>
-		
-	<!--	<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>-->
 		<script type="text/javascript">
 			var _menudata = jQuery.parseJSON('<?php echo $menu; ?>');
 			var _accountdata = 	jQuery.parseJSON('<?php echo $account; ?>');

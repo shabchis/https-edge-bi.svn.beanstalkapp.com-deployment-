@@ -46,18 +46,20 @@ $REFURL = base_url().uri_string();
 </style>
 <body>
 <div id="install">
-    <h1>Edge.BI setup</h1>
+    <h1>Edge.BI Setup</h1>
 
     <p>The Management and Find sections allow you to create and assign virtual groupings &amp; targets, import data, find and associate keywords or creatives.
 		Edge.BI requires support from other software packages to perform this functionality.
 </p>
 Click <u>run</u> to setup the following packages:
     <ul>
-        <li>Edge.BI certificate</li>
-        <li>.NET framework 3.5</li>
+        <li>Edge.BI Prerequisites</li>
+        <li>Java Runtime Environment</li>
+        <li>Windows Installer</li>
+        <li>.NET Framework 3.5 SP1</li>
     </ul>
     <a id="installbtn" href="wpf/setup.exe"></a>
-    <a id="already" href="#">Edge.BI is already set up</a>
+    <a id="already" href="#">Skip (Edge.BI is already installed)</a>
 </div>
 
 <script>

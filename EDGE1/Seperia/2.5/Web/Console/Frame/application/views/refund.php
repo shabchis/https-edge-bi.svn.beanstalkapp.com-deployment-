@@ -140,7 +140,7 @@ input[type=submit]{
             changeMonth: true,
             changeYear: true,
                showButtonPanel: true,
-			dateFormat: 'mm/dd/yy',
+			dateFormat: 'yy-mm-dd',
 			  onClose: function(dateText, inst) {
             var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
             var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
@@ -155,17 +155,18 @@ input[type=submit]{
 		
 			var form_data = {
 				"accountID": getHashSegments().accountID,
-				"refund":$("#refund").val(),
-				"date": $('#startDate').val(),
-				"channel": $('select option:selected').val()
+				"RefundAmount":$("#refund").val(),
+				"Month": $('#startDate').val()+"T00:00:00Z",
+				"ChannelID": $('select option:selected').val()
 			};
-
+			  var jsonText = JSON.stringify(form_data);
+			 
 			try
 			{
 				$.ajax({
 					dataType:"json",
 					type: "POST",
-					data:form_data,
+					data:jsonText,
 					url:"refund/proccess",
 					success: function(data) {
 	    			$("#v").show();

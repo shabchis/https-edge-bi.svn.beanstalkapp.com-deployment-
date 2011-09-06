@@ -288,7 +288,7 @@
 	<span class="bottom">Ad scheduling lets you specify certain hours or days of the week when you want your ads to appear. </span><div class="clear"></div>
 	<span class="bottom">Click the rectangles to change from <span class="greentext">active</span> to <span class = "redtext">paused</span> and vice versa.</span>
 	
-     <span class="link">All times<a target="_blank" href="http://www.thetimezoneconverter.com/">  Pacific Standard Time (PST) </a></span> 
+     <span class="link">Ad scheduling is based on the GMT time zone. See <a target="_blank" href="http://www.thetimezoneconverter.com/">converter</a></span> 
 
 </div>
 <div id="facebookwrapper">
@@ -311,7 +311,6 @@ var docwidth = $(window).width()*0.9;
 var docheight = 500;
 var globaltitle="";
 $(function(){
-
 
 var facebook = jQuery.parseJSON('<?php echo $facebook; ?>');
   globalfacebook =   facebook;
@@ -502,6 +501,7 @@ $("#facebookmoadal").dialog({
           
            $( "#facebookmoadal" ).dialog( "option", "width", docwidth );
            $( "#facebookmoadal" ).dialog( "option", "height",docheight);
+           $( "#facebookmoadal" ).dialog( "option", "zIndex", 1000000 );
            $("#facebookmoadal").dialog("open");
     return false;
 });
@@ -680,236 +680,269 @@ function build()
 <style>
 
 	.header{
-    background-color:#8D8D8D;
-        height:20px;
-        -moz-border-radius:5px 5px 0px 0px;
-        width:90%;
-        margin:0 auto 0 20px ;
-        float:left;
-      	border: 1px solid #8D8D8D;
+	background-color:#8D8D8D;
+	height:20px;
+	-moz-border-radius:5px 5px 0px 0px;
+	width:90%;
+	margin:0 auto 0 20px ;
+	float:left;
+	border: 1px solid #8D8D8D;
 
-    }
+	}
 	#facebookwrapper{
 	width: 100%;
 	overflow:hidden;
-}
+	}
 
-#facebookcontent{
-    width:90%;
-    overflow:hidden;
-    border-left: 1px solid #C2C3C5 ;
-    border-right: 1px solid #C2C3C5 ;
-     border-bottom: 1px solid #C2C3C5 ;
+	#facebookcontent{
+	width:90%;
+	overflow:hidden;
+	border-left: 1px solid #C2C3C5 ;
+	border-right: 1px solid #C2C3C5 ;
+	border-bottom: 1px solid #C2C3C5 ;
 	float:left;
-	
 
-    margin: 0 auto 10px 20px;
- 
 
-}
-h2.facebooktrigger {
- background: url("assets/img/grid_small.gif") no-repeat scroll 22px 50% #F5F5F5;
-	
-    border-top:1px solid #C2C3C5;
-    float:left;
-    font-family:"verdana";
-    font-size:12px;
-    font-weight:normal;
-    height:23px;
-    line-height:23px;
-    margin:0;
-    outline:medium none;
-    padding:0 0 0 50px;
-    width:100%;
-        position:relative;
-		width:95%\9;
- color: #616161;
-}
-h2.facebooktrigger a {
-	
+	margin: 0 auto 10px 20px;
+
+
+	}
+
+	h2.facebooktrigger a {
+
 	text-decoration: none;
 	display: block;
 	color: #7CA81D;
-    width:60%;
+	width:60%;
 
-}
+	}
 
-h2.facebooktrigger:hover{
+	h2.facebooktrigger:hover{
 
-   background: url("assets/img/grid_small.gif") no-repeat scroll 22px 50% #E3EDCB;
-   
-}
-h2.facebooktrigger a:hover {
-    color:#7CA81D;
-    text-decoration:underline;
-   
-}
+	background: url("assets/img/bullet.png") no-repeat scroll 22px 50% #E3EDCB;
 
-#facebookmoadal{
+	}
+	h2.facebooktrigger a:hover {
+	color:#7CA81D;
+	text-decoration:underline;
 
-display: none;
-    overflow-y:hidden;
- position:relative;
-}	
+	}
+	h2.facebooktrigger {
+	background: url("assets/img/bullet.png") no-repeat scroll 22px 50% #F5F5F5;
 
-#fbtable td{
+	border-top:1px solid #C2C3C5;
+	float:left;
+	font-family:"verdana";
+	font-size:12px;
+	font-weight:normal;
+	height:23px;
+	line-height:23px;
+	margin:0;
+	outline:medium none;
+	padding:0 0 0 50px;
+	width:100%;
+	position:relative;
+	width:95%\9;
+	color: #616161;
+	}
 
-font-size: 10px;
-    color:#666;
+	h2.facebooktrigger[data-schedule="false"] a,h2.facebooktrigger[data-schedule="false"] a:hover{
 
-}
- table td.hour     {
-        font-weight:bold;
-        font-size: 10px;
+	color:#c0c0c0;
+	}
+	h2.facebooktrigger[data-schedule="false"]{
+	background: url("assets/img/bullet_grey2.png") no-repeat scroll 22px 50% #F5F5F5;
 
- }
-#fbtable{
-margin: 0 30px 30px 30px;
-width: 90%;
-height:100%:
+	}
 
+	h2.facebooktrigger[data-schedule="false"]:hover{
+	background: url("assets/img/bullet_grey2.png") no-repeat scroll 22px 50% #E3EDCB;
 
+	}
+	h2.facebooktrigger a {
 
-}
+	text-decoration: none;
+	display: block;
+	color: #7CA81D;
+	width:60%;
 
-table div {
-margin:auto;
-width: 100%;
-height: 15px;
-background-color: transparent;
-text-align: center;
-}
-table td div.2{
-background-color: green !important;
-}
-   table td:first-child{
-       font-weight:bold;
+	}
 
-   }
-#fbtable th{
+	h2.facebooktrigger:hover{
 
+	background: url("assets/img/bullet.png") no-repeat scroll 22px 50% #E3EDCB;
 
-font-weight: bold;
-     text-align: left;
-font-size: 16px;
-}
+	}
+	h2.facebooktrigger a:hover {
+	color:#7CA81D;
+	text-decoration:underline;
 
-.red{
-background-color: #DF4545;
-}
-.gray{
-background-color: gray;
-}
-.green{
-background-color: #77BF53;
-}
-.greentext{
-color: #77BF53;
-}
-.redtext{
-color: #DF4545;
-}
+	}
+	#facebookmoadal{
 
-    .rotate {
-     -moz-transform: rotate(-45deg);  /* FF3.5+ */
-       -o-transform: rotate(-90deg);  /* Opera 10.5 */
-  -webkit-transform: rotate(-90deg);  /* Saf3.1+, Chrome */
-      -ms-transform: rotate(-90deg);  /* IE9 */
-          transform: rotate(-90deg);
-             filter: progid:DXImageTransform.Microsoft.Matrix(/* IE6–IE9 */
-                     M11=6.123233995736766e-17, M12=-1, M21=1, M22=6.123233995736766e-17, sizingMethod='auto expand');
-               zoom: 1;
-}
- #fbtable td span{
+	display: none;
+	overflow-y:hidden;
+	position:relative;
+	}
 
-     margin-bottom:20px;
-     display:block;
- }
-   a#state{
-      float:right;
-       display:block;
-       font-size:12px;
-       text-decoration:underline;
-       font-weight:normal;
-       margin-bottom:10px;
-       outline:none;
-       margin-right:100px;
+	#fbtable td{
+
+	font-size: 10px;
+	color:#666;
+
+	}
+	table td.hour     {
+	font-weight:bold;
+	font-size: 10px;
+
+	}
+	#fbtable{
+	margin: 0 30px 30px 30px;
+	width: 90%;
+	height:100%:
 
 
-   }
 
-    #default{
+	}
 
-    }
-    #facebookmoadal h1{
-        font-size:14px;
+	table div {
+	margin:auto;
+	width: 100%;
+	height: 15px;
+	background-color: transparent;
+	text-align: center;
+	}
+	table td div.2{
+	background-color: green !important;
+	}
+	table td:first-child{
+	font-weight:bold;
 
-    }
-    .modal{
-        margin:auto;
-        height:100%;
-        width:100%;
-        position:absolute;
-        z-index:100000 ;
-        background-color:white;
-        opacity:0.9;
-        bottom:-5px;
-        left:0px;
-     overflow:hidden;
-        text-align: center;
+	}
+	#fbtable th{
 
 
-    }
-     #facebookmoadal a{
-          color:#90B63D;
-      }
-    #disablemsg, #enablemsg {
-    background-color: white;
-    height: 89%;
-    left: 25%;
-    margin: 0;
-    opacity: 1 !important;
-    position: relative;
-    top: -9px;
-    width: 50%;
-    z-index: 1000000;
-        display:none;
-}
-  .modal h1, .modal h1{
-       font-size:12px;
-       opacity:1;
-      margin-top:5%;
+	font-weight: bold;
+	text-align: left;
+	font-size: 16px;
+	}
 
-   }
-    .modal a, .modal a{
-        opacity:1;
-        margin:10px ;
-        float:none;
-        font-size:12px;
-    }
-    .clear{
-        clear:both;
+	.red{
+	background-color: #DF4545;
+	}
+	.gray{
+	background-color: gray;
+	}
+	.green{
+	background-color: #77BF53;
+	}
+	.greentext{
+	color: #77BF53;
+	}
+	.redtext{
+	color: #DF4545;
+	}
 
-    }
-    span.link{
-    display:block;
-     margin: 0 17px 30px 0px;
-    width: 300px;
-    float:right;
-    
-    
-    }
-     span.bottom{
-      display:block;
-     margin:0 10px 0px 30px;
-	width:50%;
-    float:left;
-    
-     
-     }
-     .tooltip{
-     display:block;
-     width:30px;
-     background-color:red;
-     }
+	.rotate {
+	-moz-transform: scale(1) rotate(-45deg) translate(1px, 1px) skew(0deg, 0deg);
+	-webkit-transform: scale(1) rotate(-45deg) translate(1px, 1px) skew(0deg, 0deg);
+	-o-transform: scale(1) rotate(-45deg) translate(1px, 1px) skew(0deg, 0deg);
+	-ms-transform: scale(1) rotate(-45deg) translate(1px, 1px) skew(0deg, 0deg);
+	transform: scale(1) rotate(-45deg) translate(1px, 1px) skew(0deg, 0deg);
+	}
+	#fbtable td span{
+
+	margin-bottom:20px;
+	margin-bottom:0px\9;
+	display:block;
+	font-weight: normal\9;
+
+	}
+	a#state{
+	float:right;
+	display:block;
+	font-size:12px;
+	text-decoration:underline;
+	font-weight:normal;
+	margin-bottom:10px;
+	outline:none;
+	margin-right:100px;
+
+
+	}
+
+	#default{
+
+	}
+	#facebookmoadal h1{
+	font-size:14px;
+
+	}
+	.modal{
+	margin:auto;
+	height:100%;
+	width:100%;
+	position:absolute;
+	z-index:100000 ;
+	background-color:white;
+	opacity:0.9;
+	bottom:-5px;
+	left:0px;
+	overflow:hidden;
+	text-align: center;
+
+
+	}
+	#facebookmoadal a{
+	color:#90B63D;
+	}
+	#disablemsg, #enablemsg {
+	background-color: white;
+	height: 89%;
+	left: 25%;
+	margin: 0;
+	opacity: 1 !important;
+	position: relative;
+	top: -9px;
+	width: 50%;
+	z-index: 1000000;
+	display:none;
+	}
+	.modal h1, .modal h1{
+	font-size:12px;
+	opacity:1;
+	margin-top:5%;
+
+	}
+	.modal a, .modal a{
+	opacity:1;
+	margin:10px ;
+	float:none;
+	font-size:12px;
+	}
+	.clear{
+	clear:both;
+
+	}
+	span.link{
+	display:block;
+	margin: 0 17px 50px 0px;
+	width: 400px;
+	float:right;
+
+
+	}
+	span.bottom{
+	display:block;
+	margin:0 10px 0px 30px;
+	width:60%;
+	float:left;
+
+
+	}
+	.tooltip{
+	display:block;
+	width:30px;
+	background-color:red;
+	}
 </style>
