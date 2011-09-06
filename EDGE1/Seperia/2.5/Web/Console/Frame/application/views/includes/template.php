@@ -11,11 +11,12 @@
 		<link rel="stylesheet" href="<?php base_url(); ?>assets/css/960.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php base_url(); ?>assets/css/jquery.jscrollpane.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php base_url(); ?>assets/css/jquery-ui-1.8.8.custom.css" media="screen"/>  
-		<link rel="stylesheet" href="<?php base_url(); ?>assets/css/anythingslider.css" media="screen"/>  
 	
 		<!--[if IE]>
 		<script src="<?php base_url();?>assets/js/html5shiv.js"></script>
-		<script src="<?php base_url();?>assets/js/modernizr-1.6.min.js"></script>
+
+		
+
 		<![endif]-->
 		<script src="<?php base_url();?>assets/js/jquery-1.4.4.js"></script>  
 		<script src="<?php base_url();?>assets/js/json_encoder.js"></script>  
@@ -31,8 +32,7 @@
 		<script src="<?php base_url();?>assets/js/jquery.jscrollpane.min.js"></script>
 		<script src="<?php base_url();?>assets/js/jquery.mousewheel.js"></script>
 		<script src="<?php base_url();?>assets/js/jquery-ui-1.8.8.custom.min.js"></script>
-		<script src="<?php base_url();?>assets/js/jquery.anythingslider.js"></script>
-		<script src="<?php base_url();?>assets/js/jquery.tablesorter.min.js"></script>
+        	<script src="<?php base_url();?>assets/js/json2.js"></script>
 		<script type="text/javascript">
 			var _menudata = jQuery.parseJSON('<?php echo $menu; ?>');
 			var _accountdata = 	jQuery.parseJSON('<?php echo $account; ?>');
@@ -114,16 +114,17 @@
 				<div id="top"></div>
 				
 				
-				<div id="ajaxloader">
-					<img src="<?php base_url(); ?>assets/img/no-bg.gif" id="ajax" />
-					<b>Loading....</b>
-				</div>
+				
 			</div>
 			<div id="breadcrumbs">
 			
 			</div>
 			
  		</header>
+ 		<div id="ajaxloader">
+          <img src="<?php base_url(); ?>assets/img/no-bg.gif" id="ajax" />
+          <b>Loading....</b>
+        </div>
  		<div class="clear"></div>
 
 		
@@ -210,7 +211,7 @@
 		}
 		if (_userdata)
 		{
-			$("#usertmpl").tmpl(_userdata).prependTo("#user");
+			$("#usertmpl").tmpl(_userdata).prependTo("header #login #user");
 		}
 		
 		if(_accountdata)

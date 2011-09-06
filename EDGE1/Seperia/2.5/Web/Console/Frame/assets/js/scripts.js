@@ -468,28 +468,21 @@ $("#frame").height($("#main").height());
 		}
 	);
 
-	$("#slider span").toggle(
-		function(){
+	/*
+	$("#slider span").toggle(function(){
 			$("#caption").html("Show");
 			//$("#menu").hide();
+			
+		
+
 			$("#menuwrapper").animate(
 				{marginLeft:'-250px', opacity:0},
 				500
 			);
-			
-				
-		
-		
-				
-		// $("#menu").animate({width:'toggle'},500);
-	//	$("#main").css({width:'100%'});
-      /*
-      $("#menu").animate({marginLeft:'-210px'},500);
-      	$("#main").animate({width:'100%'},500);
-      	
-      	*/
+					
 		},
 		function(){
+			
 			$("#caption").html("Hide");
 			//	$("#menu").show();
 			//$("#menu").css("width",'200px');
@@ -497,12 +490,42 @@ $("#frame").height($("#main").height());
 				{marginLeft:'0px', opacity:1},
 				500
 			);
-			
-			 return false;
 		}
 	);
+	
+	/*	
+	 
+	 */
+	$("#slider span").click(function(){
+	if($(this).attr("data-show")!="false")
+	{
 		
-
+			$("#caption").html("Show");
+			$("#menuwrapper").animate(
+					{marginLeft:'-250px', opacity:0},
+					500
+				);
+			
+		
+			$(this).attr("data-show","false");
+		
+	}
+	
+	else
+		{
+		
+			$("#caption").html("Hide");
+			//	$("#menu").show();
+			//$("#menu").css("width",'200px');
+			$("#menuwrapper").animate(
+				{marginLeft:'0px', opacity:1},
+				500
+			);
+			$(this).attr("data-show","true");
+		}
+	
+	});
+		
 
     // -------------------------------------------
 	// Account picker drop down
