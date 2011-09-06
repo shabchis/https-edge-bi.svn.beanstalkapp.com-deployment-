@@ -243,13 +243,8 @@ input
 			success: function(result, status, request)
 			{
 				var hashparts = window.location.href.split("#");
-				if (console.log)
-					console.log(hashparts);
-					
 				var urlparts = hashparts[0].split("/");
 				delete urlparts[(urlparts.length-1)];
-				if (console.log)
-					console.log(urlparts);
 				
 				window.location = urlparts.join("/") + (hashparts.length > 1 ? '#' + hashparts[1] : '');
 			},
