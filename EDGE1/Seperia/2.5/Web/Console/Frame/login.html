@@ -242,15 +242,16 @@ input
 			data: form_data,
 			success: function(result, status, request)
 			{
-				var urlparts = window.location.href.split("/");
-				delete urlparts[(urlparts.length-1)];
-				if (console.log)
-					console.log(urlparts);
 				var hashparts = window.location.href.split("#");
 				if (console.log)
 					console.log(hashparts);
+					
+				var urlparts = hashparts[0].split("/");
+				delete urlparts[(urlparts.length-1)];
+				if (console.log)
+					console.log(urlparts);
 				
-				window.location = urlparts.join("/") + (hashparts.length > 1 ? '#' + hasparts[1] : '');
+				window.location = urlparts.join("/") + (hashparts.length > 1 ? '#' + hashparts[1] : '');
 			},
 			error:function(result)
 			{
