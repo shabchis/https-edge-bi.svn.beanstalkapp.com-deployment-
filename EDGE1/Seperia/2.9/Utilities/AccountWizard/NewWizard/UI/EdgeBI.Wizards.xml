@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EdgeBI.Wizards</name>
+    </assembly>
+    <members>
+        <member name="T:EdgeBI.Wizards.WizardRestService">
+            <summary>
+            WizardSerivce class negotiate with the UI 
+            </summary>
+        </member>
+        <member name="M:EdgeBI.Wizards.WizardRestService.Start(System.String)">
+            <summary>
+            Get the wizrdID and return new session
+            </summary>
+            <param name="WizardName"></param>
+            <returns>New SessionID</returns>
+        </member>
+        <member name="M:EdgeBI.Wizards.WizardRestService.GetExecutorState(System.Int32)">
+            <summary>
+            Get the execution state
+            </summary>
+            <param name="sessionID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EdgeBI.Wizards.WizardRestService.Collect(System.Int32,EdgeBI.Wizards.StepCollectRequest)">
+            <summary>
+            Get the request Call the right class to collect , and return repond
+            </summary>
+            <param name="stepCollectRequest"></param>
+            <returns>Step collect Respond</returns>
+        </member>
+        <member name="M:EdgeBI.Wizards.WizardRestService.GetSummary(System.Int32)">
+            <summary>
+            Return a text with summary of what is going to happend on the execute
+            </summary>
+            <param name="sessionID"></param>
+            <returns>string summary</returns>
+        </member>
+        <member name="M:EdgeBI.Wizards.WizardRestService.Execute(System.Int32)">
+            <summary>
+            After finished Collecting call all the executers and return the WizardStatus
+            </summary>
+            <param name="sessionID"></param>
+            <returns>return error of success </returns>
+        </member>
+        <member name="M:EdgeBI.Wizards.WizardRestService.GetProgress(System.Int32)">
+            <summary>
+            Get the execution progrees
+            </summary>
+            <param name="sessionID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EdgeBI.Wizards.WizardRestService.GetFirstCollectorStep(Easynet.Edge.Core.Configuration.ExecutionStepElementCollection)">
+            <summary>
+            this function run again and again until find the collectorcontainar and gets the first step of it
+            </summary>
+            <param name="executionStepElementCollection"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EdgeBI.Wizards.WizardStatus">
+            <summary>
+            CollectStatus
+            </summary>
+        </member>
+        <member name="F:EdgeBI.Wizards.WizardStatus.Collect">
+            <summary>
+            Collecting
+            </summary>
+        </member>
+        <member name="F:EdgeBI.Wizards.WizardStatus.Execute">
+            <summary>
+            Execute
+            </summary>
+        </member>
+        <member name="T:EdgeBI.Wizards.WizardSession">
+            <summary>
+            New wizard parmeters, return when runing the start functionn
+            </summary>
+        </member>
+        <member name="F:EdgeBI.Wizards.WizardSession.WizardID">
+            <summary>
+            The wizard number
+            </summary>
+        </member>
+        <member name="F:EdgeBI.Wizards.WizardSession.SessionID">
+            <summary>
+            The session id
+            </summary>
+        </member>
+        <member name="T:EdgeBI.Wizards.StepConfiguration">
+            <summary>
+            Describe the current step and optionaly the next step fields
+            </summary>
+            
+        </member>
+        <member name="T:EdgeBI.Wizards.StepCollectResponse">
+            <summary>
+            The response returned when runing the collect function
+            </summary>
+            
+        </member>
+        <member name="T:EdgeBI.Wizards.StepCollectRequest">
+            <summary>
+            Request the passed as paramter on the collect function
+            </summary>
+            
+        </member>
+        <member name="T:EdgeBI.Wizards.StepResult">
+            <summary>
+            Result of specific request or respond
+            </summary>
+        </member>
+        <member name="T:EdgeBI.Wizards.StepExecuter">
+            <summary>
+            Base executer 
+            </summary>
+        </member>
+        <member name="M:EdgeBI.Wizards.StepExecuter.GetCollectedData">
+            <summary>
+            Return the collected step respectively
+            </summary>
+            <param name="StepName"></param>
+            <param name="SessionID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EdgeBI.Wizards.StepExecuter.SaveExecutorData(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Save current executor data for next steps
+            </summary>
+            <param name="executorData"></param>
+        </member>
+        <member name="M:EdgeBI.Wizards.StepExecuter.GetExecutorData(System.String)">
+            <summary>
+            Get executors data by executor name
+            </summary>
+            <param name="stepName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EdgeBI.Wizards.IStepCollector">
+            <summary>
+            Step Collector Interface
+            </summary>
+        </member>
+        <member name="T:EdgeBI.Wizards.StepCollectorService">
+            <summary>
+            Base class for wizard step collection.
+            </summary>
+        </member>
+        <member name="M:EdgeBI.Wizards.StepCollectorService.Collect(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Main function collect data
+            </summary>
+            <param name="inputValues">keys and values to collect</param>
+            <returns>step collect response</returns>
+        </member>
+        <member name="M:EdgeBI.Wizards.StepCollectorService.OnInit">
+            <summary>
+            Start new wcf session
+            </summary>
+        </member>
+        <member name="P:EdgeBI.Wizards.StepCollectorService.WizardSession">
+            <summary>
+            Return the wizard session data
+            </summary>
+        </member>
+        <member name="T:EdgeBI.Wizards.WizardHostService">
+            <summary>
+            host the wizardServices using wcf
+            </summary>
+        </member>
+    </members>
+</doc>
