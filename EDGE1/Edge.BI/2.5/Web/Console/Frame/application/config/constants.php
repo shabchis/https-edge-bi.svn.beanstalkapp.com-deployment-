@@ -37,11 +37,11 @@ define('FOPEN_WRITE_CREATE_STRICT', 			'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 define('IS_AJAX', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
-define('EDGE_API_URL','http://localhost:6283');
+define('EDGE_API_URL','http://localhost:6283/edgebi');
 $iframeurl = array();
 $iframeurl["Path"] ="";
 
-define('LOGIN_PAGE', "/edge/login.html");
+define('LOGIN_PAGE', "/edge-qa/login.html");
 
 /* End of file constants.php */
 /* Location: ./system/application/config/constants.php */
