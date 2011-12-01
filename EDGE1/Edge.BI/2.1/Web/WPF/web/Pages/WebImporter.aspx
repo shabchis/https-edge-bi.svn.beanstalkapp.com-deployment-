@@ -48,6 +48,7 @@
 	    <div class="control">
 		    <asp:DropDownList runat="server" AutoPostBack="false" id="_sourceSelector">
 				<asp:ListItem Text="Back Office" Value="BackOffice"/>
+				<asp:ListItem Text="Pre-formatted Back Office" Value="DirectUpload.BO"/>
 				<asp:ListItem Text="Pre-formatted Yahoo" Value="DirectUpload.Yahoo"/>
 				<asp:ListItem Text="Pre-formatted Bing" Value="DirectUpload.Bing"/>
 		    </asp:DropDownList>
