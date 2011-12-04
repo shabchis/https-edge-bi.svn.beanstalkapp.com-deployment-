@@ -165,8 +165,8 @@ $("#frame").height($("#main").height());
 	
 }
 		// If there is only one account, hide the drop down
-		if (_accountdata.length < 2)
-			$('#arrow').hide();
+		//if (_accountdata.length < 2)
+		//	$('#arrow').hide();
 
 		// Get path info			
 		var hashSegments = getHashSegments();
