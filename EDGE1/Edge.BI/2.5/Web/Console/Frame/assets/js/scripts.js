@@ -374,7 +374,7 @@ $("#frame").height($("#main").height());
 	// -------------------------------------------
 	// Account operations
 			
-.    $("#accountwrapper").delegate("a","click",function(){
+    $("#accountwrapper").delegate("a","click",function(){
 
 		var hashSegments =  getHashSegments();
     	var link = $(this).attr("href");
