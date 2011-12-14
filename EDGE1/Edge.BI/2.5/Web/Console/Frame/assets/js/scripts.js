@@ -384,6 +384,7 @@ $("#frame").height($("#main").height());
 		$("#arrow").click();
 	 
     	window.location.hash = "#" + link + appendPath;
+		alert("#" + link + appendPath);
     
 		return false;
 	});
