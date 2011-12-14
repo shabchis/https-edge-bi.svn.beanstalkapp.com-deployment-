@@ -383,10 +383,12 @@ $("#frame").height($("#main").height());
 		// hide the menu
 		$("#arrow").click();
 	 
-    	window.location.hash = "#" + link + appendPath;
+    	var loc = "#" + link + appendPath;
 		
 		if ($.browser.msie)
-			window.location.hash = window.location.hash;
+			window.setTimeout(function(){window.location.hash = loc;}, 0);
+		else
+			window.location.hash = loc;
     
 		return false;
 	});
