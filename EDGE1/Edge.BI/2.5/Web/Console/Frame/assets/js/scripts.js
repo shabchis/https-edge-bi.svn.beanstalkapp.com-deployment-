@@ -160,10 +160,9 @@ $("#frame").height($("#main").height());
 
 	$(window).hashchange(function()
 	{
-
-	if(selectedAccount){
+		alert(window.location.hash);
 	
-}
+	
 		// If there is only one account, hide the drop down
 		//if (_accountdata.length < 2)
 		//	$('#arrow').hide();
@@ -385,10 +384,7 @@ $("#frame").height($("#main").height());
 	 
     	var loc = "#" + link + appendPath;
 		
-		if ($.browser.msie)
-			window.setTimeout(function(){window.location.hash = loc;}, 0);
-		else
-			window.location.hash = loc;
+		window.location.hash = loc;
     
 		return false;
 	});
