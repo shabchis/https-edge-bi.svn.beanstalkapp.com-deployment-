@@ -384,7 +384,9 @@ $("#frame").height($("#main").height());
 		$("#arrow").click();
 	 
     	window.location.hash = "#" + link + appendPath;
-		alert("#" + link + appendPath);
+		
+		if ($.browser.msie)
+			window.location.hash = window.location.hash;
     
 		return false;
 	});
