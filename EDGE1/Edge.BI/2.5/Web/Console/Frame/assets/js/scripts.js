@@ -374,10 +374,10 @@ $("#frame").height($("#main").height());
 	// -------------------------------------------
 	// Account operations
 			
-    $("#accountwrapper").delegate("li","click",function(){
+.    $("#accountwrapper").delegate("a","click",function(){
 
 		var hashSegments =  getHashSegments();
-    	var link = $(this).find("a").attr("href");
+    	var link = $(this).attr("href");
     	var appendPath = hashSegments != null ?  "/" + hashSegments.path : '';
 		
 		// hide the menu
