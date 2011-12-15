@@ -160,9 +160,6 @@ $("#frame").height($("#main").height());
 
 	$(window).hashchange(function()
 	{
-		alert(window.location.hash);
-	
-	
 		// If there is only one account, hide the drop down
 		//if (_accountdata.length < 2)
 		//	$('#arrow').hide();
@@ -191,7 +188,7 @@ $("#frame").height($("#main").height());
      	//================================================
      	// Update menu permissions according to selected account
      	applyMenuPermissions(null,null);
-     	
+     	alert('menu permissions applied');
      	
      	//================================================
      	var url = $("#selected").text();
@@ -383,7 +380,6 @@ $("#frame").height($("#main").height());
 		$("#arrow").click();
 	 
     	var loc = "#" + link + appendPath;
-		
 		window.location.hash = loc;
     
 		return false;
