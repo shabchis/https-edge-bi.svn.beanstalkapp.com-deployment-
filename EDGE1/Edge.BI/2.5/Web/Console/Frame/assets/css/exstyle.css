@@ -492,7 +492,7 @@ li.current > a {
 #ajaxloader {
 	background: url("../img/ajaxloader.png") no-repeat scroll right center transparent;
 	color: #666;
-	font-size: 12px;
+	font-size: 11px;
 	font-family: Verdana;
     height: 132px;
     left: 684px;
