@@ -504,13 +504,13 @@ li.current > a {
 
 }
 #ajaxloader img {
-	left: 39%;
+	left: 33%;
     position: absolute;
-    top: 39%;
+    top: 21%;
 
 }
 
-#ajaxloader b {
+#ajaxloader div {
 	bottom: 15px;
     display: block;
     margin-bottom: 10px;
