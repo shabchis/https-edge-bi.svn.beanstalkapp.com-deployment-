@@ -489,13 +489,15 @@ li.current > a {
 }
 
 #ajaxloader {
-	background: url("../img/loading-box.png") no-repeat scroll right center transparent;
-	background:#fff \9;
-    height: 159px;
+	background: url("../img/ajaxloader.png") no-repeat scroll right center transparent;
+	color: #000;
+	font-size: 12px;
+	font-family: Verdana;
+    height: 132px;
     left: 684px;
     position: absolute;
     top: 153px;
-    width: 233px;
+    width: 182px;
 
 }
 #ajaxloader img {

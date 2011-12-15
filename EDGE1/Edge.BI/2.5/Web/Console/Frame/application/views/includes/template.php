@@ -123,7 +123,7 @@
  		</header>
  		<div id="ajaxloader">
           <img src="<?php base_url(); ?>assets/img/no-bg.gif" id="ajax" />
-          <b>Loading....</b>
+          <b>loading....</b>
         </div>
  		<div class="clear"></div>
 
