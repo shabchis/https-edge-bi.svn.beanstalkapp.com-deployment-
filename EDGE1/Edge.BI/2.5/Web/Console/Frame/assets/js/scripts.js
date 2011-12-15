@@ -172,8 +172,8 @@ $("#frame").height($("#main").height());
      	if (hashSegments && hashSegments.accountID)
      	{
      	 	accountListItem = $("#" + hashSegments.accountID);
-     	 	wasAccountSpecified = true;
-     	 
+			if (accountListItem || accountListItem.length)
+				wasAccountSpecified = true;
      	}
      	
      	// Check if nothing was found for this item
@@ -188,30 +188,15 @@ $("#frame").height($("#main").height());
      	//================================================
      	// Update menu permissions according to selected account
      	applyMenuPermissions(null,null);
-     	alert('menu permissions applied');
      	
      	//================================================
      	var url = $("#selected").text();
     	var $parents = "";
     	var $sub  = "";
     	var $accountId="";  
-    	var $link ='<a TARGET="_blank" href="http://'+accountListItem.attr("data-url")+'">'+accountListItem.attr("data-url")+'</a>';
+    	var $link ='<a target="_blank" href="http://'+accountListItem.attr("data-url")+'">'+accountListItem.attr("data-url")+'</a>';
     	
-    		
-    	if (!accountListItem || !accountListItem.length)
-    	{
- 		  	window.location.hash = "#accounts/" + _accountdata[0].ID;		
-
-    		//$sub = "(Invalid Account)";
-    		//$('#arrow').show();
-    		
-    		/*
-    		$parents = _accountdata[0].Name;
-    		$sub = "Top Level Account";
-    		*/
-    		
-    	}
-    	else if(accountListItem.hasClass("parent"))
+    	if(accountListItem.hasClass("parent"))
     	{
     		 $parents = accountListItem.siblings(".campaign").find("span").text();
     		 $sub  = accountListItem.find('a:first').text();
@@ -228,7 +213,6 @@ $("#frame").height($("#main").height());
     	{
 			$parents = accountListItem.parent().parent().siblings(".campaign").find("span").text();
 			$sub = accountListItem.text()  ;
-			 console.log(accountListItem);
 			$accountId = accountListItem.parent().parent().siblings(".campaign").attr("id");
     	}
     	parentAccount = $parents;
