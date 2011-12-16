@@ -11,7 +11,7 @@
 |	http://example.com/
 |
 */
-$config['base_url']	= "https://console.edge-bi.com/edge-qa/";
+$config['base_url']	= "https://console.edge-bi.com/v29/";
 
 /*
 |--------------------------------------------------------------------------

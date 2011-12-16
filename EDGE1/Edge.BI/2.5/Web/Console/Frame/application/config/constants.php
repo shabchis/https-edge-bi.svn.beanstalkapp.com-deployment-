@@ -41,7 +41,7 @@ define('EDGE_API_URL','http://localhost:6283/edgebi');
 $iframeurl = array();
 $iframeurl["Path"] ="";
 
-define('LOGIN_PAGE', "/edge-qa/login.html");
+define('LOGIN_PAGE', "/v29/login.html");
 
 /* End of file constants.php */
 /* Location: ./system/application/config/constants.php */
