@@ -66,7 +66,8 @@ Click <u>run</u> to setup the following packages:
 	
 	$('a#already').click(function(){
 		$.cookie("edgebi_wpf2",'true',{expires: 14});
-		window.location="<?php echo $REFURL;?>";
+		//window.location="<?php echo $REFURL;?>";
+		window.location.reload();
 		return false;
 	});
 	
