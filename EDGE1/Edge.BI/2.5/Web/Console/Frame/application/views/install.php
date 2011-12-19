@@ -59,7 +59,7 @@ Click <u>run</u> to setup the following packages:
         <li>.NET Framework 3.5 SP1</li>
     </ul>
     <a id="installbtn" href="wpf/setup.exe"></a>
-    <a id="already" href="#">Skip (Edge.BI is already installed)</a>
+    <div id="already" href="#">Skip (Edge.BI is already installed)</div>
 </div>
 
 <script>
