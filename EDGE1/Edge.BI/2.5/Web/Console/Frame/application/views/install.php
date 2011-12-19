@@ -1,4 +1,10 @@
 <?php
+
+header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+header("Cache-Control: no-store, no-cache, must-revalidate");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 global $REFURL;
 
 $REFURL = base_url().uri_string();
@@ -30,13 +36,16 @@ $REFURL = base_url().uri_string();
         width:161px;
         height:75px;
     }
-     #install a#already,  #install a#already:active,#install a#already:visited{
+     #install #already,  #install #already:active,#install a#already:visited{
      	display: block;
      	margin-left: 30px;
      	margin-top: 0px;
      	color:black;
      	margin-bottom:10px;
      	color: #83888E;
+		cursor: pointer;
+		text-decoration: underline;
+
      }
 	 #install li{
         list-style-image:url("assets/img/bullet_1_03.gif");
@@ -64,7 +73,7 @@ Click <u>run</u> to setup the following packages:
 
 <script>
 	
-	$('a#already').click(function(){
+	$('#already').click(function(){
 		$.cookie("edgebi_wpf2",'true',{expires: 14});
 		window.location="<?php echo $REFURL;?>";
 		//return false;
