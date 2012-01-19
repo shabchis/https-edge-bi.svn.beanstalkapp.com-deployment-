@@ -47,13 +47,11 @@
 	    <div class="label">Source:</div>
 	    <div class="control">
 		    <asp:DropDownList runat="server" AutoPostBack="false" id="_sourceSelector">
-				<asp:ListItem Text="Back Office" Value="BackOffice"/>
-				<asp:ListItem Text="Bing" Value="Bing"/>
-				<asp:ListItem Text="Yahoo" Value="Yahoo"/>
 				<asp:ListItem Text="Pre-formatted Back Office" Value="DirectUpload.BO"/>
 				<asp:ListItem Text="Pre-formatted Yahoo" Value="DirectUpload.Yahoo"/>
 				<asp:ListItem Text="Pre-formatted Bing" Value="DirectUpload.Bing"/>
 				<asp:ListItem Text="Pre-formatted Creative" Value="DirectUpload.Creative"/>
+				<asp:ListItem Text="Pre-formatted Facebook" Value="DirectUpload.Facebook"/>
 		    </asp:DropDownList>
 	    </div>
     </div>
