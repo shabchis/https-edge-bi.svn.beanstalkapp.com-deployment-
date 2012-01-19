@@ -50,10 +50,6 @@
 				<asp:ListItem Text="Back Office" Value="BackOffice"/>
 				<asp:ListItem Text="Bing" Value="Bing"/>
 				<asp:ListItem Text="Yahoo" Value="Yahoo"/>
-				<asp:ListItem Text="Pre-formatted Back Office" Value="DirectUpload.BO"/>
-				<asp:ListItem Text="Pre-formatted Yahoo" Value="DirectUpload.Yahoo"/>
-				<asp:ListItem Text="Pre-formatted Bing" Value="DirectUpload.Bing"/>
-				<asp:ListItem Text="Pre-formatted Creative" Value="DirectUpload.Creative"/>
 		    </asp:DropDownList>
 	    </div>
     </div>
