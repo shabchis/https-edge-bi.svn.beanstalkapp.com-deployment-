@@ -1,5 +1,5 @@
 <?php
-	$codebase = "/intelligence";
+	$codebase = "/panorama";
 ?>
 
 <script type="text/javascript">
