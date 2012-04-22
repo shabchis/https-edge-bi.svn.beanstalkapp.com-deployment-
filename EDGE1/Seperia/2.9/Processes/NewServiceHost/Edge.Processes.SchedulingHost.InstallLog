@@ -1,0 +1,26 @@
+﻿Installing assembly 'D:\Edge\Seperia\2.9\Processes\NewServiceHost\Edge.Processes.SchedulingHost.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Edge\Seperia\2.9\Processes\NewServiceHost\Edge.Processes.SchedulingHost.InstallLog
+   assemblypath = D:\Edge\Seperia\2.9\Processes\NewServiceHost\Edge.Processes.SchedulingHost.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the D:\Edge\Seperia\2.9\Processes\NewServiceHost\Edge.Processes.SchedulingHost.exe assembly.
+Committing assembly 'D:\Edge\Seperia\2.9\Processes\NewServiceHost\Edge.Processes.SchedulingHost.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Edge\Seperia\2.9\Processes\NewServiceHost\Edge.Processes.SchedulingHost.InstallLog
+   assemblypath = D:\Edge\Seperia\2.9\Processes\NewServiceHost\Edge.Processes.SchedulingHost.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the D:\Edge\Seperia\2.9\Processes\NewServiceHost\Edge.Processes.SchedulingHost.exe assembly.
+Remove InstallState file because there are no installers.
+Installing assembly 'D:\Edge\Seperia\2.9\Processes\NewServiceHost\Edge.Processes.SchedulingHost.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Edge\Seperia\2.9\Processes\NewServiceHost\Edge.Processes.SchedulingHost.InstallLog
+   assemblypath = D:\Edge\Seperia\2.9\Processes\NewServiceHost\Edge.Processes.SchedulingHost.exe
+Installing service Edge.Processes.SchedulingHost...
+Service Edge.Processes.SchedulingHost has been successfully installed.
+Creating EventLog source Edge.Processes.SchedulingHost in log Application...
+Committing assembly 'D:\Edge\Seperia\2.9\Processes\NewServiceHost\Edge.Processes.SchedulingHost.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Edge\Seperia\2.9\Processes\NewServiceHost\Edge.Processes.SchedulingHost.InstallLog
+   assemblypath = D:\Edge\Seperia\2.9\Processes\NewServiceHost\Edge.Processes.SchedulingHost.exe
