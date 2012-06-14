@@ -1,0 +1,17 @@
+				<?xml version="1.0" encoding="utf-8" ?>	
+						
+                <Mappings>
+					<Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
+					<Object Type="Ad">
+						<Read Name="destUrl" Field='Destination URL' Regex='\bad_id=(?{tracker}\w+)\b'/>
+						<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject'>
+							<Map To='Value'  Value="{destUrl.tracker}"/>
+							<Map To='OriginalID'  Value="{destUrl.tracker}"/>
+						</Map>
+					</Object>
+				</Mappings>
+
+										 
+										 
+										 
+

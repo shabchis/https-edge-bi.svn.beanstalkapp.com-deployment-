@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>						
+				<Mappings>
+					<Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
+					<Object Type="Ad">
+						<Read Var="tracker" Field='link_url' Regex="\butm_content=(?{content}\w+)\b"/>
+						<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='tracker != null'>
+							<Map To='Value'  Value="{tracker.content}"/>
+							<Map To='OriginalID'  Value="{tracker.content}"/>
+						</Map>
+					</Object>
+				</Mappings>
