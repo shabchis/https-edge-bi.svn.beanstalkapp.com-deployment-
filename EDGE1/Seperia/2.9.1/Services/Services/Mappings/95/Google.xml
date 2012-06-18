@@ -1,20 +1,11 @@
-						<?xml version="1.0" encoding="utf-8" ?>	
-						
+<?xml version="1.0" encoding="utf-8" ?>	
                                          <Mappings>
-                                                <Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
                                                 <Object Type="Ad">
                                                        <Read Var="destUrl" Field='Destination URL' Regex='\bref_id=(?{tracker}\w+)\b'/>
-                                                       <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='destUrl != null'>
+                                                       <Map To='Segments[{GetSegment("Tracker")}]' Condition='destUrl != null'>
                                                               <Map To='Value'  Value="{destUrl.tracker}" Required="false"/>
                                                               <Map To='OriginalID'  Value="{destUrl.tracker}"/>
                                                        </Map>
-                                                       <!--<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject.Value' />
-                                         <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject.OriginalID'  Value="{destUrl.tracker}"/>-->
-                                                </Object>
-                                                <Object Type="Signature">
-                                                       <Read Name="dayCode" Field="Day_Code" Regex="(?{y}[0-9]{4})(?{m}[0-9]{2})(?{d}[0-9]{2})"/>
-                                                       <Map To='Value'
-                                                                 Value='{dayCode.y}{dayCode.m}{dayCode.d}_{GetCurrentAccount()}_{GetCurrentChannel()}' />
                                                 </Object>
                                          </Mappings>
 

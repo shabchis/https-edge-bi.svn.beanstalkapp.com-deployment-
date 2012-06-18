@@ -1,12 +1,12 @@
-						<?xml version="1.0" encoding="utf-8" ?>	
+<?xml version="1.0" encoding="utf-8" ?>	
 						
                             <Mappings>
                                   <Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
                                   <Object Type="Ad">
                                          <Read Var="destUrl" Field='Destination URL' Regex='\butm_content=(?{ref_id}\w+)\b'/>
                                          <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='destUrl != null'>
-                                                <Map To='Value'  Value="{destUrl.edgetrackerid}" Required="false"/>
-                                                <Map To='OriginalID'  Value="{destUrl.edgetrackerid}"/>
+                                                <Map To='Value'  Value="{destUrl.ref_id}" Required="false"/>
+                                                <Map To='OriginalID'  Value="{destUrl.ref_id}"/>
                                          </Map>
                                   </Object>
                            </Mappings>
