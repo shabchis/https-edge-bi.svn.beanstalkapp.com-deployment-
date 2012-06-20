@@ -10,10 +10,10 @@
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Field='DepositTotal' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Field='Redeposit' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Field='NoAnswer' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Field='NotInterested' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Field='WrongNumber' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Field='DepositLeadsCountTotal' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Field='PaymentDeclined' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Field='RedepositLeadsCount' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Field='FirstDepositLeadsCount' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Field='CallBack' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Field='FirstDeposit' />
 							</Object>
 						</Mappings>
