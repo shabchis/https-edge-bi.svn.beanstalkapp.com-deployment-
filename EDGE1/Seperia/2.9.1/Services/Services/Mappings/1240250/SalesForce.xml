@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>						
+                            <Mappings>
+							<Object Type="GenericMetricsUnit">
+								<Map To='SegmentDimensions[{GetSegment("Tracker")}]'>
+									<Read Var="tracker" Field='Edge_Tracker__c'/>									
+									<Map To='Value' Value='{tracker}' Required='false'/>									
+								</Map>
+								<Read Var="DownloadDate" Field='Download_Date__c'/>
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Value='{Test(DownloadDate)}'/>
+								<Read Var="ActivationDate" Field='Trail_Activation_Date__c'/>
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Value='{Test(ActivationDate)}'/>
+							</Object>
+						</Mappings>
