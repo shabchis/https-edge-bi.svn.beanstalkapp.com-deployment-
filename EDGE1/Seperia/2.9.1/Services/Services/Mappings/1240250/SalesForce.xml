@@ -6,8 +6,8 @@
 									<Map To='Value' Value='{tracker}' Required='false'/>									
 								</Map>
 								<Read Var="DownloadDate" Field='Download_Date__c'/>
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Value='{Test(DownloadDate)}'/>
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Value='{GetConversion(DownloadDate)}'/>
 								<Read Var="ActivationDate" Field='Trail_Activation_Date__c'/>
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Value='{Test(ActivationDate)}'/>
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Value='{GetConversion(ActivationDate)}'/>
 							</Object>
 						</Mappings>
