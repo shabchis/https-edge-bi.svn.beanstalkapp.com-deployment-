@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edge.Services.Facebook.GraphApi", "Edge.Services.Facebook.GraphApi.csproj", "{0CA66633-F417-4724-9FC5-5F8C6E1D72B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Seperia.Facebook.UpdateCampaignStatus|Any CPU = Seperia.Facebook.UpdateCampaignStatus|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CA66633-F417-4724-9FC5-5F8C6E1D72B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA66633-F417-4724-9FC5-5F8C6E1D72B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA66633-F417-4724-9FC5-5F8C6E1D72B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA66633-F417-4724-9FC5-5F8C6E1D72B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA66633-F417-4724-9FC5-5F8C6E1D72B5}.Seperia.Facebook.UpdateCampaignStatus|Any CPU.ActiveCfg = Seperia.Facebook.UpdateCampaignStatus|Any CPU
+		{0CA66633-F417-4724-9FC5-5F8C6E1D72B5}.Seperia.Facebook.UpdateCampaignStatus|Any CPU.Build.0 = Seperia.Facebook.UpdateCampaignStatus|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
