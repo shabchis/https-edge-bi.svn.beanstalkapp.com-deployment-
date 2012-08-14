@@ -5,31 +5,26 @@
                     <Read Var="tracker" Field='ID' />
                 <Map To='Value' Value='{tracker}'/>
                  </Map>
-                    <Map To='MeasureValues[{GetMeasure("Customers")}]'           Field='LastActivity' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]'          Field='Registrations' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]'               Field='Leads' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]'               Field='SAT' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]'         Field='Activations' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]'   Field='NetDeposit' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]'          Field='NetDepositsDT' />
-                    <Map To='MeasureValues[{GetMeasure("NumRetentionsDT")}]'     Field='NumRetentionsDT' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]'     Field='refund' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]'        Field='RetentionCount' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Field='FDepositsDT' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]'     Field='LTV2000' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]'          Field='LTVGREATER2000' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]'          Field='ActivationsDT' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]'                 Field='TimeToFTD' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]'       Field='CustomerToCall' />
-                    <Map To='MeasureValues[{GetMeasure("NoAnswer")}]'            Field='CalledCount' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]'         Field='new' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]'           Field='notInterested' />
-                    <Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]'          Field='noAnswer' />
-					<Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]'          Field='checkNumber' />
-					<Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]'          Field='callAgain' />
-					<Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]'          Field='inTheMoney' />
-					<Map To='MeasureValues[{GetMeasure("IntheMoney")}]'          Field='noCall' />	
+                  <Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Field='Registrations' />
+                  <Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field='Activations' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Field='SAT' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Field='Leads' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Field='refund' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Field='NetDepositsDT' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Field='NetDeposit' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Field='RetentionCount' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Field='FDepositsDT' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Field='LTV2000' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Field='LTVGREATER2000' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Field='ActivationsDT' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Field='TimeToFTD' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Field='CustomerToCall' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Field='new' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Field='notInterested' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Field='noAnswer' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]' Field='checkNumber' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]' Field='callAgain' />
+				  <Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' Field='inTheMoney' />
             </Object>
 </Mappings>
 
-ID="1004110000970" LastActivity="2012-08-12-03:41:27" Registrations="1" Leads="00" SAT="0" Activations="0" NetDeposit="0.0" NetDepositsDT="0.0" NetRetentionsDT="0.0" refund="0.0" RetentionCount="0" FDepositsDT="0" LTV2000="0" LTVGREATER2000="0" ActivationsDT="0" TimeToFTD="" CustomerToCall="" CalledCount="0" new="1" notInterested="0" noAnswer="0" checkNumber="0" callAgain="0" inTheMoney="0" noCall="0
