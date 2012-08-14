@@ -5,8 +5,8 @@
                                   <Object Type="Ad">
                                          <Read Var="destUrl" Field='Destination URL' Regex='(\bp=edgetrackerid_(?{tracker}\w+)\b)'/>
                                          <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='destUrl != null'>
-                                                <Map To='Value'  Value="{destUrl.edgetrackerid}" Required="false"/>
-                                                <Map To='OriginalID'  Value="{destUrl.edgetrackerid}"/>
+                                                <Map To='Value'  Value="{destUrl.tracker}" Required="false"/>
+                                                <Map To='OriginalID'  Value="{destUrl.tracker}"/>
                                          </Map>
                                   </Object>
                             </Mappings>
