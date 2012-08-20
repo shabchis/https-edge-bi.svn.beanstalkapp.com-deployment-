@@ -22,7 +22,7 @@
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Field='Loads' />	
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Var ='FirstLoads' Field='First Loads' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Var ='AmountLoaded' Field='Amount Loaded' />	
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Var ='PayoutLoads' Field= 'Payout Loads Count' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Var ='PayoutLoadedAmount' Field= 'Payout Loaded Amount' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Var ='AmountTransferred' Field='Amount Transferred' />								
 							</Object>
 							<Object Type="Edge.Data.Objects.Signature">
