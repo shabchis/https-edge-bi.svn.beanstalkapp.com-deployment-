@@ -16,8 +16,8 @@
 																
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Field= 'Signup' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field='Premium' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Field='CreateApp' />	
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Field= 'GenerateApp' />
+								<!-- <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Field='CreateApp' />	
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Field= 'GenerateApp' /> -->
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Field='Silver' />								
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Field='Gold' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Field='Platinum' />	
