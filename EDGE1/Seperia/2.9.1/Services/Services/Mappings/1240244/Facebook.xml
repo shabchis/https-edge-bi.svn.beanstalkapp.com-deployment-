@@ -4,6 +4,7 @@
 								<Read Var="t1" Field="link_url" Regex="\bSEM=(?{tracker}\w+)\b"/>
 								<Read Var="t2" Field="link_url" Regex="\bsem=(?{tracker}\w+)\b"/>
 								<Map To='Segments[{GetSegment("Tracker")}]' Condition='t1 != null'>
+								<Map To='Segments[{GetSegment("Tracker")}]' Condition='t2 != null'>
 									<Map To='Value' Condition='t1 != null' Value="{t1.tracker}" />
 									<Map To='Value' Condition='t2 != null' Value="{t2.tracker}" />
 									<Map To='OriginalID' Condition='t1 != null' Value="{t1.tracker}" />
