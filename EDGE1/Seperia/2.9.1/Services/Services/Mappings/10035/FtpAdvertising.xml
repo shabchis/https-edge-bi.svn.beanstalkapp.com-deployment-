@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>	
+	<Mappings>
+		
+		<Object Type="Ad">
+			<Map To="OriginalID" Value='{Guid.NewGuid().ToString("N")}'/> 
+			<!--They dont send account name-->
+			<Map To="Account" Value="OptionRally"/>
+			<!--They dont send channelName, but channel number 1. is "GoogleAdWords" written correct?-->
+			 <!-- Needed? : Field='Channel' Var='ChannelName'--> 
+			<Map To="Channel" Field='Channel' Var='ChannelName' Value="GoogleAdWords"/>
+			<Map To='Creatives[]::TextCreative'>
+				<!--Title?-->
+				<Map To='TextType' Value='Title'/>
+				<Map To='Text' Field='headline'/> 
+			</Map>
+			<Map To='Creatives[]::TextCreative'>
+				<Map To='TextType' Value='Body'/>      
+				<Map To='Text' Field='Desc1'/>
+					<!--Desc2 - cant find a similar example-->
+				<Map To='TextType' Value='Body'/>
+				<Map To='Text' Field='Desc2'/>
+			</Map>
+			<Map To='DestinationUrl' Field='destUrl'/>
+			<!--changed from Campaign-->
+			<Map To='Segments[{GetSegment("campaign")}]::Campaign.Name' Field='campaign'/>
+			<!---->
+			<!--changed from adGroup-->
+			<Map To='Segments[{GetSegment("adgroup")}]::AdGroup'>
+				<!--1. there is also an adgroupid-->
+				<!--2. why need read if there is a Field-->
+				<Read Field='adgroup'/>
+				<Read Field='campaign'/>
+				<Map To='Name' Field='adgroup' />
+				<Map To='Campaign.Name' Field='campaign'/>
+				<Map To='OriginalID' Value='{campaign}_{adgroup}'/>
+			</Map>
+			<Map To='Segments[{GetSegment("Tracker")}]'  >
+				<Read Field='destUrl' Var='destUrl' Regex='(\bp=edgetrackerid_(?{tracker}\w+)\b)'></Read>
+				<Map To='Value' Value="{destUrl.tracker}"/>
+				<Map To='OriginalID' Value="{destUrl.tracker}"/>
+			</Map>
+		</Object>
+		
+		<Object Type="AdMetricsUnit">
+			<Read Var="dayCode" Field="Day_Code" Regex="(?{y}[0-9]{4})(?{m}[0-9]{2})(?{d}[0-9]{2})"/>
+			<Map To="TimePeriodStart" Value='{CreatePeriodStart(dayCode.y, dayCode.m, dayCode.d)}'/>
+			<Map To="TimePeriodEnd" Value="{CreatePeriodEnd(dayCode.y, dayCode.m, dayCode.d)}"/>
+			<Map To='MeasureValues[{GetMeasure("Impressions")}]' Field="imps" />
+			<Map To='MeasureValues[{GetMeasure("Clicks")}]' Field="clicks"/>
+			<Map To='MeasureValues[{GetMeasure("Cost")}]' Field="cost"/>
+		</Object>
+		
+		<Object Type="Edge.Data.Objects.Signature">
+			<Read Var="dayCode" Field="Day_Code" Regex="(?{y}[0-9]{4})(?{m}[0-9]{2})(?{d}[0-9]{2})"/>
+			<Map To='Value' Value='{dayCode.y}{dayCode.m}{dayCode.d}_{GetCurrentAccount()}_{GetCurrentChannel()}' />
+		</Object>
+		
+	</Mappings>
