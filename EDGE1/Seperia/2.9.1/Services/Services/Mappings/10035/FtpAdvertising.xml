@@ -11,7 +11,6 @@
 								<Map To='Creatives[]::TextCreative'>
 									<Map To='TextType' Value='Body'/>
 									<Map To='Text' Field='Desc1'/>	
-									<Map To='Text2' Field='Desc2' Required='false'/>
 								</Map>
 								
 								<Map To='DestinationUrl' Field='destUrl'/>
@@ -24,7 +23,7 @@
 									<Map To='OriginalID' Value='{Campaign}_{Adgroup}'/>
 								</Map>
 								<Map To='Segments[{GetSegment("Tracker")}]'  >
-									<Read Field='destUrl' Var='destUrl' Regex='\bp=edgetrackerid_=(?{tracker}\w+)\b'></Read>
+									<Read Field='destUrl' Var='destUrl' Regex='\bp=edgetrackerid_(?{tracker}\w+)\b'></Read>
 									<Map To='Value' Value="{destUrl.tracker}"/>
 									<Map To='OriginalID' Value="{destUrl.tracker}"/>
 								</Map>
