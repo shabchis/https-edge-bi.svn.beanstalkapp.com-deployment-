@@ -11,6 +11,7 @@
 								<Map To='Creatives[]::TextCreative'>
 									<Map To='TextType' Value='Body'/>
 									<Map To='Text' Field='Desc1'/>	
+									<Map To='Text2' Field='Desc2'/>	
 								</Map>
 								
 								<Map To='DestinationUrl' Field='destUrl'/>
