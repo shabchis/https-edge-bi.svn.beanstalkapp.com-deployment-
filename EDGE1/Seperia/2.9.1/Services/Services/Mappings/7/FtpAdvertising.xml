@@ -34,9 +34,9 @@
 									<Map To='Value' Condition='destUrl2 != null' Value="{destUrl2.tracker}" />
 									<Map To='Value' Condition='destUrl3 != null' Value="{destUrl3.tracker}" />
 									
-									<Map To='OriginalID' Condition='t1 != null' Value="{t1.tracker}" />
-									<Map To='OriginalID' Condition='t2 != null' Value="{t2.tracker}" />
-									<Map To='OriginalID' Condition='t3 != null' Value="{t3.tracker}" />
+									<Map To='OriginalID' Condition='destUrl1 != null' Value="{destUrl1.tracker}" />
+									<Map To='OriginalID' Condition='destUrl1 != null' Value="{destUrl1.tracker}" />
+									<Map To='OriginalID' Condition='destUrl1 != null' Value="{destUrl1.tracker}" />
 									
 								</Map>
 							</Object>
