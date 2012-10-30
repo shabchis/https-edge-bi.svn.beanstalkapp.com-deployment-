@@ -2,7 +2,7 @@
 						<Mappings>
 							<Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
 							<Object Type="Ad">
-								<Read Var="t1" Field="link_url" Regex="(\bp=edgetrackerid_(?{edgetrackerid}\w+)\b)"/>/>
+								<Read Var="t1" Field="link_url" Regex="(\bp=edgetrackerid_(?{edgetrackerid}\w+)\b)" Required='false'/>
 								<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='t1 != null'>
 									<Map To='Value' Condition='t1 != null' Value="{t1.tracker}" />
 									<Map To='OriginalID' Condition='t1 != null' Value="{t1.tracker}" />
