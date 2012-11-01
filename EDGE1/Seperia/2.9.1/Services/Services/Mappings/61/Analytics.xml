@@ -2,7 +2,7 @@
 										<Mappings>
                                                 <Object Type="GenericMetricsUnit">
                                                        <Map To='SegmentDimensions[{GetSegment("Tracker")}]' Condition='!IsChecksum()'>
-                                                              <Read Var="tracker1" Field='ga:adDestinationUrl' Regex="\butm_content=(?{content}\w+)\b"/>
+                                                              <Read Var="tracker1" Field='ga:adDestinationUrl' Regex="\butm_content=(?{content}\w+)\b" Required='false'/>
                                                               <Read Var="tracker2" Field='ga:adContent' Regex="(?{content}.*\w+)\b"/>
                                                               <Map To='Value' Value='0'/>
                                                               <Map To='Value' Value='{tracker2.content}' Required='false' Condition='tracker1 == null || tracker1.content == null'/>
