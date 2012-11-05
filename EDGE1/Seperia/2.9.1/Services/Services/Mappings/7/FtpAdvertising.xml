@@ -28,15 +28,18 @@
 									<Read Field='destUrl' Var='destUrl1' Regex='\bref_id_(?{tracker}\w+)\b' Required="false"></Read>
 									<Read Field='destUrl' Var='destUrl2' Regex='\bgid_(?{tracker}\w+)\b' Required="false"></Read>
 									<Read Field='destUrl' Var='destUrl3' Regex='(%3F|%26)gid%3D(?{tracker}\w+)\b' Required="false"></Read>
+									<Read Field='destUrl' Var='destUrl4' Regex='\bgid=(?{tracker}\w+)\b' Required="false"></Read>
 									
 																	
 									<Map To='Value' Condition='destUrl1 != null' Value="{destUrl1.tracker}" />
 									<Map To='Value' Condition='destUrl2 != null' Value="{destUrl2.tracker}" />
 									<Map To='Value' Condition='destUrl3 != null' Value="{destUrl3.tracker}" />
+									<Map To='Value' Condition='destUrl4 != null' Value="{destUrl4.tracker}" />
 									
 									<Map To='OriginalID' Condition='destUrl1 != null' Value="{destUrl1.tracker}" />
 									<Map To='OriginalID' Condition='destUrl2 != null' Value="{destUrl2.tracker}" />
 									<Map To='OriginalID' Condition='destUrl3 != null' Value="{destUrl3.tracker}" />
+									<Map To='OriginalID' Condition='destUrl4 != null' Value="{destUrl4.tracker}" />
 									
 								</Map>
 							</Object>
