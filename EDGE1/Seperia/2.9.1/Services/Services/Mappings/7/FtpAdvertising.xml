@@ -25,9 +25,9 @@
 								</Map>
 								<Map To='Segments[{GetSegment("Tracker")}]'  >
 								
-									<Read Field='destUrl' Var='destUrl1' Regex='\bref_id_(?{tracker}\w+)\b'></Read>
-									<Read Field='destUrl' Var='destUrl2' Regex='\bgid_(?{tracker}\w+)\b'></Read>
-									<Read Field='destUrl' Var='destUrl3' Regex='(%3F|%26)gid%3D(?{tracker}\w+)\b'></Read>
+									<Read Field='destUrl' Var='destUrl1' Regex='\bref_id_(?{tracker}\w+)\b' Required="false"></Read>
+									<Read Field='destUrl' Var='destUrl2' Regex='\bgid_(?{tracker}\w+)\b' Required="false"></Read>
+									<Read Field='destUrl' Var='destUrl3' Regex='(%3F|%26)gid%3D(?{tracker}\w+)\b' Required="false"></Read>
 									
 																	
 									<Map To='Value' Condition='destUrl1 != null' Value="{destUrl1.tracker}" />
