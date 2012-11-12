@@ -4,7 +4,7 @@
                                   <Object Type="Ad">
 								  <Read Var="t1" Field="Destination URL" Regex="(\bparam1=(?{tracker}\w+)\b)" Required='false'/>
 								  <Read Var="t2" Field="Destination URL" Regex="(\bbtag=(?{tracker}\w+)\b)" Required='false'/>
-								<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='destUrl != null'>
+								<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='t1 != null || t2 != null'>
                                                 <Map To='Value'  Value="{destUrl.edgetracker}" Required="false"/>
                                                 <Map To='OriginalID'  Value="{destUrl.edgetracker}"/>
                                          </Map>
