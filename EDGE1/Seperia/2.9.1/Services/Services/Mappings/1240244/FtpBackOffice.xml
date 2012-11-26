@@ -23,7 +23,7 @@
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Var ='FirstLoads' Field='First Loads' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Var ='AmountLoaded' Field='Amount Loaded' />	
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Var ='PayoutLoadedAmount' Field= 'Payout Loaded Amount' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Var ='AmountTransferred' Field='Amount Transferred' />								
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Var ='AmountLoadedPerDayAndSEM' Field='Amount Loaded Per Day And SEM' />								
 							</Object>
 							<Object Type="Edge.Data.Objects.Signature">
 								<Read Var="dayCode" Field="Day_code" Regex="(?{y}[0-9]{4})(?{m}[0-9]{2})(?{d}[0-9]{2})"/>
