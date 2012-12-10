@@ -13,11 +13,12 @@
 		;
 
 		$response = file_get_contents($token_url);
+		var_dump($response);
 		$params = null; parse_str($response, $params);
 		
 		$token = $params['access_token'];
 		$expiresRaw = $params['expires'];
-		$expires = date('D M H:i:s Y', time() + intval($expiresRaw));
+		$expires = date("Y-m-d H:i:s", time() + intval($expiresRaw));
 		
 		?>
 			<div id="result">
