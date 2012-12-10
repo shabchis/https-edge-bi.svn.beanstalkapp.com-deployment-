@@ -1,6 +1,6 @@
 <?php
 	require 'include.php';	
-	$redirect = '/admin/fb-token/step2.php';
+	$redirect = '/admin/fb-token/step2.php?';
 ?>
 
 <html>
@@ -96,7 +96,11 @@
 							top: $(window).height()/2 - $dialog.height()/2
 						})
 						.show();
-					$('#iframe').attr('src', '<?php echo base_url() . $redirect ?>');
+					$('#iframe').attr('src', '<?php echo base_url() . $redirect ?>' +
+						'appID='		+ $('#field-appID').value() +
+						'&appSecret='	+ $('#field-appSecret').value() +
+						'&permissions='	+ $('#field-permissions').value()
+					);
 				});
 				
 				window.accessTokenReceived = function(token, expires) {
