@@ -97,9 +97,9 @@
 						})
 						.show();
 					$('#iframe').attr('src', '<?php echo base_url() . $redirect ?>' +
-						'appID='		+ $('#field-appID').value() +
-						'&appSecret='	+ $('#field-appSecret').value() +
-						'&permissions='	+ $('#field-permissions').value()
+						'appID='		+ $('#field-appID').attr('value') +
+						'&appSecret='	+ $('#field-appSecret').attr('value') +
+						'&permissions='	+ $('#field-permissions').attr('value')
 					);
 				});
 				
