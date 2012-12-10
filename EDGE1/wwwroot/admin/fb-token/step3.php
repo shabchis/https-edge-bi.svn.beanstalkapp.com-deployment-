@@ -21,21 +21,12 @@
 					)
 				)
 			));
+		var_dump($response);
 		
 		$params = null; parse_str($response, $params);
 		$token = $params['access_token'];
 		
-		if (!isset($token))
-		{
-			?>
-				<div id="error">
-					Error:
-					<br/>
-					<pre><?php echo $response ?></pre>
-				</div>
-			<?php
-		}
-		else
+		if ($token)
 		{
 			$expiresRaw = $params['expires'];
 			$expires = date("Y-m-d H:i:s", time() + intval($expiresRaw));
@@ -44,6 +35,16 @@
 				<div id="result">
 					Access token <input type="text" readonly="readonly" id="output-token" value="<?php echo $token ?>"/>
 					expires on <span id="output-expires"><?php echo $expires ?></span>
+				</div>
+			<?php
+		}
+		else
+		{
+			?>
+				<div id="error">
+					Error:
+					<br/>
+					<pre><?php echo $response ?></pre>
 				</div>
 			<?php
 		}
