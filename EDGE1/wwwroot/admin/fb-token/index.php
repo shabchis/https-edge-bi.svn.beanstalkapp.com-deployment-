@@ -37,26 +37,6 @@
 					display: block;
 				}
 			
-			#dialog {
-				display: none;
-				position: absolute;
-				width: 480px;
-				height: 360px;
-				border: 1px solid #999;
-				box-shadow: -3px -3px 10px 5px rgba(0,0,0,0.3);
-				background-color: #fff;
-			}
-			
-				#dialog #iframe{
-					border: 0;
-					width: 100%;
-					height: 100%;
-				}
-			
-			#result {
-				display: none
-			}
-			
 			.comment {
 				font-size: 10px;
 			}
@@ -96,31 +76,15 @@
 							top: $(window).height()/2 - $dialog.height()/2
 						})
 						.show();
-					$('#iframe').attr('src', '<?php echo base_url() . $redirect ?>' +
+					top.location.href = '<?php echo base_url() . $redirect ?>' +
 						'appID='		+ $('#field-appID').attr('value') +
 						'&appSecret='	+ $('#field-appSecret').attr('value') +
 						'&permissions='	+ $('#field-permissions').attr('value')
-					);
+					;
 				});
-				
-				window.accessTokenReceived = function(token, expires) {
-					$('#dialog').hide();
-					$('#result').show();
-					$('output-token').attr('value', token);
-					$('output-expires').html(expires);
-				};
 			});
 
 		</script>
-		<div id="dialog">
-			<iframe id="iframe">
-			</iframe>
-		</div>
-		
-		<div id="result">
-			Access token <input type="text" readonly="readonly" id="output-token"/>
-			expires on <span id="output-expires"></span>
-		</div>
 	</body>
 	
 </html>

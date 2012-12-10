@@ -20,11 +20,10 @@
 		$expires = date('D M H:i:s Y', time() + intval($expiresRaw));
 		
 		?>
-			<script type="text/javascript">
-				$(window).load(function() {
-					window.parent.accessTokenReceived('<?php echo $token ?>', '<?php echo $expires ?>');
-				});
-			</script>
+			<div id="result">
+				Access token <input type="text" readonly="readonly" id="output-token" value="<?php echo $token ?>"/>
+				expires on <span id="output-expires"><?php echo $expires ?></span>
+			</div>
 		<?php
 	}
 	else {
