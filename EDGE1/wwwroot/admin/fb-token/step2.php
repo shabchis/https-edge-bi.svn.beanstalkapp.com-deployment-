@@ -2,7 +2,7 @@
 	require 'include.php';
 	session_start();
 	
-	$redirect = '/tools/fb-token/step3.php';
+	$redirect = '/admin/fb-token/step3.php';
 	
 	$_SESSION['appID'] = $_REQUEST['appID'];
 	$_SESSION['appSecret'] = $_REQUEST['appSecret'];

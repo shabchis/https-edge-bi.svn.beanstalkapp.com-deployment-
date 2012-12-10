@@ -1,4 +1,8 @@
-<?php require 'include.php'; ?>
+<?php
+	require 'include.php';	
+	$redirect = '/admin/fb-token/step2.php';
+?>
+
 <html>
 	<head>
 		<title>Facebook App Token Generator</title>
@@ -58,8 +62,6 @@
 			}
 		</style>
 	</head>
-
-	<?php $redirect = '/fb-token/step2.php'; ?>
 	
 	<body>
 		<h1>Facebook App Token Generator</h1>
