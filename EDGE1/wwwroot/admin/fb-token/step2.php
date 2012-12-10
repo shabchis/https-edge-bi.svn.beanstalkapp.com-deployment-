@@ -15,5 +15,5 @@
 		"&state=" . $_SESSION['state']
 	;
 	
-	echo("<script> self.location.href='" . $dialog_url . "'</script>");
+	echo("<a href='" . $dialog_url . "'>Click to login</>");
 ?>
