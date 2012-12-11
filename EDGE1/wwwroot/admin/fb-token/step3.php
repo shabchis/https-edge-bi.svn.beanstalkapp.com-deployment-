@@ -16,7 +16,6 @@
 		curl_setopt($process, CURLOPT_TIMEOUT, 30);
 		curl_setopt($process, CURLOPT_RETURNTRANSFER, 30);
 		$response = curl_exec($process);
-		curl_close($process); 
 		$responseCode = curl_getinfo($process);
 		
 		if ($response && $responseCode == 200)
@@ -43,6 +42,8 @@
 				</div>
 			<?php
 		}
+		
+		curl_close($process); 
 	}
 	else {
 		echo("The state does not match. Please try again.");
