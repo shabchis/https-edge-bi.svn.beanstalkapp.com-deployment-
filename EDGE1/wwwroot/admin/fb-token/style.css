@@ -1,0 +1,42 @@
+body {
+	height: 100%;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+}
+#form {
+	margin-bottom: 10px;
+}
+	#form .field {
+		margin-bottom: 5px;
+	}
+
+	.clear {
+		clear: both;
+	}
+
+	#form .field .field-name {
+		width: 200px;
+		float: left;
+	}
+
+	#form .field input[type=text] {
+		width: 300px;
+	}
+
+	#form input[type=button] {
+		margin-left: 200px;
+		display: block;
+	}
+
+.comment {
+	font-size: 10px;
+}
+
+.highlight {
+	background-color: #34609E; color: white
+}
+textarea {
+	width: 600px;
+	height: 600px
+}

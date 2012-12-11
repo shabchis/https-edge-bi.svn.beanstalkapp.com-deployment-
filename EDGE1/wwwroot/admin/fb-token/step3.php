@@ -1,3 +1,9 @@
+<html>
+	<head>
+		<title>Facebook App Token Result</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body>
 <?php
 	require 'include.php';
 	session_start();
@@ -28,8 +34,14 @@
 
 			?>
 				<div id="result">
-					Access token <input type="text" readonly="readonly" id="output-token" value="<?php echo $token ?>"/>
-					expires on <span id="output-expires"><?php echo $expires ?></span>
+					<span class="hightlight">Access token:</span>
+					<br/>
+					<textarea readonly="readonly"><?php echo $token ?></textarea>>
+					
+					<?php if ($expiresRaw) { ?>
+					<br/><br/>
+					Expires on <span id="output-expires"><?php echo $expires ?></span>
+					<?php } ?>
 				</div>
 			<?php
 		}
@@ -50,7 +62,7 @@
 							echo 'returned from Facebook API (status ' . $responseCode . '):'
 					?>
 					<br/><br/>
-					<textarea readonly="readonly" style="width: 600px; height: 600px"><?php echo $response ?></textarea>
+					<textarea readonly="readonly"><?php echo $response ?></textarea>
 				</div>
 			<?php
 		}
@@ -62,3 +74,5 @@
 	}
 	
 ?>
+	</body>
+</html>
