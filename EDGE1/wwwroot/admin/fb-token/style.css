@@ -34,7 +34,9 @@ body {
 }
 
 .highlight {
-	background-color: #34609E; color: white
+	background-color: #34609E;
+	color: white;
+	padding: 3px;
 }
 textarea {
 	width: 600px;
