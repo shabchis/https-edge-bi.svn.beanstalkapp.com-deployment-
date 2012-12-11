@@ -15,6 +15,7 @@
 		$process = curl_init($token_url); 
 		curl_setopt($process, CURLOPT_TIMEOUT, 30);
 		curl_setopt($process, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($process, CURLOPT_SSL_VERIFYPEER, 0);
 		$response = curl_exec($process);
 		$responseCode = curl_getinfo($process);
 		
