@@ -6,45 +6,12 @@
 <html>
 	<head>
 		<title>Facebook App Token Generator</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		
-		<style type="text/css">
-			body {
-				height: 100%;
-			}
-			#form {
-				margin-bottom: 10px;
-			}
-				#form .field {
-					margin-bottom: 5px;
-				}
-
-				.clear {
-					clear: both;
-				}
-
-				#form .field .field-name {
-					width: 200px;
-					float: left;
-				}
-
-				#form .field input[type=text] {
-					width: 300px;
-				}
-
-				#form input[type=button] {
-					margin-left: 200px;
-					display: block;
-				}
-			
-			.comment {
-				font-size: 10px;
-			}
-		</style>
 	</head>
 	
 	<body>
-		<h1>Facebook App Token Generator</h1>
+		<h1 class="highlight">Facebook App Token Generator</h1>
 		<p>Make sure to login as a Facebook user with access to the required ad accounts.</p>
 		<div>
 			<div id="form">
