@@ -1,6 +1,6 @@
 <?php
 	require 'include.php';	
-	$redirect = '/admin/fb-token/step2.php?';
+	$step2 = '/admin/fb-token/step2.php?';
 ?>
 
 <html>
@@ -76,7 +76,7 @@
 							top: $(window).height()/2 - $dialog.height()/2
 						})
 						.show();
-					top.location.href = '<?php echo base_url() . $redirect ?>' +
+					top.location.href = '<?php echo base_url() . $step2 ?>' +
 						'appID='		+ $('#field-appID').attr('value') +
 						'&appSecret='	+ $('#field-appSecret').attr('value') +
 						'&permissions='	+ $('#field-permissions').attr('value')

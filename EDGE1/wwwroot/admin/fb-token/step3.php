@@ -6,13 +6,11 @@
 	{
 		$token_url = "https://graph.facebook.com/oauth/access_token?" .
 			"client_id=" . $_SESSION['appID'] .
-			"&redirect_uri=" . urlencode(complete_url()) .
+			"&redirect_uri=" . urlencode(base_url() . $step3) .
 			"&client_secret=" . $_SESSION['appSecret'] .
 			"&code=" . $_REQUEST["code"] .
 			"&scope=" . $_SESSION['permissions']
 		;
-		
-		echo $token_url;
 
 		$process = curl_init($token_url); 
 		curl_setopt($process, CURLOPT_TIMEOUT, 30);

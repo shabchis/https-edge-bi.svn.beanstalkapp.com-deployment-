@@ -2,8 +2,6 @@
 	require 'include.php';
 	session_start();
 	
-	$redirect = '/admin/fb-token/step3.php';
-	
 	$_SESSION['appID'] = $_REQUEST['appID'];
 	$_SESSION['appSecret'] = $_REQUEST['appSecret'];
 	$_SESSION['permissions'] = $_REQUEST['permissions'];
@@ -11,7 +9,7 @@
 	
     $dialog_url = "https://www.facebook.com/dialog/oauth?" .
 		"client_id="  . $_SESSION['appID'] .
-		"&redirect_uri=" . urlencode(base_url() . $redirect) .
+		"&redirect_uri=" . urlencode(base_url() . $step3) .
 		"&state=" . $_SESSION['state']
 	;
 	
