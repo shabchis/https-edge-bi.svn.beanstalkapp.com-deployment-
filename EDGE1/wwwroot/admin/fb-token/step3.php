@@ -17,7 +17,7 @@
 		curl_setopt($process, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($process, CURLOPT_SSL_VERIFYPEER, 0);
 		$response = curl_exec($process);
-		$responseCode = curl_getinfo($process);
+		$responseCode = curl_getinfo($process, CURLINFO_HTTP_CODE);
 		
 		if ($response && $responseCode == 200)
 		{
@@ -47,7 +47,7 @@
 							if ($error) echo ': ' . $error;
 						}
 						else
-							echo 'returned from Facebook API:'
+							echo 'returned from Facebook API (status ' . $responseCode . '):'
 					?>
 					<br/><br/>
 					<textarea readonly="readonly" style="width: 600px; height: 600px"><?php echo $response ?></textarea>
