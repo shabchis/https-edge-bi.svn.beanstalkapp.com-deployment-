@@ -11,6 +11,8 @@
 			"&code=" . $_REQUEST["code"] .
 			"&scope=" . $_SESSION['permissions']
 		;
+		
+		echo $token_url;
 
 		$process = curl_init($token_url); 
 		curl_setopt($process, CURLOPT_TIMEOUT, 30);
@@ -40,9 +42,12 @@
 			
 			?>
 				<div id="error">
-					Error <?php echo $errno ?>: <?php echo $error ?>
+					Error <?php
+						if ($errno) echo $errno;
+						if ($error) echo ': ' . $error;
+					?>
 					<br/><br/>
-					<pre><?php echo $response ?></pre>
+					<pre style="width: 400px"><?php echo $response ?></pre>
 				</div>
 			<?php
 		}
