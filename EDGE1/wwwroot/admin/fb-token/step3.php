@@ -45,7 +45,7 @@
 						if ($error) echo ': ' . $error;
 					?>
 					<br/><br/>
-					<pre style="width: 400px"><?php echo $response ?></pre>
+					<pre style="display: block; width: 400px"><?php echo $response ?></pre>
 				</div>
 			<?php
 		}
