@@ -41,11 +41,16 @@
 			?>
 				<div id="error">
 					Error <?php
-						if ($errno) echo $errno;
-						if ($error) echo ': ' . $error;
+						if ($errno)
+						{
+							echo $errno;
+							if ($error) echo ': ' . $error;
+						}
+						else
+							echo 'returned from Facebook API:'
 					?>
 					<br/><br/>
-					<pre style="display: block; width: 400px"><?php echo $response ?></pre>
+					<textarea readonly="readonly" style="width: 400px"><?php echo $response ?></textarea>
 				</div>
 			<?php
 		}
