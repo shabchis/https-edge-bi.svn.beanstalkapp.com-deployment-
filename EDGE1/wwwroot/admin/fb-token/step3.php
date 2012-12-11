@@ -12,22 +12,17 @@
 			"&scope=" . $_SESSION['permissions']
 		;
 
-		$response = file_get_contents($token_url,
-			false,
-			stream_context_create(
-				array(
-					'http' => array(
-						'ignore_errors' => true
-					)
-				)
-			));
-		var_dump($response);
+		$process = curl_init($token_url); 
+		curl_setopt($process, CURLOPT_TIMEOUT, 30);
+		curl_setopt($process, CURLOPT_RETURNTRANSFER, 30);
+		$response = curl_exec($process);
+		curl_close($process); 
+		$responseCode = curl_getinfo($process);
 		
-		$params = null; parse_str($response, $params);
-		$token = $params['access_token'];
-		
-		if ($token)
+		if ($response && $responseCode == 200)
 		{
+			$params = null; parse_str($response, $params);
+			$token = $params['access_token'];
 			$expiresRaw = $params['expires'];
 			$expires = date("Y-m-d H:i:s", time() + intval($expiresRaw));
 
