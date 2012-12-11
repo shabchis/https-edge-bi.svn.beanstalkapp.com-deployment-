@@ -50,7 +50,7 @@
 							echo 'returned from Facebook API:'
 					?>
 					<br/><br/>
-					<textarea readonly="readonly" style="width: 400px"><?php echo $response ?></textarea>
+					<textarea readonly="readonly" style="width: 600px; height: 600px"><?php echo $response ?></textarea>
 				</div>
 			<?php
 		}
