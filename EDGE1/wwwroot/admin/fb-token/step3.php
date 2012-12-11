@@ -14,7 +14,7 @@
 
 		$process = curl_init($token_url); 
 		curl_setopt($process, CURLOPT_TIMEOUT, 30);
-		curl_setopt($process, CURLOPT_RETURNTRANSFER, 30);
+		curl_setopt($process, CURLOPT_RETURNTRANSFER, 1);
 		$response = curl_exec($process);
 		$responseCode = curl_getinfo($process);
 		
@@ -34,10 +34,13 @@
 		}
 		else
 		{
+			$errno = curl_errno ($process);
+			$error = curl_error($process);
+			
 			?>
 				<div id="error">
-					Error:
-					<br/>
+					Error <?php echo $errno ?>: <?php echo $error ?>
+					<br/><br/>
 					<pre><?php echo $response ?></pre>
 				</div>
 			<?php
