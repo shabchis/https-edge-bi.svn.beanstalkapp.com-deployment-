@@ -1,6 +1,6 @@
 <?php
 
-function current_url()
+function complete_url()
 {
 	return base_url() . $_SERVER['REQUEST_URI'];
 }
