@@ -34,9 +34,9 @@
 
 			?>
 				<div id="result">
-					<span class="hightlight">Access token:</span>
+					<span class="highlight">Access token:</span>
 					<br/>
-					<textarea readonly="readonly"><?php echo $token ?></textarea>>
+					<textarea readonly="readonly"><?php echo $token ?></textarea>
 					
 					<?php if ($expiresRaw) { ?>
 					<br/><br/>
