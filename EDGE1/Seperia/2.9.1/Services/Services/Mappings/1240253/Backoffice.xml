@@ -2,7 +2,7 @@
 						<Mappings>
 							<Object Type="GenericMetricsUnit">
 								<Map To='SegmentDimensions[{GetSegment("Tracker")}]' >
-									<Read Var="tracker" Field='Serial' />
+									<Read Var="tracker" Field='serial' />
 									<Map To='Value' Value='{tracker}'/>
 								</Map>
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Field='Registrations' />
