@@ -4,7 +4,7 @@
                                   <Object Type="Ad">                                         
 										 <Read Var="t1" Field="DestinationUrl" Regex='(\bSID=(?{tracker}\w+)\b)' Required="false"/>
 										 <Read Var="t2" Field="DestinationUrl" Regex='(\bsid=(?{tracker}\w+)\b)' Required="false"/>
-                                         <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='t1 != null || t2 != null || t3 != null '>
+                                         <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='t1 != null || t2 != null '>
 									<Map To='Value' Condition='t1 != null' Value="{t1.tracker}" />
 									<Map To='Value' Condition='t2 != null' Value="{t2.tracker}" />
 									<Map To='OriginalID' Condition='t1 != null' Value="{t1.tracker}" />
