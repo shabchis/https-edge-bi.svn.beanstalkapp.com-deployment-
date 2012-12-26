@@ -9,7 +9,7 @@
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field='Activations' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Field='Leads' />	
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Field='SAT' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Field='NetDeposit' Value='{NetDeposit.Replace(",", string.Empty)}'/>
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Field='NetDeposit' Value=’{NetDeposit.ToString().Replace(“,”, string.Empty)}’ />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Field='Refund' />									
 							</Object>
 						</Mappings>
