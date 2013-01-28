@@ -25,7 +25,7 @@
 									<Map To='OriginalID' Value='{Campaign}_{Adgroup}'/>
 								</Map>
 								<Map To='Segments[{GetSegment("Tracker")}]'  >
-									<Read Field='destUrl' Var='destUrl' Regex='\bSEM=(?{edgetrackerid}\w+)\b'></Read>
+									<Read Field='destUrl' Var='destUrl' Regex="(\bSEM=(?{edgetrackerid}\w+)\b)"></Read>
 									<Map To='Value' Value="{destUrl.tracker}"/>
 									<Map To='OriginalID' Value="{destUrl.tracker}"/>
 								</Map>
