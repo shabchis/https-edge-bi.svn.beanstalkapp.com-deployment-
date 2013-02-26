@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>	
-						
-                            <Mappings>
+	                          <Mappings>
                                   <Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
                                   <Object Type="Ad">
-                                         <Read Var="destUrl" Field='Destination URL' Regex='(\bp=edgetrackerid_(?{edgetrackerid}\w+)\b)' Required='false'/>
-                                         <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='destUrl != null'>
-                                                <Map To='Value'  Value="{destUrl.edgetrackerid}" Required="false"/>
-                                                <Map To='OriginalID'  Value="{destUrl.edgetrackerid}"/>
+                                         <Read Var="destUrl1" Field='Destination URL' Regex='(\bp=edgetrackerid_(?{edgetrackerid}\w+)\b)' Required='false'/>
+										 <Read Var="destUrl2" Field='Destination URL' Regex='(\bedgetrackerid=(?{edgetrackerid}\w+)\b)' Required='false'/>
+                                         <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='destUrl1 != null || destUrl2 != null'>										
+                                                <Map To='Value'  Condition='destUrl1 Value="{destUrl1.edgetrackerid}" Required="false" />
+												<Map To='Value'  Condition='destUrl2 Value="{destUrl2.edgetrackerid}" Required="false" />
+                                                <Map To='OriginalID'   Condition='destUrl1 != null' Value="{destUrl1.edgetrackerid}" />
+												<Map To='OriginalID'   Condition='destUrl2 != null' Value="{destUrl2.edgetrackerid}" />
                                          </Map>
                                   </Object>
                                   <!--<Object Type="Signature">
