@@ -14,7 +14,7 @@
 									<Map To='Text2' Field='Desc2' Required='false'/>	
 								</Map>
 								
-								<Map To='DestinationUrl' Field='destUrl'/>
+								<Map To='DestinationUrl' Field='destUrl' Required="false"/>
 								<Map To='Segments[{GetSegment("Campaign")}]::Campaign.Name' Field='Campaign'/>
 								<Map To='Segments[{GetSegment("AdGroup")}]::AdGroup'>
 									<Read Field='Adgroup'/>
@@ -23,7 +23,7 @@
 									<Map To='Campaign.Name' Field='Campaign'/>
 									<Map To='OriginalID' Value='{Campaign}_{Adgroup}'/>
 								</Map>
-								<Map To='Segments[{GetSegment("Tracker")}]'  >
+								<Map To='Segments[{GetSegment("Tracker")}]'  Required="false">
 									<Read Field='destUrl' Var='destUrl' Regex='\bolgs_tr=(?{tracker}\w+)\b'></Read>
 									<Map To='Value' Value="{destUrl.tracker}"/>
 									<Map To='OriginalID' Value="{destUrl.tracker}"/>
