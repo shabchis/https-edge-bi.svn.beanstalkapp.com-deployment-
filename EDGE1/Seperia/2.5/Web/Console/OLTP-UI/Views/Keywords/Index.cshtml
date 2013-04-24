@@ -1,0 +1,39 @@
+﻿@model EdgeBiUI.Models.KeywordsListModel
+@using Easynet.Edge.UI.Data
+           
+@{
+    ViewBag.Title = "Creatives";
+}
+
+<script type="text/javascript">
+
+    function openKeywordDetails(keywordGK) {
+        ShowLoadingMessage();
+        $.get('@(Url.Action("EditKeyword", "Keywords"))', { keywordGK: keywordGK }, function (data) {
+            $('#ControllerDialogDiv').html(data);
+            openController(600, 400);
+            HideLoadingMessage();
+        });
+    }
+
+    function findKeywords() {
+        searchText = $("#search_value").val();
+        ShowLoadingMessage();
+        $.get('@(Url.Action("FindKeywords", "Keywords"))', { searchText: searchText }, function (data) {
+            HideLoadingMessage();
+            $('#IndexDynamicTableContainer').html(data);
+            $(".IndexTableRowNoResult").css("display", "block");
+        });
+    }
+
+</script>
+
+<div class="IndexTopNav">
+    <input type="text" name="search_value" class="searchText" id="search_value" />
+    <input type="button" value="find" onclick="findKeywords()" />
+</div>
+
+<div id="IndexDynamicTableContainer">
+@Html.Partial("Table", Model.Keywords)
+</div>
+
