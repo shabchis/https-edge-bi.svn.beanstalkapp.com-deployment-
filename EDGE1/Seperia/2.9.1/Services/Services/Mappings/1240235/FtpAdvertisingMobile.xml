@@ -4,19 +4,19 @@
 								<Map To="OriginalID" Value='{Guid.NewGuid().ToString("N")}'/>
 								<Map To="Account" Field='AccountName' Var='AccountName' Value="{GetAccount(AccountName)}"/>
 								<Map To="Channel" Field='Channel' Var='ChannelName' Value='{GetChannel(ChannelName)}'/>
-								<Map To='Creatives[]::TextCreative'>
+								<!-- <Map To='Creatives[]::TextCreative'>
 									<Map To='TextType' Value='Title'/>
 									<Map To='Text' Field='Headline'/>
-								</Map>
-								<Map To='Creatives[]::TextCreative'>
+								</Map> -->
+								<!-- <Map To='Creatives[]::TextCreative'>
 									<Map To='TextType' Value='Body'/>
 									<Map To='Text' Field='Desc1' Required='false'/>	
 									<Map To='Text2' Field='Desc2' Required='false'/>	
-								</Map>
+								</Map> -->
 								
 								<Map To='DestinationUrl' Field='destUrl' Required="false"/>
 								<Map To='Segments[{GetSegment("Campaign")}]::Campaign.Name' Field='Campaign'/>
-								<Map To='Segments[{GetSegment("AdGroup")}]::AdGroup'>
+								<Map To='Segments[{GetSegment("AdGroup")}]::AdGroup' Required="false"/>>
 									<Read Field='Adgroup'/>
 									<Read Field='Campaign'/>
 									<Map To='Name' Field='Adgroup' />
