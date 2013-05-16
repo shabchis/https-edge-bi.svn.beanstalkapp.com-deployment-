@@ -15,8 +15,8 @@
 								</Map>
 																
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Field='Application' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field='Account' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var='EstimatedTotalNetRevenue' Field='Estimated Total Net Revenue' Required="false"/>
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field='Account' />								
+								
 								
 							</Object>
 							<Object Type="Edge.Data.Objects.Signature">
