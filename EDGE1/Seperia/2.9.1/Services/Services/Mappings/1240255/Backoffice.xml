@@ -13,6 +13,7 @@
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='TalkNE' Field='Talk-NE' />	
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Field='Wrongn' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Field='NoCC' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Field='Sales' />
 								
 							</Object>
 						</Mappings>
