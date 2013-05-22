@@ -75,19 +75,30 @@ function closeControllerDialog() {
 
 
 function ShowLoadingMessage() {
-    $('#ScreenOverlay').css("width", getBrowserHeight().width);
-    $('#ScreenOverlay').css("height", getBrowserHeight().height);
-    $('#ScreenOverlay').css("display", "block");
-    $('#ScreenOverlay').css("z-index", 1000);
+//    $('#ScreenOverlay').css("width", getBrowserHeight().width);
+//    $('#ScreenOverlay').css("height", getBrowserHeight().height);
+//    $('#ScreenOverlay').css("display", "block");
+//    $('#ScreenOverlay').css("z-index", 1000);
 
-    $('#LoadingMessage').css("display", "block");
+    //    $('#LoadingMessage').css("display", "block");
+    try {
+        window.parent.ajaxLoaderShow();
+    }
+    catch(err)
+    { }
 }
 
 function HideLoadingMessage() {
-    $('#ScreenOverlay').css("display", "none");
-    $('#ScreenOverlay').css("z-index", -1000);
+//    $('#ScreenOverlay').css("display", "none");
+//    $('#ScreenOverlay').css("z-index", -1000);
 
-    $('#LoadingMessage').css("display", "none");
+//    $('#LoadingMessage').css("display", "none");
+    try {
+        window.parent.ajaxLoaderHide();
+    }
+    catch (err)
+    { }
+    
 }
 
 function handleNewValue(selectElement) {
@@ -120,8 +131,11 @@ function addNewValue(selectElement) {
         $.post("../Home/AddNewSegmentValue", { segmentID: segmentID, newValue: newValue }, function (data) {
             $("#newValeOption_" + segmentID + "_div").remove();
             jElement.children("option[value='-1000']").remove();
-            jElement.append(new Option(newValue, data, false, true));
-            jElement.append(new Option("Add New...", "-1000", false, false));
+            //alert(newValue + " " + data);
+            //jElement.append(new Option(newValue, data, false, true));
+            jElement.append("<option value='" + data + "' selected='selected'>" + newValue + "</option>");
+            //jElement.append(new Option("Add New...", "-1000", false, false));
+            jElement.append("<option value='" + -1000 + "'>" + "Add New..." + "</option>");
             jElement.fadeIn(200);
         });
     }
