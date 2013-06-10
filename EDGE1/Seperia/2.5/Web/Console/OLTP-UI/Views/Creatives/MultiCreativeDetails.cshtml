@@ -16,9 +16,13 @@
 
     function SaveCreatives(closeAfter) {
         $.post($('#PageEditorForm').attr("action"), $('#PageEditorForm').serialize(), function (data) {
-            if (closeAfter)
-                closeControllerDialog();
-        }).error(function () { window.parent.handleError({ message: "error saving data" }); });
+            if (data == "OK") {
+                if (closeAfter)
+                    closeControllerDialog();
+            } else {
+                $('#ControllerDialogDiv').html(data);
+            }
+              }).error(window.parent.handleError);
     }
 </script>
 
