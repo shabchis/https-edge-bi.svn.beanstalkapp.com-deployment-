@@ -3,7 +3,7 @@
 <Mappings>
 <Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
 <Object Type="Ad">
-<Read Var="destUrl" Field='DestinationUrl' Regex='(\bedgetracker=(?{edgetrackerid}\w+\{*[a-z]*\}*))'/>
+<Read Var="destUrl" Field='DestinationUrl' Regex='(\bedgetrackerID=(?{edgetrackerid}\w+\{*[a-z]*\}*))'/>
 <Read Var="ad_id" Field='AdId' Required='true'/>
 <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='destUrl != null'>
 <Map To='Value'  Value="{destUrl.edgetrackerid}" Condition='destUrl.edgetrackerid.ToString()!="140{AdId}"' Required="false"/>
