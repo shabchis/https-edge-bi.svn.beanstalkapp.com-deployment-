@@ -14,7 +14,7 @@
 									<Map To="ID" Value="-1"/>
 								</Map>
 																
-								<Map To='MeasureValues[{GetMeasure("New_Active_Users")}]' Field='NewActiveUsers' />											
+								<Map To='MeasureValues[{GetMeasure("Acquisition2")}]' Field='NewActiveUsers' />											
 								
 								
 							</Object>
