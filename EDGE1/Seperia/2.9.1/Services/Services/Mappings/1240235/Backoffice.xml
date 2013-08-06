@@ -15,5 +15,7 @@
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Field='RedepositLeadsCount' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Field='FirstDepositLeadsCount' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Field='FirstDeposit' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Field='Withdrawals' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Field='WithdrawalsLeadsCount' />
 							</Object>
 						</Mappings>
