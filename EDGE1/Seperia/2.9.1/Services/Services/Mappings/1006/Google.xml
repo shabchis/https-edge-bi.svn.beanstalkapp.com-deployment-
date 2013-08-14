@@ -13,8 +13,8 @@
 												<Map To='OriginalID'  Value="100{ad_id}" Condition='destUrl.edgetrackerid.ToString()=="100{creative}"' Required="false"/>
                                          </Map>
 										 <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='siteLink != null'>
-                                                <Map To='Value'  Value="{siteLink.edgetrackerid}" Condition='destUrl.edgetrackerid != null' Required="false"/>
-												<Map To='OriginalID'   Value="{siteLink.edgetrackerid}" Condition='destUrl.edgetrackerid != null' Required="false"/>
+                                                <Map To='Value'  Value="{siteLink.edgetrackerid}" Condition='siteLink.edgetrackerid != null' Required="false"/>
+												<Map To='OriginalID'   Value="{siteLink.edgetrackerid}" Condition='siteLink.edgetrackerid != null' Required="false"/>
 										 </Map>
                                   </Object>
                                   <!--<Object Type="Signature">
