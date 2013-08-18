@@ -1,17 +1,35 @@
-						<Mappings>
-							<Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
-							<Object Type="Ad">
-								<Read Var="t1" Field="Destination URL" Regex="(\bref_id=(?{tracker}\w+)\b)" Required='false'/>
-								<Read Var="t2" Field="Destination URL" Regex="(\bgid=(?{tracker}\w+)\b)" Required='false'/>
-								<Read Var="t3" Field="Destination URL" Regex="((%3F|%26)gid%3D(?{tracker}\w+)\b)" Required='false'/>
+<Mappings>
+<Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
+<Object Type="Ad">
+<Read Var="t1" Field="Destination URL" Regex="(\bref_id=(?{tracker}\w+)\b)" Required='false'/>
+<Read Var="t2" Field="Destination URL" Regex="(\bgid=(?{tracker}\w+)\b)" Required='false'/>
+<Read Var="t3" Field="Destination URL" Regex="((%3F|%26)gid%3D(?{tracker}\w+)\b)" Required='false'/>
 
-								<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='t1 != null || t2 != null || t3 != null '>
-									<Map To='Value' Condition='t1 != null' Value="{t1.tracker}" />
-									<Map To='Value' Condition='t2 != null' Value="{t2.tracker}" />
-									<Map To='Value' Condition='t3 != null' Value="{t3.tracker}" />
-									<Map To='OriginalID' Condition='t1 != null' Value="{t1.tracker}" />
-									<Map To='OriginalID' Condition='t2 != null' Value="{t2.tracker}" />
-									<Map To='OriginalID' Condition='t3 != null' Value="{t3.tracker}" />
-								</Map>
-							</Object>
-						</Mappings>
+<Read Var="siteLink1" Field='Attribute Values' Regex="(\bref_id=(?{tracker}\w+)\b)" Required='false'/>
+<Read Var="siteLink2" Field='Attribute Values' Regex="(\bgid=(?{tracker}\w+)\b)" Required='false'/>
+<Read Var="siteLink3" Field='Attribute Values' Regex="((%3F|%26)gid%3D(?{tracker}\w+)\b)" Required='false'/>
+
+<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='t1 != null || t2 != null || t3 != null '>
+<Map To='Value' Condition='t1 != null' Value="{t1.tracker}" />
+<Map To='Value' Condition='t2 != null' Value="{t2.tracker}" />
+<Map To='Value' Condition='t3 != null' Value="{t3.tracker}" />
+
+<Map To='OriginalID' Condition='t1 != null' Value="{t1.tracker}" />
+<Map To='OriginalID' Condition='t2 != null' Value="{t2.tracker}" />
+<Map To='OriginalID' Condition='t3 != null' Value="{t3.tracker}" />
+
+<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='siteLink1 != null || siteLink2 != null || siteLink3 != null '>
+<Map To='Value'  Value="{siteLink1.edgetrackerid}" Condition='siteLink1.edgetrackerid != null' Required="false"/>
+<Map To='Value'  Value="{siteLink2.edgetrackerid}" Condition='siteLink2.edgetrackerid != null' Required="false"/>
+<Map To='Value'  Value="{siteLink3.edgetrackerid}" Condition='siteLink3.edgetrackerid != null' Required="false"/>
+
+<Map To='OriginalID'   Value="{siteLink1.edgetrackerid}" Condition='siteLink1.edgetrackerid != null' Required="false"/>
+<Map To='OriginalID'   Value="{siteLink2.edgetrackerid}" Condition='siteLink2.edgetrackerid != null' Required="false"/>
+<Map To='OriginalID'   Value="{siteLink3.edgetrackerid}" Condition='siteLink3.edgetrackerid != null' Required="false"/>
+
+</Map>
+
+
+</Map>
+</Object>
+</Mappings>
