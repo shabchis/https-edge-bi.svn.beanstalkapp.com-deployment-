@@ -13,7 +13,7 @@
 									<Map To='Text' Field='Description'/>									
 								</Map>
 								
-								<Map To='DestinationUrl' Field='destUrl'/>
+								<Map To='DestinationUrl' Field='DestinationURL'/>
 								<Map To='Segments[{GetSegment("Campaign")}]::Campaign.Name' Field='Campaign'/>
 								<Map To='Segments[{GetSegment("AdGroup")}]::AdGroup'>
 									<Read Field='Adgroup'/>
@@ -23,7 +23,7 @@
 									<Map To='OriginalID' Value='{Campaign}_{Adgroup}'/>
 								</Map>
 								<Map To='Segments[{GetSegment("Tracker")}]'  >
-									<Read Field='Destination URL' Var='destUrl' Regex='\bgid=(?{tracker}\w+)\b'></Read>
+									<Read Field='DestinationURL' Var='destUrl' Regex='\bgid=(?{tracker}\w+)\b'></Read>
 									<Map To='Value' Value="{destUrl.tracker}"/>
 									<Map To='OriginalID' Value="{destUrl.tracker}"/>
 								</Map>
