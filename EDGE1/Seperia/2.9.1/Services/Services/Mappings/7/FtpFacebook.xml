@@ -23,9 +23,9 @@
 									<Map To='OriginalID' Value='{Campaign}_{Adgroup}'/>
 								</Map>
 								<Map To='Segments[{GetSegment("Tracker")}]'  >
-									<Read Field='destUrl' Var='destUrl' Regex='\bgid=(?{tracker}\w+)\b'></Read>
-									<Map To='Value' Value="{destUrl.tracker}"/>
-									<Map To='OriginalID' Value="{destUrl.tracker}"/>
+									<Read Field='destUrl' Var='destUrl' Regex='\bgid=(?{tracker}\w+)\b' Required='false'></Read>
+									<Map To='Value' Value="{destUrl.tracker}" Required='false'/>
+									<Map To='OriginalID' Value="{destUrl.tracker}" Required='false'/>
 								</Map>
 							</Object>
 							<Object Type="AdMetricsUnit">
