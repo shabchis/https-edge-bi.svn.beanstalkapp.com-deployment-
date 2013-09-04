@@ -22,27 +22,27 @@
                                 
                 <!--Getting ScheduleDemo-->
                 <Read Var="Subject" Field='Subject' Required='false' RequiredAlert='false'/>
-                <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='Status!= null &amp;&amp; Status != "Completed" &amp;&amp; Subject == "**Demo**"' Value='1'/>
+                <Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Condition='Status!= null &amp;&amp; Status != "Completed" &amp;&amp; Subject == "**Demo**"' Value='1'/>
 
                 <!--Getting ClosedDemo-->
-                <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='Status!= null &amp;&amp; Status == "Completed" &amp;&amp; Subject == "**Demo**"' Value='1'/>
+                <Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Condition='Status!= null &amp;&amp; Status == "Completed" &amp;&amp; Subject == "**Demo**"' Value='1'/>
 
                 <!--Getting OPEN Opportunity-->
                 <Read Var="RecordTypeId" Field='RecordTypeId' Required='false'/>
                 <Read Var='CreatedDate' Field='CreatedBy.CreatedDate'  Required='false'/>
-                <Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='CreatedDate != null &amp;&amp; RecordTypeId != null &amp;&amp; RecordTypeId=="012D0000000BUcPIAW"' Value='1'/><!--SMB-->
-                <Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='CreatedDate != null &amp;&amp; RecordTypeId != null &amp;&amp; RecordTypeId=="012D0000000BUcUIAW"' Value='1'/><!--Enterprise-->
+                <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='CreatedDate != null &amp;&amp; RecordTypeId != null &amp;&amp; RecordTypeId=="012D0000000BUcPIAW"' Value='1'/><!--SMB-->
+                <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='CreatedDate != null &amp;&amp; RecordTypeId != null &amp;&amp; RecordTypeId=="012D0000000BUcUIAW"' Value='1'/><!--Enterprise-->
                 
                 <!--Getting Closed Opportunity-->
                 <Read Var="OpportunityStatus" Field='StageName' Required='false'/>
                 <Read Var='ClosedDate' Field='CloseDate'  Required='false'/>
-                <Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='OpportunityStatus != null &amp;&amp; ClosedDate!=null &amp;&amp; RecordTypeId=="012D0000000BUcPIAW"' Value='1'/><!--SMB-->
-                <Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Condition='OpportunityStatus != null &amp;&amp; ClosedDate!=null &amp;&amp; RecordTypeId=="012D0000000BUcUIAW"' Value='1'/><!--Enterprise-->
+                <Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='OpportunityStatus != null &amp;&amp; ClosedDate!=null &amp;&amp; RecordTypeId=="012D0000000BUcPIAW"' Value='1'/><!--SMB-->
+                <Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='OpportunityStatus != null &amp;&amp; ClosedDate!=null &amp;&amp; RecordTypeId=="012D0000000BUcUIAW"' Value='1'/><!--Enterprise-->
 
                 <!--Getting Closed Opportunity Value-->
                 <Read Var="ClosedOpportunityAmount" Field='Amount' Required='false'/>
-                <Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Condition='ClosedOpportunityAmount != null  &amp;&amp; ClosedDate!=null &amp;&amp; RecordTypeId=="012D0000000BUcPIAW"' Value='{ClosedOpportunityAmount}'/><!--SMB-->
-                <Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Condition='ClosedOpportunityAmount != null &amp;&amp; ClosedDate!=null &amp;&amp; RecordTypeId=="012D0000000BUcUIAW"' Value='{ClosedOpportunityAmount}'/><!--Enterprise-->
+                <Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='ClosedOpportunityAmount != null  &amp;&amp; ClosedDate!=null &amp;&amp; RecordTypeId=="012D0000000BUcPIAW"' Value='{ClosedOpportunityAmount}'/><!--SMB-->
+                <Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Condition='ClosedOpportunityAmount != null &amp;&amp; ClosedDate!=null &amp;&amp; RecordTypeId=="012D0000000BUcUIAW"' Value='{ClosedOpportunityAmount}'/><!--Enterprise-->
 
               </Object>
      </Mappings>
