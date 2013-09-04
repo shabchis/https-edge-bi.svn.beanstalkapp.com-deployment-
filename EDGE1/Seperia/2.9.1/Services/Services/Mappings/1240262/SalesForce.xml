@@ -29,7 +29,7 @@
 
                 <!--Getting OPEN Opportunity-->
                 <Read Var="RecordTypeId" Field='RecordTypeId' Required='false'/>
-                <Read Var='CreatedDate' Field='CreatedBy.CreatedDate'  Required='false'/>
+                <Read Var='CreatedDate' Field='CreatedDate'  Required='false'/>
                 <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='CreatedDate != null &amp;&amp; RecordTypeId != null &amp;&amp; RecordTypeId=="012D0000000BUcPIAW"' Value='1'/><!--SMB-->
                 <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='CreatedDate != null &amp;&amp; RecordTypeId != null &amp;&amp; RecordTypeId=="012D0000000BUcUIAW"' Value='1'/><!--Enterprise-->
                 
