@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>	
+
+<Mappings>
+<Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
+<Object Type="Ad">
+<Read Var="destUrl" Field='DestinationUrl' Regex='(\bp=(?{edgetrackerid}\w+\{*[a-z]*\}*))'/>
+<Read Var="ad_id" Field='AdId' Required='true'/>
+<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='destUrl != null'>
+<Map To='Value'  Value="{destUrl.edgetrackerid}" Condition='destUrl.edgetrackerid.ToString()!="140{AdId}"' Required="false"/>
+<Map To='Value'  Value="140{ad_id}" Condition='destUrl.edgetrackerid.ToString()=="140{AdId}"' Required="false"/>
+<Map To='OriginalID'  Value="{destUrl.edgetrackerid}" Condition='destUrl.edgetrackerid.ToString()!="140{AdId}"' Required="false"/>
+<Map To='OriginalID'  Value="140{ad_id}" Condition='destUrl.edgetrackerid.ToString()=="140{AdId}"' Required="false"/>
+</Map>
+</Object>
+</Mappings>
+
+
+					
