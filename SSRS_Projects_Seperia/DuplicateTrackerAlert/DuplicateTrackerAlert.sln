@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "DuplicateTrackerAlert", "DuplicateTrackerAlert\DuplicateTrackerAlert.rptproj", "{930B8F45-704F-4ACC-9504-3FA98EE86353}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{930B8F45-704F-4ACC-9504-3FA98EE86353}.Debug|Default.ActiveCfg = Debug
+		{930B8F45-704F-4ACC-9504-3FA98EE86353}.Debug|Default.Build.0 = DebugLocal
+		{930B8F45-704F-4ACC-9504-3FA98EE86353}.Debug|Default.Deploy.0 = DebugLocal
+		{930B8F45-704F-4ACC-9504-3FA98EE86353}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{930B8F45-704F-4ACC-9504-3FA98EE86353}.DebugLocal|Default.Build.0 = DebugLocal
+		{930B8F45-704F-4ACC-9504-3FA98EE86353}.Release|Default.ActiveCfg = Release
+		{930B8F45-704F-4ACC-9504-3FA98EE86353}.Release|Default.Build.0 = Release
+		{930B8F45-704F-4ACC-9504-3FA98EE86353}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

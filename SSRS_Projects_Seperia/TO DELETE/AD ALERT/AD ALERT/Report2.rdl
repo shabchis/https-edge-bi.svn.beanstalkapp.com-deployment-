@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DS_Seperia_DWH">
+      <rd:DataSourceID>e3481e7b-7615-46c8-bd8c-2108d23726ca</rd:DataSourceID>
+      <DataSourceReference>DS_Seperia_DWH</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <rd:ReportID>7faf0874-8f60-448a-b7d4-b19e9ef6340f</rd:ReportID>
+  <Width>5in</Width>
+  <Body>
+    <Height>0.33in</Height>
+    <ColumnSpacing>0.5in</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <Style>
+          <FontFamily>Times New Roman</FontFamily>
+          <FontSize>18pt</FontSize>
+          <Color>#365838</Color>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Value>Report2</Value>
+        <CanGrow>true</CanGrow>
+        <Height>0.33in</Height>
+      </Textbox>
+      <Table Name="table1">
+        <Top>0.33in</Top>
+        <Style />
+        <Header>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+          <TableRows>
+            <TableRow>
+              <TableCells />
+              <Height>0in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells />
+              <Height>0in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <TableColumns />
+        <DataSetName>DataSet1</DataSetName>
+      </Table>
+    </ReportItems>
+  </Body>
+  <Language>en-US</Language>
+  <LeftMargin>1in</LeftMargin>
+  <RightMargin>1in</RightMargin>
+  <TopMargin>1in</TopMargin>
+  <BottomMargin>1in</BottomMargin>
+  <PageWidth>8.5in</PageWidth>
+  <PageHeight>11in</PageHeight>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields />
+      <Query>
+        <DataSourceName>DS_Seperia_DWH</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>declare @fromstr  varchar(1000)
+declare @select1 varchar(max)
+declare @select2 varchar(max)
+declare @Regs  varchar(50)
+declare @Actives  varchar(50)
+declare @CPR  varchar(50)
+declare @CPA  varchar(50)
+declare @CubeName varchar(1000)
+declare @where varchar(max)
+
+set @Regs = (select MDX_Name from [Seperia].[dbo].[Measure] where AccountID = @Account_ID and BaseMeasureID = 5)
+set @Actives = (select MDX_Name from [Seperia].[dbo].[Measure] where AccountID = @Account_ID and BaseMeasureID = 7)
+set @CPR = (select MDX_Name from [Seperia].[dbo].[Measure] where AccountID = @Account_ID and BaseMeasureID = 1)
+set @CPA = (select MDX_Name from [Seperia].[dbo].[Measure] where AccountID = @Account_ID and BaseMeasureID = 9)
+set @CubeName  = (select substring(convert(varchar(50), AnalysisSettings, 0 ),29, (len( convert(varchar(50), AnalysisSettings, 0 )  ) - 31 ))  FROM [Seperia].[dbo].[User_GUI_Account] where Account_ID =  @Account_ID  )
+
+--print @Regs
+--print @Actives
+--print  @CPA 
+--print @CPR
+
+set @select1  = 
+'With 
+SET [Selected Measures] AS { [Measures].['+@Actives+']
+                            ,[Measures].[Cost]
+                            ,[Measures].['+@CPA+']
+                            ,[Measures].['+@CPR+']
+                            ,[Measures].['+@Regs+'] 
+                           , [Measures].[7% of AdGroup]
+                            ,[Measures].[Sum of ADgroup]
+                            ,[Measures].[0.1% of Account]
+                            ,[Measures].[Sum of Account]
+                            ,[Measures].[Best_CPA] 
+                            ,[Measures].[Best_CPR] 
+                            ,[Measures].[Weight] 
+                                                } 
+MEMBER [Measures].[0.1% of Account] AS (([Measures].['+@Regs+'],[Paid Creatives Dim].[Creatives].CurrentMember.Parent.Parent.Parent) * 0.001) --Account Level
+MEMBER [Measures].[7% of AdGroup]   AS (([Measures].['+@Regs+'],[Paid Creatives Dim].[Creatives].CurrentMember.Parent) * 0.07) --Ad group level
+MEMBER [Measures].[Sum of Account]  AS ([Measures].['+@Regs+'],[Paid Creatives Dim].[Creatives].CurrentMember.Parent.Parent.Parent)  -- Account
+MEMBER [Measures].[Sum of ADgroup]  AS ([Measures].['+@Regs+'],[Paid Creatives Dim].[Creatives].CurrentMember.Parent)  -- Adgroup
+
+MEMBER [Measures].[Weight]          AS  IIF ( ([Measures].['+@CPA+']=null or [Measures].['+@CPA+'] = 0 ) and ([Measures].['+@CPR+']=null or [Measures].['+@CPR+'] = 0 ),99 ,
+											  IIF( ([Measures].['+@CPA+']=null or [Measures].['+@CPA+'] = 0) and ([Measures].['+@CPR+']&lt;&gt;null AND [Measures].['+@CPR+'] &lt;&gt; 0 ),
+                                                  ((1- Measures.[Best_CPR]/[Measures].['+@CPR+']) * 1), 
+													     IIF( ([Measures].['+@CPA+']&lt;&gt;null AND [Measures].['+@CPA+'] &lt;&gt; 0 ) and ([Measures].['+@CPR+']=null or [Measures].['+@CPR+'] = 0 ),
+													         ((1- Measures.[Best_CPA]/[Measures].['+@CPA+']) * 1  ),										     
+													     		((1- Measures.[Best_CPA]/[Measures].['+@CPA+']) * 0.5  ) +  ((1- Measures.[Best_CPR]/[Measures].['+@CPR+']) * 0.5 ) )))
+
+
+SET [Filtered Creatives_1] AS FILTER( 
+                                                      {[Paid Creatives Dim].[Creatives].[Creative]} , [Measures].['+@Regs+'] &gt; [Measures].[7% of AdGroup]
+                                                      AND
+                                                      [Sum of ADgroup] &gt;  [Measures].[0.1% of Account]
+                                                      )  
+MEMBER [Measures].[Best_CPA]  AS  Min([Filtered Creatives_1], [Measures].['+@CPA+'])
+MEMBER [Measures].[Best_CPR]  AS  Min([Filtered Creatives_1], [Measures].['+@CPR+'])
+SET [Filtered Creatives_2] AS FILTER( 
+                                                       {[Filtered Creatives_1]} , [Measures].['+@CPA+'] &gt;= Measures.[Best_CPA] * 1.5 
+                                                            and
+                                                      [Measures].['+@CPR+'] &gt;=   Measures.[Best_CPR] * 1.2                                                     )
+SELECT ORDER([Filtered Creatives_2], [Measures].[Weight] , BDESC)  ON ROWS,
+[Selected Measures]  ON COLUMNS
+'
+set @fromstr =  'FROM [' + @CubeName  + ']'
+set @where =  'WHERE (  [Accounts Dim].[Accounts].[Account].&amp;['+@Account_ID+'] ,
+ClosingPeriod([Time Dim].[Time Dim].[Day], [Time Dim].[Time Dim].[All Time]).Lag('+@DaysNum+'): ClosingPeriod([Time Dim].[Time Dim].[Day], [Time Dim].[Time Dim].[All Time]) )
+'
+
+
+exec Seperia..SP_ExecuteMDX  @select1,  @fromstr, @where</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <Timeout>0</Timeout>
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
