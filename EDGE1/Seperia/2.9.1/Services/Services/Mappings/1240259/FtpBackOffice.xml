@@ -18,8 +18,8 @@
 																
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Var ='PreJunk' Field= 'Pre - Junk' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Var ='PrePoor' Field='Pre – Poor' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var ='PreGeneral' Field='Pre – General' />	
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Var ='PreQuality' Field= 'Pre – Quality' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var ='PreOK' Field='Pre – OK' />	
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Var ='PreVeryGood' Field= 'Pre – Very Good' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Var ='FinalJunk' Field='Final – Junk' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var ='FinalPoor' Field='Final – Poor' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Var ='FinalGeneral' Field='Final – General' />
