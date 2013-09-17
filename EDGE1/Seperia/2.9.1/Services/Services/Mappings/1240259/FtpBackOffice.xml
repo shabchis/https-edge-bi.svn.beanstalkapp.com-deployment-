@@ -22,8 +22,8 @@
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Var ='PreVeryGood' Field= 'Pre – Very Good' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Var ='FinalJunk' Field='Final – Junk' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var ='FinalPoor' Field='Final – Poor' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Var ='FinalGeneral' Field='Final – General' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Var ='FinalQuality' Field='Final – Quality' />	
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Var ='FinalOK' Field='Final – OK' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Var ='FinalVeryGood' Field='Final – Very Good' />	
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Var ='CRMLeads' Field='CRM Leads' />
 																
 							</Object>
