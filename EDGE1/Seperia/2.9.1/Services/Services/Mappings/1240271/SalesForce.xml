@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>						
+
+<Mappings>
+<Object Type="GenericMetricsUnit">
+
+<Map To='SegmentDimensions[{GetSegment("Tracker")}]'>
+<Read Var="tracker" Field='Edge_BI_Tracker__c' Required='false'/>
+<Map To='Value' Value='{tracker}' Condition='tracker!=null' Required='false'/>
+</Map>
+
+<!--Getting Leads--> 
+<Read Var="Status" Field='Status' Required='false'/>
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Condition='Status != null &amp;&amp; Status == "Created"' Value='1'/> <!--Created Leads-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Condition='Status != null &amp;&amp; Status == "Assigned"' Value='1'/> <!--Assigned Leads-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Condition='Status != null &amp;&amp; Status == "Demo scheduled"' Value='1'/> <!--Schedule Demo-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='Status != null &amp;&amp; Status == "Nurturing"' Value='1'/> <!--Nurturing Lead-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='Status != null &amp;&amp; Status == "Not relevant"' Value='1'/> <!--Not Relevant Lead-->
+
+<!--Getting Opportunity--> 
+<Read Var="StageName" Field='StageName' Required='false'/>
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='StageName != null' Value='1'/> <!--Converted Lead (Demo conducted)-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='StageName != null &amp;&amp; StageName == "Demo Meeting"' Value='1'/> <!--Demo Meeting-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='StageName != null &amp;&amp; StageName == "Trial – In Process"' Value='1'/> <!-- Trial – In Process-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Condition='StageName != null &amp;&amp; StageName == "Trial - Live"' Value='1'/> <!-- Trial - Live-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Condition='StageName != null &amp;&amp; StageName == "Proposal/Price Quote"' Value='1'/> <!-- Proposal/Price Quote-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Condition='StageName != null &amp;&amp; StageName == "Closed Lost"' Value='1'/> <!-- Closed Lost-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Condition='StageName != null &amp;&amp; StageName == "Closed Churn"' Value='1'/> <!-- Closed Churn-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Condition='StageName != null &amp;&amp; StageName == "Paying Installation"' Value='1'/> <!-- Paying Installation-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Condition='StageName != null &amp;&amp; StageName == "Paying Live"' Value='1'/> <!-- Paying Live-->
+
+<!--Getting Paying Total Amount-->
+<Read Var="PayingAmount" Field='Amount' Required='false'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Condition='PayingAmount != null &amp;&amp; StageName != null &amp;&amp; StageName == "Paying Installation"' Value='{PayingAmount}'/><!--Installation Amount-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Condition='PayingAmount != null &amp;&amp; StageName != null &amp;&amp; StageName == "Paying Live"' Value='{PayingAmount}'/><!--Live Amount-->
+
+
+</Object>
+</Mappings>
