@@ -16,7 +16,7 @@
 <Read Var="NurturingDate" Field='Nurturing_Date__c' Required='false'/>
 <Read Var="NotRelevantDate" Field='Not_Relevant_Date__c' Required='false'/>
 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Condition='CreatedDate != null' Value='1'/> <!--Created Leads-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Condition='CreatedDateLeads != null' Value='1'/> <!--Created Leads-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Condition='AssignedDate != null' Value='1'/> <!--Assigned Leads-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Condition='DemoSetDate != null' Value='1'/> <!--Schedule Demo-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='NurturingDate != null' Value='1'/> <!--Nurturing Lead-->
