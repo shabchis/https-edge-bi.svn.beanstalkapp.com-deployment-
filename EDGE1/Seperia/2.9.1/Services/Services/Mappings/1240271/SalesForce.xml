@@ -10,20 +10,20 @@
 </Map>
 
 <!--Getting Leads--> 
-<Read Var="CreatedDateLeads" Field='CreatedDate' Required='false'/>
+<Read Var="CreatedDate" Field='CreatedDate' Required='false'/>
 <Read Var="AssignedDate" Field='Assigned_Date__c' Required='false'/>
 <Read Var="DemoSetDate" Field='Demo_set_up_date__c' Required='false'/>
 <Read Var="NurturingDate" Field='Nurturing_Date__c' Required='false'/>
 <Read Var="NotRelevantDate" Field='Not_Relevant_Date__c' Required='false'/>
 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Condition='CreatedDateLeads != null' Value='1'/> <!--Created Leads-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Condition='CreatedDate != null' Value='1'/> <!--Created Leads-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Condition='AssignedDate != null' Value='1'/> <!--Assigned Leads-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Condition='DemoSetDate != null' Value='1'/> <!--Schedule Demo-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='NurturingDate != null' Value='1'/> <!--Nurturing Lead-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='NotRelevantDate != null' Value='1'/> <!--Not Relevant Lead-->
 
 <!--Getting Opportunity--> 
-<Read Var="CreatedDateOpp" Field='CreatedDate' Required='false'/>
+<Read Var="StageName" Field='StageName' Required='false'/>
 <Read Var="DemoMeetingDate" Field='Demo_Meeting_Date__c' Required='false'/>
 <Read Var="TrialProcessDate" Field='Trial_In_Process_date__c' Required='false'/>
 <Read Var="TrialLiveDate" Field='Trial_Live_Date__c' Required='false'/>
@@ -33,7 +33,7 @@
 <Read Var="ClosedLostDate" Field='Closed_Lost_Date__c' Required='false'/>
 <Read Var="ClosedChurnDate" Field='Closed_Churn_Date__c' Required='false'/>
 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='CreatedDateOpp != null' Value='1'/> <!--Converted Lead (Demo conducted)-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='CreatedDate != null &amp;&amp; StageName != null' Value='1'/> <!--Converted Lead (Demo conducted)-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='DemoMeetingDate != null' Value='1'/> <!--Demo Meeting-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='TrialProcessDate != null' Value='1'/> <!-- Trial – In Process-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Condition='TrialLiveDate != null' Value='1'/> <!-- Trial - Live-->
