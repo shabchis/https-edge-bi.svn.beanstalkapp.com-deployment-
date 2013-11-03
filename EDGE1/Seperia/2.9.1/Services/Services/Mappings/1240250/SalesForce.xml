@@ -5,7 +5,7 @@
 
 <Map To='SegmentDimensions[{GetSegment("Tracker")}]'>
 <Read Var="tracker" Field='Edge_Tracker__c' Required='false'/>
-<Map To='Value' Value='{tracker.edgetrackerid}' Condition='(tracker != null) &amp;&amp; (tracker.edgetrackerid != null)' Required='false'/>
+<Map To='Value' Value='{tracker}' Condition='(tracker != null)' Required='false'/>
 </Map>
 
 <!--Getting Leads-->
@@ -21,8 +21,8 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='Status == "Qualified Leads"' Value='1'/> 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='Status == "Unqualified Leads"' Value='1'/> 
 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='Isconverted == true ' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='MQL == true' Value='1'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='Isconv == "true"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='MQL == "true"' Value='1'/>
 
 </Object>
 </Mappings>
