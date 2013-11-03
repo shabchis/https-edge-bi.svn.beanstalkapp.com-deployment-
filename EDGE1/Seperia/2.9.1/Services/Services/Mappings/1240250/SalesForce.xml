@@ -18,11 +18,11 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='CreatedDate != null &amp;&amp; Status!=null' Value='1' />
 
 <!--Leads-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='Status == "Qualified Leads"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='Status == "Unqualified Leads"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='Status == "Qualified Leads"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='Status == "Unqualified Leads"' Value='1'/> 
 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='Isconverted == true ' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='MQL == true' Value='1'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='Isconverted == true ' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='MQL == true' Value='1'/>
 
 </Object>
 </Mappings>
