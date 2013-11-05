@@ -56,6 +56,21 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific28")}]' Condition='Type == "Objet Connex Multi-Material (PolyJet)"' Value='1'/>
 <Map To='MeasureValues[{GetMeasure("ClientSpecific29")}]' Condition='Type == "Product not selected yet"' Value='1'/> 
 
+<!--Getting Opportunity-->
+<Read Var="StageName" Field='ConvertedOpportunity.StageName' Required='false'/>
+<Read Var="OppID" Field='ConvertedOpportunityId' Required='false'/>
+
+<!--Total Opportunity-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific40")}]' Condition='OppID != null' Value='1' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific32")}]' Condition='StageName == "A"' Value='1'/> <!--Stage A-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific33")}]' Condition='StageName == "B"' Value='1'/> <!-- Stage B-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific34")}]' Condition='StageName == "C"' Value='1'/> <!-- Stage C-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific35")}]' Condition='StageName == "D"' Value='1'/> <!-- Stage D-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific36")}]' Condition='StageName == "E"' Value='1'/> <!-- Stage E-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific37")}]' Condition='StageName == "F"' Value='1'/> <!-- Stage F-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific38")}]' Condition='StageName == "Closed Lost"' Value='1'/> <!-- Closed Lost-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific39")}]' Condition='StageName == "Closed Won"' Value='1'/> <!-- Closed Won-->
 
 </Object>
 </Mappings>
