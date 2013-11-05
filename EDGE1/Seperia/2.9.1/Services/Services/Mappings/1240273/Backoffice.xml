@@ -8,6 +8,6 @@
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Field='Leads' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field='Members' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Field='Sales' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Field='Refund' />								
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Field='Refunds' />								
 							</Object>
 						</Mappings>
