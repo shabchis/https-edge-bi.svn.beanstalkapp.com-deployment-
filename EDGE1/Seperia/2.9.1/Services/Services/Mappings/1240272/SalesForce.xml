@@ -61,7 +61,7 @@
 <Read Var="OppID" Field='ConvertedOpportunityId' Required='false'/>
 
 <!--Total Opportunity-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific40")}]' Condition='OppID != null' Value='1' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific40")}]' Condition='StageName != null' Value='1' />
 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific32")}]' Condition='StageName == "A"' Value='1'/> <!--Stage A-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific33")}]' Condition='StageName == "B"' Value='1'/> <!-- Stage B-->
