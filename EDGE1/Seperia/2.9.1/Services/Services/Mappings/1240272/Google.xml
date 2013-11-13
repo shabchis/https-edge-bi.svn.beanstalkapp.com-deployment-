@@ -11,6 +11,14 @@
 <Map To='OriginalID'  Value="{destUrl.edgetrackerid}" Condition='destUrl.edgetrackerid.ToString()!="100{creative}"' Required="false"/>
 <Map To='OriginalID'  Value="100{ad_id}" Condition='destUrl.edgetrackerid.ToString()=="100{creative}"' Required="false"/>
 </Map>
+
+</Object>
+<Object Type="KeywordTarget">
+<Read Var="KwdDestUrl" Field='Destination URL' Regex='(\butm_ad=(?{KwdID}[\-0-9a-zA-Z]*))' Required='false'/>
+<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='KwdDestUrl != null'>
+<Map To='Value'  Value="{KwdDestUrl.KwdID}" Condition='KwdDestUrl.KwdID.ToString()!="100{creative}"' Required="false"/>
+<Map To='OriginalID'  Value="{KwdDestUrl.KwdID}" Condition='KwdDestUrl.KwdID.ToString()!="100{creative}"' Required="false"/>
+</Map>
 </Object>
 
 </Mappings>
