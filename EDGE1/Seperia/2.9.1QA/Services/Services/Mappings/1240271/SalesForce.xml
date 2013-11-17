@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>						
+
+
+<Mappings>
+<Object Type="GenericMetricsUnit">
+
+<Map To='SegmentDimensions[{GetSegment("Tracker")}]'>
+<Read Var="tracker" Field='Edge_BI_Tracker__c' Required='false'/>
+<Map To='Value' Value='{tracker}' Condition='tracker!=null' Required='false'/>
+</Map>
+
+<!--Getting Leads-->
+<Read Var="Status" Field='Status' Required='false'/> 
+<Read Var="CreatedDate" Field='CreatedDate' Required='false'/>
+<Read Var="AssignedDate" Field='Assigned_Date__c' Required='false'/>
+<Read Var="DemoSetDate" Field='Demo_set_up_date__c' Required='false'/>
+<Read Var="NurturingDate" Field='Nurturing_Date__c' Required='false'/>
+<Read Var="NotRelevantDate" Field='Not_Relevant_Date__c' Required='false'/>
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Condition='CreatedDate != null &amp;&amp; Status!=null' Value='1'/> <!--Created Leads-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Condition='AssignedDate != null' Value='1'/> <!--Assigned Leads-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Condition='DemoSetDate != null' Value='1'/> <!--Schedule Demo-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='NurturingDate != null' Value='1'/> <!--Nurturing Lead-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='NotRelevantDate != null' Value='1'/> <!--Not Relevant Lead-->
+
+<!--Getting Opportunity--> 
+<Read Var="StageName" Field='StageName' Required='false'/>
+<Read Var="DemoMeetingDate" Field='Demo_Meeting_Date__c' Required='false'/>
+<Read Var="TrialProcessDate" Field='Trial_In_Process_date__c' Required='false'/>
+<Read Var="TrialLiveDate" Field='Trial_Live_Date__c' Required='false'/>
+<Read Var="ProposalPriceQuoteDate" Field='Proposal_Price_Quote_Date__c' Required='false'/>
+<Read Var="PayingInstDate" Field='Paying_Installation_Date__c' Required='false'/>
+<Read Var="PayingLiveDate" Field='Paying_Live_date__c' Required='false'/>
+<Read Var="ClosedLostDate" Field='Closed_Lost_Date__c' Required='false'/>
+<Read Var="ClosedChurnDate" Field='Closed_Churn_Date__c' Required='false'/>
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='CreatedDate != null &amp;&amp; StageName != null' Value='1'/> <!--Converted Lead (Demo conducted)-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='DemoMeetingDate != null' Value='1'/> <!--Demo Meeting-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='TrialProcessDate != null' Value='1'/> <!-- Trial – In Process-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Condition='TrialLiveDate != null' Value='1'/> <!-- Trial - Live-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Condition='ProposalPriceQuoteDate != null' Value='1'/> <!-- Proposal/Price Quote-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Condition='PayingInstDate != null' Value='1'/> <!-- Closed Lost-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Condition='PayingLiveDate != null' Value='1'/> <!-- Closed Churn-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Condition='ClosedLostDate != null' Value='1'/> <!-- Paying Installation-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Condition='ClosedChurnDate != null' Value='1'/> <!-- Paying Live-->
+
+<!--Getting Paying Total Amount-->
+<Read Var="PayingAmount" Field='Amount' Required='false'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Condition='PayingAmount != null &amp;&amp; PayingInstDate != null' Value='{PayingAmount}'/><!--Installation Amount-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Condition='PayingAmount != null &amp;&amp; PayingLiveDate != null' Value='{PayingAmount}'/><!--Live Amount-->
+
+
+</Object>
+</Mappings>

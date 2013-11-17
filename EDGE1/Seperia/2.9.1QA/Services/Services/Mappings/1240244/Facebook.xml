@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>						
+						<Mappings>
+							<Object Type="Ad">
+								<Read Var="t1" Field="link_url" Regex="\bSEM=(?{tracker}\w+)\b" Required='false'/>
+								<Read Var="t2" Field="link_url" Regex="\bsem=(?{tracker}\w+)\b" Required='false'/>
+								<Map To='Segments[{GetSegment("Tracker")}]' Condition='t1 != null || t2 != null'>
+									<Map To='Value' Condition='t1 != null' Value="{t1.tracker}" />
+									<Map To='Value' Condition='t2 != null' Value="{t2.tracker}" />
+									<Map To='OriginalID' Condition='t1 != null' Value="{t1.tracker}" />
+									<Map To='OriginalID' Condition='t2 != null' Value="{t2.tracker}" />
+								</Map>
+							</Object>
+						</Mappings>

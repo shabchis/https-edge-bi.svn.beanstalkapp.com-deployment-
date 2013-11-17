@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>	
+						<Mappings>
+							<Object Type="GenericMetricsUnit">
+								<Map To='SegmentDimensions[{GetSegment("Tracker")}]' >
+									<Read Var="tracker" Field='ID' Required='true'/>
+									<Map To='Value' Value='{tracker}'/>
+								</Map>
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Field='Leads' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field='Accounts' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Field='NotInterested' />	
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Field='Under18' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Var='TalkNeng' Field='Talk-Neng'/>
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='TalkNE' Field='Talk-NE' />	
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Field='Wrongn' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Field='NoCC' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Field='Sales' />
+								
+							</Object>
+						</Mappings>

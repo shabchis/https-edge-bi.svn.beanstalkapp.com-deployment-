@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>						
+						<Mappings>
+							<Object Type="Ad">
+								<Read Var="tracker" Field="link_url" Regex="\bedgetrackerid==(?{tracker}\w+)\b" Required='false'/>								
+								<Map To='Segments[{GetSegment("Tracker")}]' Condition='tracker != null'>
+									<Map To='Value' Condition='tracker != null' Value="{tracker.tracker}" />									
+									<Map To='OriginalID' Condition='tracker != null' Value="{tracker.tracker}" />
+									
+								</Map>
+							</Object>
+						</Mappings>

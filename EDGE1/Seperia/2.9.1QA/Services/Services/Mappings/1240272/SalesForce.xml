@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>						
+
+<Mappings>
+<Object Type="GenericMetricsUnit">
+
+<Map To='SegmentDimensions[{GetSegment("Tracker")}]'>
+<Read Var="tracker" Field='utm_ad__c'  Regex='(\b.*\$(?{edgetrackerid}\w+[0-9]*))' Required='false'/>
+<Map To='Value' Value='{tracker.edgetrackerid}' Condition='(tracker != null) &amp;&amp; (tracker.edgetrackerid != null)' Required='false'/>
+</Map>
+
+<!--Getting Leads-->
+<Read Var="Status" Field='Status' Required='false'/> 
+<Read Var="CreatedDate" Field='CreatedDate' Required='false'/>
+<Read Var="Industry" Field='Industry' Required='false'/> 
+<Read Var="SubStatus" Field='Lead_sub_status__c' Required='false'/>
+<Read Var="Type" Field='Products__c' Required='false'/>
+
+ <!--Total Leads-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific30")}]' Condition='CreatedDate != null &amp;&amp; Status!=null' Value='1' />
+
+<!--Leads status list-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Condition='Status == "Assignment List"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Condition='Status == "Disqualified Leads"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='Status == "New Leads"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='Status == "Converted Leads"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='Status == "Pending Approval"' Value='1'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='Status == "Neglected"' Value='1'/>
+
+<!--Leads sub-status-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='SubStatus == "Junk"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Condition='SubStatus == "No Budget"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Condition='SubStatus == "No Buying Intention"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Condition='SubStatus == "Rejected"' Value='1'/> 
+
+<!--Leads Industries list-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Condition='Industry == "Aerospace"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Condition='Industry == "Arts and Entertainment"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Condition='Industry == "Automotive"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Condition='Industry == "Commercial Products"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Condition='Industry == "Consumer Electronics"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Condition='Industry == "Consumer Goods"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Condition='Industry == "Dental"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]' Condition='Industry == "Education"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]' Condition='Industry == "Engineering Consulting Services"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' Condition='Industry == "Government / Military"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific31")}]' Condition='Industry == "Medical Device or Equipment"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific21")}]' Condition='Industry == "Service Bureau"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific22")}]' Condition='Industry == "Other"' Value='1'/> 
+
+<!--Leads Product Types-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific23")}]' Condition='Type == "Mojo OR uPrint (FDM)"' Value='1'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific24")}]' Condition='Type == "Dimension (FDM)"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific25")}]' Condition='Type == "Fortus (FDM)"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific26")}]' Condition='Type == "Objet Desktop (PolyJet)"' Value='1'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific27")}]' Condition='Type == "Objet Eden (PolyJet)"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific28")}]' Condition='Type == "Objet Connex Multi-Material (PolyJet)"' Value='1'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific29")}]' Condition='Type == "Product not selected yet"' Value='1'/> 
+
+<!--Getting Opportunity-->
+<Read Var="StageName" Field='ConvertedOpportunity.StageName' Required='false'/>
+<Read Var="OppID" Field='ConvertedOpportunityId' Required='false'/>
+
+<!--Total Opportunity-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific40")}]' Condition='StageName != null' Value='1' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific32")}]' Condition='StageName == "A"' Value='1'/> <!--Stage A-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific33")}]' Condition='StageName == "B"' Value='1'/> <!-- Stage B-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific34")}]' Condition='StageName == "C"' Value='1'/> <!-- Stage C-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific35")}]' Condition='StageName == "D"' Value='1'/> <!-- Stage D-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific36")}]' Condition='StageName == "E"' Value='1'/> <!-- Stage E-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific37")}]' Condition='StageName == "F"' Value='1'/> <!-- Stage F-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific38")}]' Condition='StageName == "Closed Lost"' Value='1'/> <!-- Closed Lost-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific39")}]' Condition='StageName == "Closed Won"' Value='1'/> <!-- Closed Won-->
+
+</Object>
+</Mappings>

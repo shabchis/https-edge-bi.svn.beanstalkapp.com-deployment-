@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>	
+						<Mappings>
+							<Object Type="GenericMetricsUnit">
+								<Map To='SegmentDimensions[{GetSegment("Tracker")}]' >
+									<Read Var="tracker" Field='SEM' />
+									<Map To='Value' Value='{tracker}'/>
+								</Map>		
+								
+								<Read Var="dayCode" Field="Day_code" Regex="(?{y}[0-9]{4})(?{m}[0-9]{2})(?{d}[0-9]{2})"/>
+								<Map To="TimePeriodStart" Value='{CreatePeriodStart(dayCode.y, dayCode.m, dayCode.d)}'/>
+								<Map To="TimePeriodEnd" Value="{CreatePeriodEnd(dayCode.y, dayCode.m, dayCode.d)}"/>						
+								<Map To="Account" Value="{GetAccount(AccountName)}" Field="AccountName"/>
+								<Map To="Channel" >
+									<Map To="ID" Value="-1"/>
+								</Map>
+																
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Var ='ClicksOnSignUp' Field= 'Clicks On SignUp' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Var ='UserRegistrations' Field='User Registrations' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var ='CardsIssued' Field='Cards Issued' />	
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Var ='ActivationsCount' Field= 'Activations Count' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Var ='VirtualAccounts' Field='Virtual Accounts' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Field='Loads' />	
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Var ='FirstLoads' Field='First Loads' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Var ='AmountLoaded' Field='Amount Loaded' />	
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Var ='PayoutLoadedAmount' Field= 'Payout Loaded Amount' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Var ='AmountLoadedPerDayAndSEM' Field='Amount Loaded Per Day And SEM' />								
+							</Object>
+							<Object Type="Edge.Data.Objects.Signature">
+								<Read Var="dayCode" Field="Day_code" Regex="(?{y}[0-9]{4})(?{m}[0-9]{2})(?{d}[0-9]{2})"/>
+								<Read Var="AccountName" Field="AccountName"/>
+								<Map To='Value' Value='{dayCode.y}{dayCode.m}{dayCode.d}_{AccountName}}' />
+							</Object>
+						</Mappings>

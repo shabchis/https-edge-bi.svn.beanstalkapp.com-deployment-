@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>	
+										<Mappings>
+                                                <Object Type="GenericMetricsUnit">
+                                                       <Map To='SegmentDimensions[{GetSegment("Tracker")}]' Condition='!IsChecksum()'>
+                                                              <Read Var="tracker1" Field='ga:adDestinationUrl' Regex="\butm_content=(?{content}\w+)\b" Required='false'/>
+                                                              <Read Var="tracker2" Field='ga:adContent' Regex="(?{content}.*\w+)\b"/>
+                                                              <Map To='Value' Value='0'/>
+                                                              <Map To='Value' Value='{tracker2.content}' Required='false' Condition='tracker1 == null || tracker1.content == null'/>
+                                                              <Map To='Value' Value='{tracker1.content}' Required='false'/>
+                                                       </Map>
+                                                       <Map To='MeasureValues[{GetMeasure("Acquisition1")}]' Field='ga:goal1Completions' Var='goal1Completions'/>
+                                                       <Map To='MeasureValues[{GetMeasure("Acquisition2")}]' Field='ga:goal2Completions' Var='goal2Completions'/>
+                                                       <Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Field='ga:goal3Completions' Var='goal3Completions'/>
+                                                       <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Field='ga:visitors' Var='visitors'/>
+                                                       <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Field='ga:newVisits' Var='newVisits'/>
+                                                       <Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field='ga:goal4Completions' Var='goal4Completions'/>
+                                                       <Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Field='ga:visits' Var='visits'/>
+                                                </Object>
+                                         </Mappings>
+

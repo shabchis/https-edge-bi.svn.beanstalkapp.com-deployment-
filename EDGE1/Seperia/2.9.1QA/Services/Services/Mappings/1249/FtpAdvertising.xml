@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>	
+						<Mappings>
+							<Object Type="Ad">
+								<Map To="OriginalID" Value='{Guid.NewGuid().ToString("N")}'/>
+								<Map To="Account" Field='AccountName' Var='AccountName' Value="{GetAccount(AccountName)}"/>
+								<Map To="Channel" Field='Channel' Var='ChannelName' Value='{GetChannel(ChannelName)}'/>
+								<Map To='Creatives[]::TextCreative'>
+									<Map To='TextType' Value='Title'/>
+									<Map To='Text' Field='Headline'/>
+								</Map>
+								<Map To='Creatives[]::TextCreative'>
+									<Map To='TextType' Value='Body'/>
+									<Map To='Text' Field='Desc1'/>
+									<Map To='Text2' Field='Desc2' Required="false" />
+								</Map>
+								
+								<Map To='DestinationUrl' Field='destUrl'/>
+								<Map To='Segments[{GetSegment("Campaign")}]::Campaign.Name' Field='Campaign'/>
+								<Map To='Segments[{GetSegment("AdGroup")}]::AdGroup'>
+									<Read Field='Adgroup'/>
+									<Read Field='Campaign'/>
+									<Map To='Name' Field='Adgroup' />
+									<Map To='Campaign.Name' Field='Campaign'/>
+									<Map To='OriginalID' Value='{Campaign}_{Adgroup}'/>
+								</Map>
+								<Map To='Segments[{GetSegment("Tracker")}]'  >
+									<Read Field='destUrl' Var='destUrl' Regex='\bp=(?{tracker}\w+)\b'></Read>
+									<Map To='Value' Value="{destUrl.tracker}"/>
+									<Map To='OriginalID' Value="{destUrl.tracker}"/>
+								</Map>
+							</Object>
+							<Object Type="AdMetricsUnit">
+								<Read Var="dayCode" Field="Day_Code" Regex="(?{y}[0-9]{4})(?{m}[0-9]{2})(?{d}[0-9]{2})"/>
+								<Map To="TimePeriodStart" Value='{CreatePeriodStart(dayCode.y, dayCode.m, dayCode.d)}'/>
+								<Map To="TimePeriodEnd" Value="{CreatePeriodEnd(dayCode.y, dayCode.m, dayCode.d)}"/>
+								<Map To='MeasureValues[{GetMeasure("Impressions")}]' Field="Imps" Required="false"/>
+								<Map To='MeasureValues[{GetMeasure("Clicks")}]' Field="Clicks" Required="false"/>
+								<Map To='MeasureValues[{GetMeasure("Cost")}]' Field="Cost" Required="false"/>
+							</Object>
+							<Object Type="Edge.Data.Objects.Signature">
+								<Read Var="dayCode" Field="Day_Code" Regex="(?{y}[0-9]{4})(?{m}[0-9]{2})(?{d}[0-9]{2})"/>
+								<Map To='Value' Value='{dayCode.y}{dayCode.m}{dayCode.d}_{GetCurrentAccount()}_{GetCurrentChannel()}' />
+							</Object>
+						</Mappings>
