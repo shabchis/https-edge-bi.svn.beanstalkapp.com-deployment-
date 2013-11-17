@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>	
+<?xml version="1.0" encoding="utf-8" ?> 
 
 <Mappings>
 <Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
@@ -15,20 +15,28 @@
 <Map To='OriginalID'  Value="{destUrl.edgetrackerid}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()!="100{creative}"' Required="false"/>
 <Map To='OriginalID'  Value="100{ad_id}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString() == "100{creative}"' Required="false"/>
 
+<!-- No Tracker for Ad/-->
+<Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='destUrl == null || destUrl.edgetrackerid == null' Required="false"/>
+<Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='destUrl == null || destUrl.edgetrackerid == null' Required="false"/>
+
 </Map>
 </Object> 
 
 <Object Type="KeywordTarget">
 <Read Var="KwdDestUrl" Field='Destination URL' Regex='(\bMyTest(?{KwdID}\w+\{*[a-z]*\}*))' Required='false'/>
+<Read Var="KwdDestUrlFullValue" Field='Destination URL' Regex='(\bMyTest(?{tracker}\w+\{*[a-z]*\}*))' Required='false'/>
 
 <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='KwdDestUrl != null'>
 
+<!-- Case of using creative tracking value/-->
 <Map To='Value'  Value="{KwdDestUrl.KwdID}" Condition='KwdDestUrl.KwdID.ToString()!= null' Required="false"/>
-<Map To='Value'  Value="No Tracker For Ad ADID" Condition='KwdDestUrl.KwdID == null' Required="false"/>
-
 <Map To='OriginalID'  Value="{KwdDestUrl.KwdID}" Condition='KwdDestUrl.KwdID.ToString()!= null'  Required="false"/>
-<Map To='OriginalID' Value="No Tracker For Ad ADID" Condition='KwdDestUrl.KwdID == null' Required="false"/>
 
+<!-- Case of orginal tracker without creative tracking value/-->
+<Map To='Value'  Value="{KwdDestUrl.KwdID}" Condition='KwdDestUrl.KwdID.ToString()!= null' Required="false"/>
+<Map To='OriginalID'  Value="{KwdDestUrl.KwdID}" Condition='KwdDestUrl.KwdID.ToString()!= null'  Required="false"/>
+
+<!-- Note: In case of keyword tracker null getting value from Ad/-->
 </Map>
 </Object>                            
 </Mappings>
