@@ -1,0 +1,17 @@
+						<Mappings>
+							<Object Type="GenericMetricsUnit">
+								<Map To='SegmentDimensions[{GetSegment("Tracker")}]' >
+									<Read Var="tracker" Field='GID' Required='true'/>
+									<Map To='Value' Value='{tracker}'/>
+								</Map>
+								<Map To='MeasureValues[{GetMeasure("Acquisition1")}]' Field='NewUsers' />
+								<Map To='MeasureValues[{GetMeasure("Acquisition2")}]' Field='NewActiveUsers' />
+								<Map To='MeasureValues[{GetMeasure("Bo Total Hits")}]' Field='TotalHits' />
+								<Map To='MeasureValues[{GetMeasure("Bo New Leads")}]' Field='NewLeads' />
+								<Map To='MeasureValues[{GetMeasure("Bo New Net Deposits USD")}]' Field='NewDeposit' />
+								<Map To='MeasureValues[{GetMeasure("Bo Activations")}]' Field='ActiveUsers' />
+								<Map To='MeasureValues[{GetMeasure("NewDeposit")}]' Field='TotalNewDeposit' />
+								<Map To='MeasureValues[{GetMeasure("EV")}]' Field='TotalEV' />
+								<Map To='MeasureValues[{GetMeasure("SAT")}]' Field='SAT' />
+							</Object>
+						</Mappings>

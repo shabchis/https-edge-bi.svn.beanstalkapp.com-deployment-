@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>	
+
+<Mappings>
+<Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
+<Object Type="Ad">
+<Read Var="destUrl1" Field='Destination URL' Regex='(\bolgs_tr=(?{edgetrackerid}\w+\{*[a-z]*\}*))' Required='false'/>
+<Read Var="destUrl2" Field='Destination URL' Regex='(\bEcid=(?{edgetrackerid}\w*\{*[a-z]*\}*))' Required='false'/>
+<Read Var="ad_id" Field='Ad ID' Required='true'/>
+
+<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='destUrl1 != null ||  destUrl2 != null'>
+
+<Map To='Value'  Value="{destUrl1.edgetrackerid}" Condition='destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()!="100{creative}" &amp;&amp; destUrl1.edgetrackerid.ToString()!="100{Creative}" &amp;&amp; destUrl1.edgetrackerid.ToString()!="{creative}"' Required="false"/>
+
+<Map To='Value'  Value="{destUrl2.edgetrackerid}" Condition='destUrl2 != null &amp;&amp; destUrl2.edgetrackerid.ToString()!="100{creative}" &amp;&amp; destUrl1.edgetrackerid.ToString()!="100{Creative}"  &amp;&amp; destUrl2.edgetrackerid.ToString()!="{creative}"' Required="false"/>
+
+<Map To='Value'  Value="100{ad_id}" 
+Condition='(destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()=="100{creative}") || 
+(destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()=="100{Creative}") || 
+(destUrl2 != null &amp;&amp; destUrl2.edgetrackerid.ToString()=="100{creative}") ||
+(destUrl2 != null &amp;&amp; destUrl2.edgetrackerid.ToString()=="100{Creative}")' Required="false"/>
+
+<Map To='Value'  Value="{ad_id}" Condition='(destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()=="{creative}") || (destUrl2 != null &amp;&amp; destUrl2.edgetrackerid.ToString()=="{creative}")' Required="false"/>
+
+
+
+<Map To='OriginalID'  Value="{destUrl1.edgetrackerid}" Condition='destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()!="100{creative}"' Required="false"/>
+
+<Map To='OriginalID'  Value="{destUrl2.edgetrackerid}" Condition='destUrl2 != null &amp;&amp; destUrl2.edgetrackerid.ToString()!="100{creative}"' Required="false"/>
+
+<Map To='OriginalID'  Value="100{ad_id}" Condition='(destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()=="100{creative}") || 
+(destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()=="100{Creative}") || 
+(destUrl2 != null &amp;&amp; destUrl2.edgetrackerid.ToString()=="100{creative}") ||
+(destUrl2 != null &amp;&amp; destUrl2.edgetrackerid.ToString()=="100{Creative}")' Required="false"/>
+
+<Map To='OriginalID'  Value="{ad_id}" Condition='(destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()=="{creative}") || (destUrl2 != null &amp;&amp; destUrl2.edgetrackerid.ToString()=="{creative}")' Required="false"/>
+
+
+</Map>
+</Object>
+</Mappings>
+
+
+
+
+
