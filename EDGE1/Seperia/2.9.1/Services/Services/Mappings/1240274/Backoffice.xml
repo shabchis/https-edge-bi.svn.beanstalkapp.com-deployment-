@@ -6,8 +6,10 @@
 									<Map To='Value' Value='{tracker}'/>
 								</Map>
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Field='Leads' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field='Members' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Field='Sales' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Field='Refunds' />								
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field='Activations' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Field='Registrations' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Field='SAT' />								
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]'  Field='NetDeposit' />		
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Field='Refund' />
 							</Object>
 						</Mappings>
