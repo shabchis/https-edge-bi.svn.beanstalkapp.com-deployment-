@@ -39,10 +39,10 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='TrialProcessDate != null' Value='1'/> <!-- Trial – In Process-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Condition='TrialLiveDate != null' Value='1'/> <!-- Trial - Live-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Condition='ProposalPriceQuoteDate != null' Value='1'/> <!-- Proposal/Price Quote-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Condition='PayingInstDate != null' Value='1'/> <!-- Closed Lost-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Condition='PayingLiveDate != null' Value='1'/> <!-- Closed Churn-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Condition='ClosedLostDate != null' Value='1'/> <!-- Paying Installation-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Condition='ClosedChurnDate != null' Value='1'/> <!-- Paying Live-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Condition='ClosedLostDate != null' Value='1'/> <!-- Closed Lost-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Condition='ClosedChurnDate != null' Value='1'/> <!-- Closed Churn-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Condition='PayingInstDate != null' Value='1'/> <!-- Paying Installation-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Condition='PayingLiveDate != null' Value='1'/> <!-- Paying Live-->
 
 <!--Getting Paying Total Amount-->
 <Read Var="PayingAmount" Field='Amount' Required='false'/>
