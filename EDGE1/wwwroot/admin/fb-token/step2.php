@@ -10,7 +10,8 @@
     $dialog_url = "https://www.facebook.com/dialog/oauth?" .
 		"client_id="  . $_SESSION['appID'] .
 		"&redirect_uri=" . urlencode(base_url() . $step3) .
-		"&state=" . $_SESSION['state']
+		"&state=" . $_SESSION['state'] .
+		"&scope=" . $_SESSION['permissions']
 	;
 	
 	header("Location: " . $dialog_url);

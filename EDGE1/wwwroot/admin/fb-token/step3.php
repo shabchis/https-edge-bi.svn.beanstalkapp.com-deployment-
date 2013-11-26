@@ -14,8 +14,7 @@
 			"client_id=" . $_SESSION['appID'] .
 			"&redirect_uri=" . urlencode(base_url() . $step3) .
 			"&client_secret=" . $_SESSION['appSecret'] .
-			"&code=" . $_REQUEST["code"] .
-			"&scope=" . $_SESSION['permissions']
+			"&code=" . $_REQUEST["code"]
 		;
 
 		$process = curl_init($token_url); 
