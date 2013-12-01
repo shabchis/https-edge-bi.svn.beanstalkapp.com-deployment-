@@ -59,9 +59,10 @@
 <!--Getting Opportunity-->
 <Read Var="StageName" Field='ConvertedOpportunity.StageName' Required='false'/>
 <Read Var="OppID" Field='ConvertedOpportunityId' Required='false'/>
+<Read Var="AccID" Field='ConvertedAccountId' Required='false'/>
 
 <!--Total Opportunity-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific40")}]' Condition='StageName != null' Value='1' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific40")}]' Condition='StageName != null || AccID != null' Value='1' />
 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific32")}]' Condition='StageName == "A"' Value='1'/> <!--Stage A-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific33")}]' Condition='StageName == "B"' Value='1'/> <!-- Stage B-->
