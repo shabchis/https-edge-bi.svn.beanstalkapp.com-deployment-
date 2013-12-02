@@ -9,7 +9,7 @@
 
 <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' >
 
-<!-- No Tracker for Ad/-->
+<!-- No Tracker for Ad-->
 <Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='destUrl == null' Required="false"/>
 <Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='destUrl == null' Required="false"/>
 
@@ -30,8 +30,8 @@
 </Object> 
 
 <Object Type="KeywordTarget">
-<Read Var="KwdDestUrl" Field='Destination URL' Regex='(\butm_ad=(?{KwdID}\w+\{*[a-z]*\}*))' Required='false'/>
-<Read Var="KwdDestUrlFullValue" Field='Destination URL' Regex='(\butm_ad=(?{KwdID}\w+\{*[a-z]*\}*))' Required='false'/>
+<Read Var="KwdDestUrl" Field='Destination URL' Regex='(\butm_ad=(?{KwdID}\w+\{*[-a-zA-Z0-9]*\}*))' Required='false'/>
+<Read Var="KwdDestUrlFullValue" Field='Destination URL' Regex='(\butm_ad=(?{KwdID}\w+\{*[-a-zA-Z0-9]*\}*))' Required='false'/>
 
 <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='KwdDestUrl != null'>
 
