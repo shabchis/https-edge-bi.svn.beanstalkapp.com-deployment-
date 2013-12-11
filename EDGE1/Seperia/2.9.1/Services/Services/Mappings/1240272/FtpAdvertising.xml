@@ -24,14 +24,9 @@
 <Map To='OriginalID' Value='{Campaign}_{Adgroup}'/>
 </Map>
 <Map To='Segments[{GetSegment("Tracker")}]'  >
-<Read Field='destUrl' Var='destUrl' Regex='\butm_ad=(?{UtmAdTracker}.*\$(?{DollarTracker}.(\w+[0-9]*)))' /> 
-
-<Map To='Value'  Value="{destUrl.DollarTracker}" Condition='destUrl != null &amp;&amp; destUrl.DollarTracker != null' Required="false"/>
-<Map To='OriginalID'  Value="{destUrl.DollarTracker}" Condition='destUrl != null &amp;&amp; destUrl.DollarTracker != null' Required="false"/>
-
-<Map To='Value'  Value="{destUrl.UtmAdTracker}"  Condition='destUrl != null &amp;&amp; destUrl.UtmAdTracker  != null' Required="false"/>
-<Map To='OriginalID'  Value="{destUrl.UtmAdTracker}" Condition='destUrl != null &amp;&amp; destUrl.UtmAdTracker != null' Required="false"/>
-
+<Read Field='destUrl' Var='destUrl' Regex='(\butm_ad=(.*\$(?{tracker}.(\w+[0-9]*))))'></Read>
+<Map To='Value' Value="{destUrl.tracker}"/>
+<Map To='OriginalID' Value="{destUrl.tracker}"/>
 </Map>
 </Object>
 <Object Type="AdMetricsUnit">
