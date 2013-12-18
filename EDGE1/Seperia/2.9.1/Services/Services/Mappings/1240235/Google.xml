@@ -7,7 +7,10 @@
 <Read Var="destUrl2" Field='Destination URL' Regex='(\bEcid=(?{edgetrackerid}\w*\{*[a-z]*\}*))' Required='false'/>
 <Read Var="ad_id" Field='Ad ID' Required='true'/>
 
-<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='destUrl1 != null ||  destUrl2 != null'>
+<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject'>
+
+<Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='destUrl1 == null &amp;&amp; destUrl2 == null' Required="false"/>
+<Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='destUrl1 == null &amp;&amp; destUrl2 == null' Required="false"/>
 
 <Map To='Value'  Value="{destUrl1.edgetrackerid}" Condition='destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()!="100{creative}" &amp;&amp; destUrl1.edgetrackerid.ToString()!="100{Creative}" &amp;&amp; destUrl1.edgetrackerid.ToString()!="{creative}"' Required="false"/>
 
