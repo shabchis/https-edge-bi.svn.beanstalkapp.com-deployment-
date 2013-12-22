@@ -6,8 +6,8 @@
 <Read Var="t3" Field="link_url" Regex="((%3F|%26)gid%3D(?{tracker}\w+)\b)" Required='false'/>
 <Map To='Segments[{GetSegment("Tracker")}]'>
 
-<Map To='Value'  Value="No Tracker Data" Condition='t1 == null' Required="false"/>
-<Map To='OriginalID' Value="No Tracker Data" Condition='t1 == null' Required="false"/>
+<Map To='Value'  Value="No Tracker Data" Condition='t1 == null &amp;&amp; t2 == null &amp;&amp; t3 == null' Required="false"/>
+<Map To='OriginalID' Value="No Tracker Data" Condition='t1 == null &amp;&amp; t2 == null &amp;&amp; t3 == null' Required="false"/>
 
 <Map To='Value' Condition='t1 != null' Value="{t1.tracker}" />
 <Map To='Value' Condition='t2 != null' Value="{t2.tracker}" />
