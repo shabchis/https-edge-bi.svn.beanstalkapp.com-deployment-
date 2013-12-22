@@ -12,8 +12,8 @@
 <Map To='Value'  Value="{destUrl.edgetrackerid}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()!="100{creative}"' Required="false"/>
 <Map To='Value'  Value="100{ad_id}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()=="100{creative}"' Required="false"/>
 
-<Map To='OriginalID'  Value="{destUrl.edgetrackerid}" Condition='destUrl.edgetrackerid.ToString()!="100{creative}"' Required="false"/>
-<Map To='OriginalID'  Value="100{ad_id}" Condition='destUrl.edgetrackerid.ToString()=="100{creative}"' Required="false"/>
+<Map To='OriginalID'  Value="{destUrl.edgetrackerid}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()!="100{creative}"' Required="false"/>
+<Map To='OriginalID'  Value="100{ad_id}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()=="100{creative}"' Required="false"/>
 
 </Map>
 </Object>
