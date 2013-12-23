@@ -9,6 +9,9 @@
 
 <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject'>
 
+<Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='destUrl_edge == null &amp;&amp; destUrl_p == null' Required="false"/>
+<Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='destUrl_edge == null &amp;&amp; destUrl_p == null' Required="false"/>
+
 <Map To='Value'  Value="{destUrl_edge.edgetrackerid}" Condition='destUrl_edge !=null &amp;&amp; destUrl_edge.edgetrackerid !=null &amp;&amp; destUrl_edge.edgetrackerid.ToString()!="100{creative}"' Required="false"/>
 
 <Map To='Value'  Value="{destUrl_p.edgetrackerid}" Condition='destUrl_p !=null &amp;&amp; destUrl_p.edgetrackerid !=null &amp;&amp; destUrl_p.edgetrackerid.ToString()!="100{creative}"' Required="false"/>
