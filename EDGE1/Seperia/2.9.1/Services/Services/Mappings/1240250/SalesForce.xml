@@ -13,16 +13,23 @@
 <Read Var="CreatedDate" Field='CreatedDate' Required='false'/>
 <Read Var="MQL" Field='MQL__c' Required='false'/>
 <Read Var="Isconv" Field='Isconverted' Required='false'/>
+<Read Var="SQL" Field='Lead_Stage__c' Required='false'/>
 
  <!--Total Leads-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='CreatedDate != null &amp;&amp; Status!=null' Value='1' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='CreatedDate != null &amp;&amp; Status!=null' Value='1' /> <!--Total Leads-->
 
 <!--Leads-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='Status == "Qualified Leads"' Value='1'/> 
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='MQL == "true"' Value='1'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='Isconv == "true"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='SQL == "true"' Value='1'/>
 <Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='Status == "Unqualified Leads"' Value='1'/> 
 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='Isconv == "true"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='MQL == "true"' Value='1'/>
+<!--Opportunities-->
+
+<Read Var="Revenue" Field='Amount' Required='false'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Condition='Revenue != null'  Value='{Revenue}'/><!--Revenue Amount-->
+
 
 </Object>
 </Mappings>
