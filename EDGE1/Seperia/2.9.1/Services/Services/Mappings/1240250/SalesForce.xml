@@ -27,10 +27,11 @@
 <!--Opportunities-->
 
 <Read Var="Revenue" Field='Amount' Required='false'/>
+<Read Var="Stage" Field='StageName' Required='false'/>
 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Condition='Revenue != null'  Value='{Revenue}'/><!--Revenue Amount-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Condition='StageName == "Closed Won"' Value='1' /><!--Closed Won Opportunity-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='StageName != null' Value='1' /><!--Total Opportunities-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Condition='Stage == "Closed Won"' Value='1' /><!--Closed Won Opportunity-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='Stage != null' Value='1' /><!--Total Opportunities-->
 
 </Object>
 </Mappings>
