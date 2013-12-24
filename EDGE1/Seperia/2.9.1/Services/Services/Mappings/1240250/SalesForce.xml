@@ -21,15 +21,16 @@
 <!--Leads-->
 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='MQL == "true"' Value='1'/>
-<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='Isconv == "true"' Value='1'/> 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='SQL == "true"' Value='1'/>
-<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='Status == "Unqualified Leads"' Value='1'/> 
+
 
 <!--Opportunities-->
 
 <Read Var="Revenue" Field='Amount' Required='false'/>
-<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Condition='Revenue != null'  Value='{Revenue}'/><!--Revenue Amount-->
 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Condition='Revenue != null'  Value='{Revenue}'/><!--Revenue Amount-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Condition='StageName == "Closed Won"' Value='1' /><!--Closed Won Opportunity-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='StageName != null' Value='1' /><!--Total Opportunities-->
 
 </Object>
 </Mappings>
