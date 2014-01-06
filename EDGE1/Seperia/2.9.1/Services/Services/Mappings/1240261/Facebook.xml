@@ -2,11 +2,11 @@
 <Mappings>
 <Object Type="Ad">
 <Read Var="tracker" Field="link_url" Regex="\bedgetrackerid==(?{tracker}\w+)\b" Required='false'/>		
-						
+<Read Var="ad_id" Field='id' Required='true'/>
 <Map To='Segments[{GetSegment("Tracker")}]'>
 
-<Map To='Value'  Value="No Tracker Data" Condition='tracker == null' Required="false"/>
-<Map To='OriginalID' Value="No Tracker Data" Condition='tracker == null' Required="false"/>
+<Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='tracker == null' Required="false"/>
+<Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='tracker == null' Required="false"/>
 
 <Map To='Value' Condition='tracker != null' Value="{tracker.tracker}" />									
 <Map To='OriginalID' Condition='tracker != null' Value="{tracker.tracker}" />
