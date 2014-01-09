@@ -30,18 +30,16 @@
 </Object> 
 
 <Object Type="KeywordTarget">
-<Read Var="KwdDestUrl" Field='Destination URL' Regex='(\butm_ad=(?{KwdID}\w+\{*[-a-zA-Z0-9]*\}*))' Required='false'/>
-<Read Var="KwdDestUrlFullValue" Field='Destination URL' Regex='(\butm_ad=(?{KwdID}\w+\{*[-a-zA-Z0-9]*\}*))' Required='false'/>
+<Read Var="KwdDestUrl" Field='Destination URL' Regex='(\butm_ad=(.*\$(?{KwdTrackerValue}.(\w+[0-9]*))))' Required='false'/>
 
 <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='KwdDestUrl != null'>
 
 <!-- Case of using creative tracking value/-->
-<Map To='Value'  Value="{KwdDestUrl.KwdID}" Condition='KwdDestUrl.KwdID.ToString()!= null' Required="false"/>
-<Map To='OriginalID'  Value="{KwdDestUrl.KwdID}" Condition='KwdDestUrl.KwdID.ToString()!= null'  Required="false"/>
+<Map To='Value'  Value="CID100ADID" Condition='KwdDestUrl.KwdTrackerValue.ToString()!= null &amp;&amp; KwdDestUrl.KwdTrackerValue == "CID100"' Required="false"/>
+<Map To='OriginalID'  Value="CID100ADID" Condition='KwdDestUrl.KwdTrackerValue.ToString()!= null &amp;&amp; KwdDestUrl.KwdTrackerValue == "CID100"' Required="false"/>
 
 <!-- Case of orginal tracker without creative tracking value/-->
-<Map To='Value'  Value="{KwdDestUrl.KwdID}" Condition='KwdDestUrl.KwdID.ToString()!= null' Required="false"/>
-<Map To='OriginalID'  Value="{KwdDestUrl.KwdID}" Condition='KwdDestUrl.KwdID.ToString()!= null'  Required="false"/>
+
 
 <!-- Note: In case of keyword tracker null getting value from Ad/-->
 </Map>
