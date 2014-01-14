@@ -9,8 +9,8 @@
 <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' >
 
 <!-- No Tracker for Ad-->
-<Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='Ad ID == null' Required="false"/>
-<Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='Ad ID == null' Required="false"/>
+<Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='ad_id == null' Required="false"/>
+<Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='ad_id == null' Required="false"/>
 
 <Map To='Value'  Value="CID100{ad_id}" Condition='ad_id != null' Required="false"/>
 <Map To='OriginalID'  Value="CID100{ad_id}" Condition='ad_id != null' Required="false"/>
