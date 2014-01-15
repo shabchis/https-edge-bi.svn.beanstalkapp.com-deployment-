@@ -15,5 +15,6 @@
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Field='AmountLoaded' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Field='PayoutLoadedAmount' />
 								<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Field='AmountLoadedPerDayAndSEM' />
+								<Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Field='FirstLoadsExcludingVerficiation' />
 							</Object>
 						</Mappings>
