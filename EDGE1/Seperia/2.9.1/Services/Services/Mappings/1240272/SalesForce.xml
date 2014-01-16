@@ -5,7 +5,10 @@
 
 <Map To='SegmentDimensions[{GetSegment("Tracker")}]'>
 <Read Var="tracker" Field='utm_ad__c'  Regex='(\b.*\$(?{edgetrackerid}\w+[0-9]*))' Required='false'/>
-<Map To='Value' Value='{tracker.edgetrackerid}' Condition='(tracker != null) &amp;&amp; (tracker.edgetrackerid != null)' Required='false'/>
+<Read Var="NoDollarTracker" Field='utm_ad__c' Required='false'/>
+
+<Map To='Value' Value='{NoDollarTracker}' Condition='(NoDollarTracker!=null)' Required='false' />
+<Map To='Value' Value='{tracker.edgetrackerid}' Condition='(tracker != null) &amp;&amp;(tracker.edgetrackerid != null)' Required='false'/>
 </Map>
 
 <!--Getting Leads-->
