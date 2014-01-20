@@ -2,51 +2,75 @@
 						<Mappings>
 							<Object Type="Ad">
 								<Read Var="camp" Field="Campaign Name" Regex="(?{Name}[a-z0-9-_ ]*)"/>
-								<Read Var="Ad" Field="Campaign Name"  Regex="(\bad=(?{Headline}[a-z0-9-_ ]*)\b)"/>
-								<Read Var="DestURL" Field="Campaign Name" Regex="(\bdest=(?{Url}[a-z0-9-_ ./:]*)\b)"/>
+								<Read Var="Ad" Field="Campaign Name"  Regex="(\bad=(?{Headline}[a-z0-9-_ ]*)\b)" Required="false"/>
+								<Read Var="DestURL" Field="Campaign Name" Regex="(\bdest=(?{Url}[a-z0-9-_ ./:]*)\b)" Required="false"/>
 								
 								<Map To="OriginalID" Value='{Guid.NewGuid().ToString("N")}'/>
-								<Map To="Account" Field='AccountName' Var='AccountName' Value="EasyForex"/>
-								<Map To="Channel" Field='Channel' Var='ChannelName' Value='GSP'/>
+								
+								<Map To="Account" Var='AccountName' Value='{GetAccount("Easy Forex")}'/>
+								
+								<Map To="Channel" Var='ChannelName' Value='{GetChannel("GSP")}' />
+								
 								<Map To='Creatives[]::TextCreative'>
 									<Map To='TextType' Value='Title'/>
-									<Map To='Text' Value="{Ad.Headline}"/>
-								</Map>
-								<Map To='Creatives[]::TextCreative'>
-									<Map To='TextType' Value='Body'/>
-									<Map To='Text' Value="{Ad.Headline}"/>									
+									<Map To='Text' Value="{camp.Name}" Condition='Ad.Headline == null' Required="false"/>
+									<Map To='Text' Value="{Ad.Headline}" Condition='Ad.Headline != null' Required="false"/>		
+									
 								</Map>
 								
-								<Map To='DestinationUrl' Value="{DestURL.Url}"/>								
+								<Map To='Creatives[]::TextCreative'>
+									<Map To='TextType' Value='Body'/>
+									<Map To='Text' Value="{camp.Name}" Condition='Ad.Headline == null' Required="false"/>
+									<Map To='Text' Value="{Ad.Headline}" Condition='Ad.Headline != null' Required="false"/>																		
+								</Map>
+								
+								<Map To='DestinationUrl' Value="No Destination URL"  Condition='DestURL == null' Required="false"/>	
+								<Map To='DestinationUrl' Value="{DestURL.Url}"  Condition='DestURL != null' Required="false"/>	
+								
+
+								
 								<Map To='Segments[{GetSegment("Campaign")}]::Campaign.Name' Value="{camp.Name}"/>
+								
 								<Map To='Segments[{GetSegment("AdGroup")}]::AdGroup'>
 									<Map To='Name' Value="{camp.Name}" />
-									<Map To='Campaign.Name' Value="{camp.Name}"/>
-									<Map To='OriginalID' Value='AG_{OriginalID}_{camp.Name}'/>
+									<Map To='Campaign.Name' Value="{camp.Name}"/>	
+									<Map To='OriginalID' Value='ID_{camp.Name}' Condition='Ad.Headline == null' Required="false"/>
+									<Map To='OriginalID' Value='ID_{camp.Name}_{Ad.Headline}' Condition='Ad.Headline != null' Required="false"/>									
 								</Map>
+								
+								
 								<Map To='Segments[{GetSegment("Tracker")}]'>
-									<Read Field='Campaign Name' Var='EdgeTracker' Regex='(\bgid=(?{tracker}[a-z0-9]*)\b)'> </Read>
-									<Map To='Value' Value="{EdgeTracker.tracker}"/>
-									<Map To='OriginalID' Value="{EdgeTracker.tracker}"/>
+									<Read Field='Campaign Name' Var='EdgeTracker' Regex='(\bgid=(?{tracker}[ a-z0-9]*)\b)' Required="false"/>
+									
+									<Map To='Value' Value="No Tracker Data" Condition='EdgeTracker == null' Required="false"/>
+									<Map To='OriginalID' Value="No Tracker Data" Condition='EdgeTracker == null' Required="false"/>
+									
+									<Map To='Value' Value="{EdgeTracker.tracker}" Condition='EdgeTracker != null' Required="false"/>	
+									<Map To='OriginalID' Value="{EdgeTracker.tracker}" Condition='EdgeTracker != null' Required="false"/>	
+									
 								</Map>
+								
 							</Object>
+							
 							<Object Type="AdMetricsUnit">
 								<Read Var="dayCode" Field="Date" Regex="(?{m}[0-9]{2})/(?{d}[0-9]{2})/(?{y}[0-9]{4})"/>
 								<Map To="TimePeriodStart" Value='{CreatePeriodStart(dayCode.y, dayCode.m, dayCode.d)}'/>
 								<Map To="TimePeriodEnd" Value="{CreatePeriodEnd(dayCode.y, dayCode.m, dayCode.d)}"/>
-								
+							
 								<Map To='MeasureValues[{GetMeasure("Impressions")}]' Field="Users" />
 								<Map To='MeasureValues[{GetMeasure("Clicks")}]' Field="Clicks" />
-								<Map To='MeasureValues[{GetMeasure("Cost")}]' Field="Total Cost" />
-								<Map To='MeasureValues[{GetMeasure("Purchases")}]' Field="Saves" />
-								<Map To='MeasureValues[{GetMeasure("Connections")}]' Field="Forwards" />
-								<Map To='MeasureValues[{GetMeasure("UniqueClicks")}]' Field="External Clicks" />
-								<Map To='MeasureValues[{GetMeasure("Signups")}]' Field="Form Submits" />
-								<Map To='MeasureValues[{GetMeasure("Actions")}]' Field="Video Views" />
+								<Map To='MeasureValues[{GetMeasure("Cost")}]' Var = "TotalCost" Field="Total Cost" />
+								<!-- <Map To='MeasureValues[{GetMeasure("Purchases")}]'  Field="Saves" /> -->
+								<!-- <Map To='MeasureValues[{GetMeasure("Connections")}]' Field="Forwards" /> -->
+								<Map To='MeasureValues[{GetMeasure("UniqueClicks")}]' Var = "ExternalClicks" Field="External Clicks" />
+								<!-- <Map To='MeasureValues[{GetMeasure("Signups")}]' Var = "FormSubmits" Field="Form Submits" /> -->
+								<!-- <Map To='MeasureValues[{GetMeasure("Actions")}]' Var = "VideoViews" Field="Video Views" /> -->
 								
 							</Object>
+							
 							<Object Type="Edge.Data.Objects.Signature">
 								<Read Var="dayCode" Field="Date" Regex="(?{m}[0-9]{2})/(?{d}[0-9]{2})/(?{y}[0-9]{4})"/>
 								<Map To='Value' Value='{dayCode.y}{dayCode.m}{dayCode.d}_{GetCurrentAccount()}_{GetCurrentChannel()}' />
 							</Object>
+							
 						</Mappings>
