@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<Mappings>
+<Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
+<Object Type="Ad">
+
+<Read Var="destUrl" Field='Destination URL' Regex='(\butm_ad=(?{UtmAdTracker}.*\$(?{DollarTracker}.(\w+[0-9]*))))' Required='false'/>
+<Read Var="ad_id" Field='Ad ID' Required='true'/>
+
+<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' >
+
+<!-- No Tracker for Ad-->
+<Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='destUrl == null' Required="false"/>
+<Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='destUrl == null' Required="false"/>
+
+</Map>
+</Object> 
+
+<Object Type="KeywordTarget">
+<Read Var="KwdDestUrl" Field='Destination URL' Regex='(\butm_ad=((?{KwdTrackerValue}.(\w+[- a-z0-9]*))))' Required='false'/>
+
+<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='KwdDestUrl != null'>
+
+<!-- Case of using creative tracking value/-->
+<Map To='Value'  Value="{KwdTrackerValue}" Condition='KwdDestUrl.KwdTrackerValue.ToString()!= null' Required="false"/>
+<Map To='OriginalID'  Value="{KwdTrackerValue}" Condition='KwdDestUrl.KwdTrackerValue.ToString()!= null' Required="false"/>
+
+</Map>
+</Object>                            
+</Mappings>
