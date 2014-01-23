@@ -4,8 +4,8 @@
 <Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
 <Object Type="Ad">
 <Read Var="destUrl" Field='Destination URL' Regex='(\bedgetrackerid=(?{edgetrackerid}\w+\{*[a-z]*\}*))' Required='false'/>
-<Read Var="ad_id" Field='Ad ID' Required='true'/>
-
+<Read Var="ad_id" Field='Ad ID' Required='false'/>
+<Read Var="siteLink" Field='Attribute Values' Regex="(\bedgetrackerid=(?{tracker}\w+)\b)" Required='false'/>
 <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='destUrl != null'>
 
 <Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='destUrl == null' Required="false"/>
@@ -18,6 +18,12 @@
 <Map To='OriginalID'  Value="100{ad_id}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()=="100{creative}"' Required="false"/>
 
 </Map>
+
+<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='siteLink != null'>
+<Map To='Value'  Value="{siteLink.tracker}" Condition='siteLink.tracker != null' Required="false"/>
+<Map To='OriginalID'   Value="{siteLink.tracker}" Condition='siteLink.tracker != null' Required="false"/>
+</Map>
+
 </Object>
 </Mappings>
 
