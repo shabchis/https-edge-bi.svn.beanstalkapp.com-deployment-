@@ -1,23 +1,39 @@
 <Mappings>
 <Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
 <Object Type="Ad">
+
 <Read Var="t1" Field="Destination URL" Regex="(\bref_id=(?{tracker}\w+)\b)" Required='false'/>
 <Read Var="t2" Field="Destination URL" Regex="(\bgid=(?{tracker}\w+)\b)" Required='false'/>
 <Read Var="t3" Field="Destination URL" Regex="((%3F|%26)gid%3D(?{tracker}\w+)\b)" Required='false'/>
-<Read Var="ad_id" Field='Ad ID' Required='true'/>
 
-<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject'>
+<Read Var="ad_id" Field='Ad ID' Required='false'/>
+
+
+<Read Var="siteLink" Field='Attribute Values' Regex="(\bgid=(?{tracker}\w+)\b)" Required='false'/>
+
+
+<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='siteLink == null'>
 
 <Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='t1 == null &amp;&amp; t2 == null &amp;&amp; t3 == null' Required="false"/>
 <Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='t1 == null &amp;&amp; t2 == null &amp;&amp; t3 == null' Required="false"/>
 
-<Map To='Value' Condition='t1 != null' Value="{t1.tracker}" />
-<Map To='Value' Condition='t2 != null' Value="{t2.tracker}" />
-<Map To='Value' Condition='t3 != null' Value="{t3.tracker}" />
+<Map To='Value' Condition='t1 != null' Value="{t1.tracker}" Required="false"/>
+<Map To='Value' Condition='t2 != null' Value="{t2.tracker}" Required="false"/>
+<Map To='Value' Condition='t3 != null' Value="{t3.tracker}" Required="false"/>
 
-<Map To='OriginalID' Condition='t1 != null' Value="{t1.tracker}" />
-<Map To='OriginalID' Condition='t2 != null' Value="{t2.tracker}" />
-<Map To='OriginalID' Condition='t3 != null' Value="{t3.tracker}" />
+<Map To='OriginalID' Condition='t1 != null' Value="{t1.tracker}" Required="false"/>
+<Map To='OriginalID' Condition='t2 != null' Value="{t2.tracker}" Required="false"/>
+<Map To='OriginalID' Condition='t3 != null' Value="{t3.tracker}" Required="false"/>
+
 </Map>
+
+<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='siteLink != null'>
+<Map To='Value'  Value="{siteLink.tracker}" Condition='siteLink.tracker != null' Required="false"/>
+<Map To='OriginalID'   Value="{siteLink.tracker}" Condition='siteLink.tracker != null' Required="false"/>
+
+
+</Map>
+
+
 </Object>
 </Mappings>
