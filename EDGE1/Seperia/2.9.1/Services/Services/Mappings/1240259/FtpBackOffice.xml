@@ -32,8 +32,8 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Var ='RetailBroker' Field='Retail Broker' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Var ='LiquidityWLProvider' Field='Liquidity/WL Provider' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Var ='TechProvider' Field='Tech Provider' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Var ='SoftwareAndDeveloper' Field='Software & Developer' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Var ='TechProvider' Field='Tech Provider' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Var ='FXTrader' Field='FX Trader' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Var ='SoftwareAndDeveloper' Field='Software and Developer' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Var ='SolutionProvider' Field='Solution Provider' />
 	
 </Object>
