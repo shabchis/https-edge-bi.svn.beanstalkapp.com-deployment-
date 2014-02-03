@@ -4,7 +4,7 @@
 <Object Type="GenericMetricsUnit">
 
 <Map To='SegmentDimensions[{GetSegment("Tracker")}]'>
-<Read Var="tracker" Field='Edge_Tracker__c' Required='false'/>
+<Read Var="tracker" Field='Edge_Tracker_New__c ' Required='false'/>
 <Map To='Value' Value='{tracker}' Condition='(tracker != null)' Required='false'/>
 </Map>
 
