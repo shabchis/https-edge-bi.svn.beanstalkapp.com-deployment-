@@ -4,14 +4,14 @@
 <Object Type="GenericMetricsUnit">
 
 <Map To='SegmentDimensions[{GetSegment("Tracker")}]'>
-<Read Var="tracker" Field='Edge_Tracker_New__c' Required='false'/>
+<Read Var="tracker" Field='Edge_Tracker_New__c' Required='true'/>
 <Map To='Value' Value='{tracker}' Condition='(tracker != null)' Required='false'/>
 </Map>
 
 <!--Getting Leads-->
-<Read Var="Status" Field='Status' Required='false'/> 
-<Read Var="CreatedDate" Field='CreatedDate' Required='false'/>
-<Read Var="MQL" Field='MQL__c' Required='false'/>
+<Read Var="Status" Field='Status' Required='true'/> 
+<Read Var="CreatedDate" Field='CreatedDate' Required='true'/>
+<Read Var="MQL" Field='MQL__c' Type='boolean' Required='true'/>
 
 
  <!--Total Leads-->
@@ -19,7 +19,7 @@
 
 <!--Leads-->
 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='MQL = true' Value='1'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='MQL = true' Value='1'/><!--MQL-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='Status == "Qualified"' Value='1'/><!--SQL-->
 
 
