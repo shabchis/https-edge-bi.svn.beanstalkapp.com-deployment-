@@ -7,7 +7,7 @@
 								
 								<Map To="OriginalID" Value='{Guid.NewGuid().ToString("N")}'/>
 								
-								<Map To="Account" Var='AccountName' Value='{GetAccount("Easy Forex")}'/>
+								<Map To="Account" Var='AccountName' Value='{GetAccount("XFSOL")}'/>
 								
 								<Map To="Channel" Var='ChannelName' Value='{GetChannel("GSP")}' />
 								
@@ -40,7 +40,7 @@
 								
 								
 								<Map To='Segments[{GetSegment("Tracker")}]'>
-									<Read Field='Campaign Name' Var='EdgeTracker' Regex='(\bgid=(?{tracker}[ a-z0-9]*)\b)' Required="false"/>
+									<Read Field='Campaign Name' Var='EdgeTracker' Regex='(\bedgetrackerid=(?{tracker}[ a-z0-9]*)\b)' Required="false"/>
 									
 									<Map To='Value' Value="No Tracker Data" Condition='EdgeTracker == null' Required="false"/>
 									<Map To='OriginalID' Value="No Tracker Data" Condition='EdgeTracker == null' Required="false"/>
