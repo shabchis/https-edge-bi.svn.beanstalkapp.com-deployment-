@@ -11,13 +11,15 @@
 <Map To="TimePeriodStart" Value='{CreatePeriodStart(dayCode.y, dayCode.m, dayCode.d)}'/>
 <Map To="TimePeriodEnd" Value="{CreatePeriodEnd(dayCode.y, dayCode.m, dayCode.d)}"/>						
 <Map To="Account" Value="{GetAccount(AccountName)}" Field="AccountName"/>
-<Map To="Channel" >
+<Map To="Channel">
 <Map To="ID" Value="-1"/>
 </Map>
 
+<!-- Condition="OptionRegs > 0 || BBinaryRegs > 0 || TradeRushRegs > 0 || StockPairRegs > 0 || StockPairRegs > 0 ||
+OptionWebRegs > 0 || CedarRegs > 0 OpteckRegs > 0 || AnyOptionRegs > 0 || TopOptionRegs > 0" value ="1"/> -->
 
-<!-- <Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Field= 'Registrations' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field='Depositors' />			 -->	
+<!-- <Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Var ="TotalRegs" Field= 'Total Regs'  />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Var ="TotalDepositors" Field='Total Depositors' /> -->
 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var='OptionRegs' Field= '24Option - Regs' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Var='OptionDepositors' Field= '24Option - Depositors' />
