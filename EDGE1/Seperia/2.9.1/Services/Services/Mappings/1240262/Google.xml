@@ -6,7 +6,7 @@
 <Read Var="destUrl" Field='Destination URL' Regex='(\bp=(?{edgetrackerid}\w+\{*[a-z]*\}*))' Required='false'/>
 <Read Var="ad_id" Field='Ad ID' Required='true'/>
 
-<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='destUrl != null'>
+<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject'>
 
 <Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='destUrl == null' Required="false"/>
 <Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='destUrl == null' Required="false"/>
