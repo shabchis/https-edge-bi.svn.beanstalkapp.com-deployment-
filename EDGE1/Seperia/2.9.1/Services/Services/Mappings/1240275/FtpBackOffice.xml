@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="utf-8" ?>	
-						<Mappings>
-							<Object Type="GenericMetricsUnit">
-								<Map To='SegmentDimensions[{GetSegment("Tracker")}]' >
-									<Read Var="tracker" Field='Gateway_id' />
-									<Map To='Value' Value='{tracker}'/>
-								</Map>		
+<Mappings>
+<Object Type="GenericMetricsUnit">
+<Map To='SegmentDimensions[{GetSegment("Tracker")}]' >
+<Read Var="tracker" Field='Gateway_id' />
+<Map To='Value' Value='{tracker}'/>
+</Map>		
+
+<Read Var="dayCode" Field="Day_Code" Regex="(?{y}[0-9]{4})(?{m}[0-9]{2})(?{d}[0-9]{2})"/>
+<Map To="TimePeriodStart" Value='{CreatePeriodStart(dayCode.y, dayCode.m, dayCode.d)}'/>
+<Map To="TimePeriodEnd" Value="{CreatePeriodEnd(dayCode.y, dayCode.m, dayCode.d)}"/>						
+<Map To="Account" Value="{GetAccount(AccountName)}" Field="AccountName"/>
+<Map To="Channel" >
+<Map To="ID" Value="-1"/>
+</Map>
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Var='Registrations' Field= 'Registrations' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Var='NewDepositingAcc' Field= 'New Depositing Acc' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var='NewAccounts' Field= 'New Accounts' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Var='FirstDepositCount' Field= 'First Deposit Count' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Var='Gross/Player' Field= 'Gross / Player' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='Net/Player' Field= 'Net / Player' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Var='Deposits' Field= 'Deposits' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Var='Bonus' Field= 'Bonus' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Var='Chargebacks' Field= 'Chargebacks' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Var='GrossRevenue' Field= 'Gross Revenue' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Var='NetRevenue' Field= 'Net Revenue' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Var='Wagers' Field= 'Wagers' />
+
 								
-								<Read Var="dayCode" Field="Day_Code" Regex="(?{y}[0-9]{4})(?{m}[0-9]{2})(?{d}[0-9]{2})"/>
-								<Map To="TimePeriodStart" Value='{CreatePeriodStart(dayCode.y, dayCode.m, dayCode.d)}'/>
-								<Map To="TimePeriodEnd" Value="{CreatePeriodEnd(dayCode.y, dayCode.m, dayCode.d)}"/>						
-								<Map To="Account" Value="{GetAccount(AccountName)}" Field="AccountName"/>
-								<Map To="Channel" >
-									<Map To="ID" Value="-1"/>
-								</Map>
-																
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Field='Registration' />
-								<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field='Depositor' />								
-								
-								
-							</Object>
-							<Object Type="Edge.Data.Objects.Signature">
-								<Read Var="dayCode" Field="Day_Code" Regex="(?{y}[0-9]{4})(?{m}[0-9]{2})(?{d}[0-9]{2})"/>
-								<Read Var="AccountName" Field="AccountName"/>
-								<Map To='Value' Value='{dayCode.y}{dayCode.m}{dayCode.d}_{AccountName}}' />
-							</Object>
-						</Mappings>
+
+
+</Object>
+<Object Type="Edge.Data.Objects.Signature">
+<Read Var="dayCode" Field="Day_Code" Regex="(?{y}[0-9]{4})(?{m}[0-9]{2})(?{d}[0-9]{2})"/>
+<Read Var="AccountName" Field="AccountName"/>
+<Map To='Value' Value='{dayCode.y}{dayCode.m}{dayCode.d}_{AccountName}}' />
+</Object>
+</Mappings>
