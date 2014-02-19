@@ -8,6 +8,11 @@
 <Read Var="siteLink" Field='Attribute Values' Regex="(\bedgetrackerid=(?{tracker}\w+)\b)" Required='false'/>
 
 <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject'>
+
+<Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='destUrl1 == null &amp;&amp; destUrl2 == null' Required="false"/>
+<Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='destUrl1 == null &amp;&amp; destUrl2 == null' Required="false"/>
+
+
 <Map To='Value'  Value="{destUrl.edgetrackerid}" Condition='destUrl.edgetrackerid.ToString()!="100{creative}"' Required="false"/>
 <Map To='Value'  Value="100{ad_id}" Condition='destUrl.edgetrackerid.ToString()=="100{creative}"' Required="false"/>
 <Map To='OriginalID'  Value="{destUrl.edgetrackerid}" Condition='destUrl.edgetrackerid.ToString()!="100{creative}"' Required="false"/>
