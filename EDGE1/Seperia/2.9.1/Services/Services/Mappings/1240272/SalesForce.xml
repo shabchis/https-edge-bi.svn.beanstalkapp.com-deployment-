@@ -23,9 +23,9 @@
 
 <!--Leads status list-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Condition='Status == "Assignment List"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Condition='Status == "Disqualified Leads"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='Status == "New Leads"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='Status == "Converted Leads"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Condition='Status == "Disqualified"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='Status == "New"' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='Status == "Converted"' Value='1'/> 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='Status == "Pending Approval"' Value='1'/>
 <Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='Status == "Neglected"' Value='1'/>
 
