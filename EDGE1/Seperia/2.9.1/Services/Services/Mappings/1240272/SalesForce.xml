@@ -15,7 +15,7 @@
 <Read Var="Status" Field='Status' Required='false'/> 
 <Read Var="CreatedDate" Field='CreatedDate' Required='false'/>
 <Read Var="Industry" Field='Industry' Required='false'/> 
-<Read Var="SubStatus" Field='Lead_sub_status__c' Required='false'/>
+<Read Var="SubStatus" Field='Lead_Sub_Status__c' Required='false'/>
 <Read Var="Type" Field='Products__c' Required='false'/>
 
  <!--Total Leads-->
