@@ -12,7 +12,7 @@
 <Read Var="CreatedDate" Field='CreatedDate' Required='false'/> <!--Lead Create Date-->
 <Read Var="Status" Field='Status' Required='false'/> <!--Lead Status-->
 <Read Var="StageName" Field='ConvertedOpportunity.StageName' Required='false'/> <!--Opportunity Stage Name-->
-<Read Var="AccName" Field='ConvertedAccountId' Required='false'/> <!--Account Name-->
+<Read Var="AccID" Field='ConvertedAccountId' Required='false'/> <!--Account Name-->
 <Read Var="OEM" Field='Non_OEM_Project__c' Required='false'/> <!--OEM Opportunity (boolian field)-->
 
 <!--Totals-->
