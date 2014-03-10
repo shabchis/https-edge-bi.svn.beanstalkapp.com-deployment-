@@ -9,34 +9,34 @@
 </Map>
 
 <!-- Fields -->
-<Read Var="CreatedDate" Field='CreatedDate' Required='false'/> <!--Lead Create Date-->
-<Read Var="Status" Field='Status' Required='false'/> <!--Lead Status-->
+<Read Var="CreatedDate" Field='CreatedDate' Required='true'/> <!--Lead Create Date-->
+<Read Var="Status" Field='Status' Required='true'/> <!--Lead Status-->
 <Read Var="StageName" Field='ConvertedOpportunity.StageName' Required='false'/> <!--Opportunity Stage Name-->
-<Read Var="AccID" Field='ConvertedAccountId' Required='false'/> <!--Account Name-->
-<Read Var="OEM" Field='Non_OEM_Project__c' Required='false'/> <!--OEM Opportunity (boolian field)-->
+<Read Var="AccName" Field='ConvertedAccount.Name' Required='false'/> <!--Account Name-->
+<Read Var="OEM" Field='ConvertedOpportunity.Non_OEM_Project__c' Required='false'/> <!--OEM Opportunity (boolian field)-->
 
 <!--Totals-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Condition='Status!=null' Value='1' /> <!--Total Leads-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Condition='StageName!=null' Value='1' /> <!--Total Opportunities-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='AccID!=null' Value='1' /> <!--Total Accounts-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Condition='Status != null' Value='1' Required='false'/> <!--Total Leads-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Condition='StageName != null' Value='1' Required='false'/> <!--Total Opportunities-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='AccName != null' Value='1' Required='false'/> <!--Total Accounts-->
 
 <!--Leads status list-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='Status == "Unqualified"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='Status == "Open"' Value='1'/>
-<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='Status == "Disqualified"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='Status == "EVL"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Condition='Status == "ESL"' Value='1'/>
-<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Condition='Status == "Already Exists"' Value='1'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='Status == "Unqualified"' Value='1' Required='false'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='Status == "Open"' Value='1' Required='false'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='Status == "Disqualified"' Value='1' Required='false'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='Status == "EVL"' Value='1' Required='false'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Condition='Status == "ESL"' Value='1' Required='false'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Condition='Status == "Already Exists"' Value='1' Required='false'/>
 
 <!--Opportunity stages list-->
-<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Condition='StageName == "Initial Discussion"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Condition='StageName == "Samples"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Condition='StageName == "Pilot"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Condition='StageName == "Production"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Condition='StageName == "Ongoing Production"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Condition='StageName == "Closed Lost"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Condition='StageName == "Closed Terminated"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Condition='OEM = true' Value='1'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Condition='StageName == "Initial Discussion"' Value='1' Required='false'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Condition='StageName == "Samples"' Value='1' Required='false'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Condition='StageName == "Pilot"' Value='1' Required='false'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Condition='StageName == "Production"' Value='1' Required='false'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Condition='StageName == "Ongoing Production"' Value='1' Required='false'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Condition='StageName == "Closed Lost"' Value='1' Required='false'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Condition='StageName == "Closed Terminated"' Value='1' Required='false'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Condition='OEM = true' Value='1' Required='false'/>
 
 
 </Object>
