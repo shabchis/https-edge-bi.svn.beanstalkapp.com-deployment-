@@ -36,7 +36,7 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Condition='StageName == "Ongoing Production"' Value='1' Required='false'/> 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Condition='StageName == "Closed Lost"' Value='1' Required='false'/> 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Condition='StageName == "Closed Terminated"' Value='1' Required='false'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Condition='OEM = true' Value='1' Required='false'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Condition='Convert.ToBoolean(OEM ) == true' Value='1' Required='false'/>
 
 
 </Object>
