@@ -7,7 +7,7 @@
 								
 								<Map To="OriginalID" Value='{Guid.NewGuid().ToString("N")}'/>
 								
-								<Map To="Account" Var='AccountName' Value='{GetAccount("Stock Pair")}'/>
+								<Map To="Account" Var='AccountName' Value='{GetAccount("USAGC")}'/>
 								
 								<Map To="Channel" Var='ChannelName' Value='{GetChannel("GSP")}' />
 								
