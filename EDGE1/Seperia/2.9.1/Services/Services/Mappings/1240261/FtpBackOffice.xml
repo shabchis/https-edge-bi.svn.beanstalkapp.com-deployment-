@@ -16,9 +16,9 @@
 </Map>
 
 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='PowerDepositors' Field= 'PowerOption - Depositors' /> 
+<!--<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='PowerDepositors' Field= 'PowerOption - Depositors' /> 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Var='InteractiveDepositors' Field= 'InteractiveOption - Depositors' /> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Var='BBSwissDepositors' Field= 'BBSwiss - Depositors' /> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Var='BBSwissDepositors' Field= 'BBSwiss - Depositors' /> -->
 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var='OptionRegs' Field= '24Option - Regs' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Var='OptionDepositors' Field= '24Option - Depositors' />
