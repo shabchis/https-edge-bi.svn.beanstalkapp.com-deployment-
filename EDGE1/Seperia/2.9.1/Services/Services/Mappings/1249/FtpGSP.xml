@@ -60,11 +60,14 @@
 								<Map To='MeasureValues[{GetMeasure("Impressions")}]' Field="Users" />
 								<Map To='MeasureValues[{GetMeasure("Clicks")}]' Field="Clicks" />
 								<Map To='MeasureValues[{GetMeasure("Cost")}]' Var = "TotalCost" Field="Total Cost" />
-								<!-- <Map To='MeasureValues[{GetMeasure("Purchases")}]'  Field="Saves" /> -->
-								<!-- <Map To='MeasureValues[{GetMeasure("Connections")}]' Field="Forwards" /> -->
 								<Map To='MeasureValues[{GetMeasure("UniqueClicks")}]' Var = "ExternalClicks" Field="External Clicks" />
-								<!-- <Map To='MeasureValues[{GetMeasure("Signups")}]' Var = "FormSubmits" Field="Form Submits" /> -->
-								<!-- <Map To='MeasureValues[{GetMeasure("Actions")}]' Var = "VideoViews" Field="Video Views" /> -->
+								<Map To='MeasureValues[{GetMeasure("Conversions")}]' Var = "TotalConv" Field="Total Conversions" />
+								<Map To='MeasureValues[{GetMeasure("SocialClicks")}]' Var = "Dismisses" Field="Dismisses" />
+								<Map To='MeasureValues[{GetMeasure("Leads")}]' Var = "WebLead" Field="Web Lead (LEAD)" />								
+								<!-- <Map To='MeasureValues[{GetMeasure("Purchases")}]'  Var = "Depositor" Field="Depositor (PURCHASE)" /> -->
+								<!-- <Map To='MeasureValues[{GetMeasure("Signups")}]' Var = "Registration" Field="Registration (SIGNUP)" /> -->								
+								<!-- <Map To='MeasureValues[{GetMeasure("Connections")}]' Var = "Forwards" Field="Forwards" /> -->								
+								<!-- <Map To='MeasureValues[{GetMeasure("Actions")}]' Var = "Saves" Field="Saves" /> -->
 								
 							</Object>
 							
