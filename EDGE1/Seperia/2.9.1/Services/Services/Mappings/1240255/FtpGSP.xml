@@ -40,7 +40,7 @@
 								
 								
 								<Map To='Segments[{GetSegment("Tracker")}]'>
-									<Read Field='Campaign Name' Var='EdgeTracker' Regex='(\butm_creative==(?{tracker}[ a-z0-9]*)\b)' Required="false"/>
+									<Read Field='Campaign Name' Var='EdgeTracker' Regex='(\butm_creative=(?{tracker}[ a-z0-9]*)\b)' Required="false"/>
 									
 									<Map To='Value' Value="No Tracker Data" Condition='EdgeTracker == null' Required="false"/>
 									<Map To='OriginalID' Value="No Tracker Data" Condition='EdgeTracker == null' Required="false"/>
