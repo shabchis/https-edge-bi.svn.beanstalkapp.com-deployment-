@@ -8,7 +8,7 @@
 <Read Var="siteLink" Field='Attribute Values' Regex="(\bedgetracrackerid=(?{tracker}\w+)\b)" Required='false'/>
 
 <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject'>
-
+ 
 <Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='destUrl == null' Required="false"/>
 <Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='destUrl == null' Required="false"/>
 
