@@ -11,11 +11,11 @@
 <Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='destUrl == null' Required="false"/>
 <Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='destUrl == null' Required="false"/>
 
-<Map To='Value'  Value="{destUrl.edgetrackerid}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()!="140{AdId}"' Required="false"/>
-<Map To='Value'  Value="140{ad_id}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()=="140{AdId}"' Required="false"/>
+<Map To='Value'  Value="{destUrl.edgetrackerid}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()!="SEP140{AdId}"' Required="false"/>
+<Map To='Value'  Value="SEP140{ad_id}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()=="SEP140{AdId}"' Required="false"/>
 
-<Map To='OriginalID'  Value="{destUrl.edgetrackerid}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()!="140{AdId}"' Required="false"/>
-<Map To='OriginalID'  Value="140{ad_id}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()=="140{AdId}"' Required="false"/>
+<Map To='OriginalID'  Value="{destUrl.edgetrackerid}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()!="SEP140{AdId}"' Required="false"/>
+<Map To='OriginalID'  Value="SEP140{ad_id}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()=="SEP140{AdId}"' Required="false"/>
 
 </Map>
 </Object>
