@@ -9,14 +9,14 @@
 
 <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject'>
 
-<Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='destUrl1 == null &amp;&amp; destUrl2 == null' Required="false"/>
-<Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='destUrl1 == null &amp;&amp; destUrl2 == null' Required="false"/>
+<Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='destUrl == null' Required="false"/>
+<Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='destUrl == null' Required="false"/>
 
+<Map To='Value'  Value="{destUrl.edgetrackerid}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()!="100{creative}"' Required="false"/>
+<Map To='Value'  Value="100{ad_id}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()=="100{creative}"' Required="false"/>
 
-<Map To='Value'  Value="{destUrl.edgetrackerid}" Condition='destUrl.edgetrackerid.ToString()!="100{creative}"' Required="false"/>
-<Map To='Value'  Value="100{ad_id}" Condition='destUrl.edgetrackerid.ToString()=="100{creative}"' Required="false"/>
-<Map To='OriginalID'  Value="{destUrl.edgetrackerid}" Condition='destUrl.edgetrackerid.ToString()!="100{creative}"' Required="false"/>
-<Map To='OriginalID'  Value="100{ad_id}" Condition='destUrl.edgetrackerid.ToString()=="100{creative}"' Required="false"/>
+<Map To='OriginalID'  Value="{destUrl.edgetrackerid}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()!="100{creative}"' Required="false"/>
+<Map To='OriginalID'  Value="100{ad_id}" Condition='destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()=="100{creative}"' Required="false"/>
 </Map>
 
 <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='siteLink != null'>
@@ -26,7 +26,7 @@
 
 </Object>
 </Mappings>
-
+ 
 										 
 										 
 										 
