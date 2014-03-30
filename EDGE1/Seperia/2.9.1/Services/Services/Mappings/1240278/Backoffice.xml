@@ -7,25 +7,24 @@
 </Map>
 <Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Var='Reservations' Field= 'Reservations' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Var='TotalOrders' Field= 'TotalOrders' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var='TotalLeads' Field= 'TotalLeads' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var='TotalLeads' Field= 'Leads' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Var='FailedOrders' Field= 'FailedOrders' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Var='SuccessOrders' Field= 'SuccessOrders' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='TotalDepositsUSD' Field= 'TotalDepositsUSD' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='TotalDeposit' Field= 'TotalDeposit' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Var='TotalInsuranceUSD' Field= 'TotalInsuranceUSD' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Var='TotalPassengers' Field= 'TotalPassengers' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Var='Flights' Field= 'Flights' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Var='HotelsLocal' Field= 'HotelsLocal' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Var='FlyAndDrive' Field= 'FlyAndDrive' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Var='Deals' Field= 'Deals' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Var='DealsWithCars' Field= 'DealsWithCars' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Var='OrganizedTours' Field= 'OrganizedTours' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Var='Combined' Field= 'Combined' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Var='HotelsAbroad' Field= 'HotelsAbroad' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Var='VacationApartments' Field= 'VacationApartments' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]' Var='TravelInsurance' Field= 'TravelInsurance' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]' Var='OfflineProductQuantity' Field= 'OfflineProductQuantity' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' Var='OfflineProductPassengers' Field= 'OfflineProductPassengers' />
 
-
+<!-- <Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Var='DealsWithCars' Field= 'DealsWithCars' /> -->
+<!-- <Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Var='Combined' Field= 'Combined' /> -->
+<!-- <Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Var='VacationApartments' Field= 'VacationApartments' /> -->
 </Object>
 </Mappings>
