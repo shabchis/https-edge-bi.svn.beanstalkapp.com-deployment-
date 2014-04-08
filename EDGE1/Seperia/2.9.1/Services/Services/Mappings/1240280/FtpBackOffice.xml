@@ -5,7 +5,7 @@
 <Read Var="SubID" Field='sub_id'/>
 <Read Var="SerialID" Field='Serial'/>
 
-<Map To='Value'  Value="{SerialID} " Condition='SerialID != null' Required="false"/>
+<Map To='Value'  Value="{SerialID}" Condition='SerialID != null' Required="false"/>
 <Map To='Value'  Value="{SubID}" Condition='Convert.ToString(SubID).Contains("Sep") == true' Required="false"
 
 </Map>		
