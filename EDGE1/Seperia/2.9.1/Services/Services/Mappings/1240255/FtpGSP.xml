@@ -63,7 +63,7 @@
 <Map To='MeasureValues[{GetMeasure("UniqueClicks")}]' Var = "ExternalClicks" Field="External Clicks" />
 <Map To='MeasureValues[{GetMeasure("TotalConversionsManyPerClick")}]' Var = "TotalConv" Field="Total Conversions" />
 <Map To='MeasureValues[{GetMeasure("SocialClicks")}]' Var = "Dismisses" Field="Dismisses" />
-<Map To='MeasureValues[{GetMeasure("Leads")}]' Var = "Lead" Field="Lead" />	 								
+<Map To='MeasureValues[{GetMeasure("Leads")}]' Var = "Lead" Field="lead" />	 								
 <Map To='MeasureValues[{GetMeasure("Connections")}]' Var = "Forwards" Field="Forwards" />							
 <Map To='MeasureValues[{GetMeasure("Actions")}]' Var = "Saves" Field="Saves" />
 <Map To='MeasureValues[{GetMeasure("Signups")}]' Var = "FormSubmits" Field="Form Submits" />
