@@ -25,6 +25,8 @@
 
 
 <Map To='OriginalID'  Value="140{ad_id}" Condition='(destUrl != null &amp;&amp; destUrl.edgetrackerid.ToString()=="140{AdId}") || (destUrl2 != null &amp;&amp; destUrl2.edgetrackerid.ToString()=="140{AdId}")' Required="false"/>
+
+</Map>
 </Object>
 </Mappings>
 
