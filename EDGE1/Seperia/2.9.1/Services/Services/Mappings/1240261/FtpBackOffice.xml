@@ -59,7 +59,7 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Var='OptionBitRegs' Field= 'OptionBit - Regs' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Var='OptionBitDepositors' Field= 'OptionBit - Depositors' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific39")}]' Var='OptionBitClicks' Field= 'OptionBit - Clicks' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific40")}]' Var='OptionTimeDepositors' Field= 'OptionTime - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific40")}]' Var='OptionTimeDepositors' Field= 'OptionTime - Clicks' />
 
 
 </Object>
