@@ -7,7 +7,9 @@
 <Read Var="destUrl1" Field='Destination URL' Regex='(\bolgs_tr=(?{edgetrackerid}\w*\{*[::;;-a-z]*\}*))' Required='false'/>
 <Read Var="destUrl2" Field='Destination URL' Regex='(\bEcid=(?{edgetrackerid}\w*\{*[a-z]*\}*))' Required='false'/>
 
-<Read Var="ad_id" Field='Ad ID' Required='true'/>
+<Read Var="ad_id" Field='Ad ID' Required='false'/>
+
+<Read Var="siteLink" Field='Attribute Values' Regex='(\bolgs_tr=(?{edgetrackerid}\w*\{*[a-z]*\}*))' Required='false'/>
 
 
 <Map To='Segments[{GetSegment("Tracker")}]::SegmentObject'>
@@ -41,6 +43,11 @@ Condition='(destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()=="100{
 <Map To='OriginalID'  Value="{ad_id}" Condition='(destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()=="{creative}") || (destUrl2 != null &amp;&amp; destUrl2.edgetrackerid.ToString()=="{creative}")' Required="false"/>
 
 
+</Map>
+
+<Map To='Segments[{GetSegment("Tracker")}]::SegmentObject' Condition='siteLink != null'>
+<Map To='Value'  Value="{siteLink.edgetrackerid}" Condition='siteLink.edgetrackerid != null' Required="false"/>
+<Map To='OriginalID'   Value="{siteLink.edgetrackerid}" Condition='siteLink.edgetrackerid != null' Required="false"/>
 </Map>
 
 </Object>
