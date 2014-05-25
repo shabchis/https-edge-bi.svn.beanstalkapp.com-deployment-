@@ -2,7 +2,7 @@
 <Mappings>
 <Object Type="Ad">
 <Read Var="camp" Field="Campaign Name" Regex="(?{Name}[a-z0-9-_ ]*)"/>
-<Read Var="Ad" Field="Campaign Name"  Regex="(\bad=(?{Headline}[a-z0-9-_ ]*)\b)" Required="false"/>
+<Read Var="Ad" Field="Campaign Name"  Regex="(\bad=(?{Headline}[a-z0-9-_+ ]*)\b)" Required="false"/>
 <Read Var="DestURL" Field="Campaign Name" Regex="(\bdest=(?{Url}[a-z0-9-_ ./:]*)\b)" Required="false"/>
 
 <Map To="OriginalID" Value='{Guid.NewGuid().ToString("N")}'/>
