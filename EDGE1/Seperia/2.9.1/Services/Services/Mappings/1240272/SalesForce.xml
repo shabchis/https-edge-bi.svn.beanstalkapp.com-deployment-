@@ -11,6 +11,16 @@
 <Map To='Value' Value='{tracker.edgetrackerid}' Condition='(tracker != null) &amp;&amp;(tracker.edgetrackerid != null)' Required='false'/>
 </Map>
 
+
+<!--Getting First Campaigns-->
+<Read Var="LeadFirst" Field='First_Campaign_Name__c' Required='false'/> 
+<Read Var="OppFirst" Field='ConvertedOpportunity.First_Campaign_Name__c' Required='false'/> 
+<Read Var="LeadLast" Field='Last_Campaign_Name__c' Required='false'/> 
+<Read Var="OppLast" Field='ConvertedOpportunity.Last_Campaign_Name__c' Required='false'/> 
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific22")}]' Condition='LeadFirst != null &amp;&amp; LeadLast == ""' Value='1'/> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific29")}]' Condition='OppFirst != null &amp;&amp; OppLast == ""' Value='1'/> 
+
 <!--Getting Leads-->
 <Read Var="Status" Field='Status' Required='false'/> 
 <Read Var="CreatedDate" Field='CreatedDate' Required='false'/>
@@ -48,7 +58,8 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' Condition='Industry == "Government / Military"' Value='1'/> 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific31")}]' Condition='Industry == "Medical Device or Equipment"' Value='1'/> 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific21")}]' Condition='Industry == "Service Bureau"' Value='1'/> 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific22")}]' Condition='Industry == "Other"' Value='1'/> 
+
+
 
 <!--Leads Product Types-->
 <Map To='MeasureValues[{GetMeasure("ClientSpecific23")}]' Condition='Type == "Mojo OR uPrint (FDM)"' Value='1'/>
@@ -57,7 +68,8 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific26")}]' Condition='Type == "Objet Desktop (PolyJet)"' Value='1'/>
 <Map To='MeasureValues[{GetMeasure("ClientSpecific27")}]' Condition='Type == "Objet Eden (PolyJet)"' Value='1'/> 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific28")}]' Condition='Type == "Objet Connex Multi-Material (PolyJet)"' Value='1'/>
-<Map To='MeasureValues[{GetMeasure("ClientSpecific29")}]' Condition='Type == "Product not selected yet"' Value='1'/> 
+
+
 
 <!--Getting Opportunity-->
 <Read Var="StageName" Field='ConvertedOpportunity.StageName' Required='false'/>
