@@ -18,6 +18,8 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Var='NumofInstalls' Field= 'Num_of_Installs' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var='NumOfNPU' Field= 'Num_of_NPU' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Var='PredictedActiveDays' Field= 'Predicted_Active_Days' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Var='SDMTotal' Field= 'Num_of_SDM_Total_Process_Start' />
+
 								
 
 </Object>
