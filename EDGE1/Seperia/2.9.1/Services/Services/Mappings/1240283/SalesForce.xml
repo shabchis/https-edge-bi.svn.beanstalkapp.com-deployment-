@@ -11,7 +11,8 @@
 <!-- Fields -->
 <Read Var="CreatedDate" Field='CreatedDate' Required='true'/> 
 <Read Var="Status" Field='client_status__c' Required='true'/> 
-<Read Var="userID" Field='user_id__c' Required='true'/> 
+<Read Var="userID" Field='user_id__c' Required='true'/>
+<Read Var="TotalFund" Field='total_successful_funding__c' Required='true'/> 
 
 
 <!--Totals-->
@@ -20,14 +21,16 @@
 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Condition='Status != null &amp;&amp; (Status == "APPROVED" || Status == "SUSPENDED" || Status == "DEFAULT")' Value='1' Required='false'/> <!--Total Approved-->
 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='(Status != "ACTIVE" || Status != "REJECTED" || Status != "INACTIVE" || Status != "APPROVED" || Status != "SUSPENDED" || Status != "DEFAULT" ) &amp;&amp; (userID != null)' Value='1' Required='true'/> <!--Total Users-->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Condition='Status == "" &amp;&amp; userID != null' Value='1' Required='true'/> <!--Total Users-->
 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='Status == "ACTIVE"' Value='1' Required='false'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Condition='Status == "ACTIVE"' Value='1' Required='false'/> 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Condition='Status == "REJECTED"' Value='1' Required='false'/>
 <Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Condition='Status == "INACTIVE"' Value='1' Required='false'/>
 <Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Condition='Status == "APPROVED"' Value='1' Required='false'/>
 <Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Condition='Status == "SUSPENDED"' Value='1' Required='false'/>
 <Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Condition='Status == "DEFAULT"' Value='1' Required='false'/>
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Condition='TotalFund != null' Value='{TotalFund}' Required='false'/>
 
 
 </Object>
