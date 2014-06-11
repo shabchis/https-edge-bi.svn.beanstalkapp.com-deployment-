@@ -13,6 +13,7 @@
 <Read Var="Status" Field='client_status__c' Required='true'/> 
 <Read Var="userID" Field='user_id__c' Required='true'/>
 <Read Var="TotalFund" Field='total_successful_funding__c' Required='true'/> 
+<Read Var="CreditLine" Field='client_credit_line__c' Required='true'/> 
 
 
 <!--Totals-->
@@ -31,6 +32,8 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Condition='Status == "DEFAULT"' Value='1' Required='false'/>
 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Condition='TotalFund != null' Value='{TotalFund}' Required='false'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Condition='Convert.ToDouble(CreditLine) &gt;= 5000 &amp;&amp; Convert.ToDouble(CreditLine) &lt;  15000' Value='1' Required='false'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Condition='Convert.ToDouble(CreditLine) &gt;= 15000 &amp;&amp; Convert.ToDouble(CreditLine) &lt;=  50000' Value='1' Required='false'/> 
 
 
 </Object>
