@@ -24,6 +24,22 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Var='BBinaryDepositors' Field= 'BBinary - Depositors' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Var='BBinaryClicks' Field= 'BBinary - Clicks' />
 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Var='StockPairRegs' Field= 'StockPair - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Var='StockPairDepositors' Field= 'StockPair - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Var='StockPairClicks' Field= 'StockPair - Clicks' />
+
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]' Var='OptionWebRegs' Field= 'OptionWeb - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' Var='OptionWebDepositors' Field= 'OptionWeb - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific21")}]' Var='OptionWebClicks' Field= 'OptionWeb - Clicks' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific35")}]' Var='TopOptionRegs' Field= 'TopOption - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific36")}]' Var='TopOptionDepositors' Field= 'TopOption - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific37")}]' Var='TopOptionClicks' Field= 'TopOption - Clicks' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific38")}]' Var='TopOptionRevenue' Field= 'TopOption - Revenue' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='PowerDepositors' Field= 'PowerOption - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]' Var='PowerRevenue' Field= 'PowerOption - Revenue' />
 
 </Object>
 <Object Type="Edge.Data.Objects.Signature">
