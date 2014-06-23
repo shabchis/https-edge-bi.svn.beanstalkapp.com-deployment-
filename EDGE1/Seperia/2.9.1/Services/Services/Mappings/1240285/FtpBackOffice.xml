@@ -38,14 +38,14 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific21")}]' Var='OptionWebClck' Field= 'OptionTime - Clicks' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific22")}]' Var='PowerOptionRegs' Field= 'PowerOption - Regs' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific23")}]' Var='PowerOptionDep' Field= 'PowerOption - Depositors' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific24")}]' Var='PowerOptionClck' Field= 'PowerOption - Clicks' />
+
 <Map To='MeasureValues[{GetMeasure("ClientSpecific25")}]' Var='RBOptionsRegs' Field= 'RB Options - Regs' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific26")}]' Var='RBOptionsDep' Field= 'RB Options - Depositors' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific27")}]' Var='TopOptionRegs' Field= 'TopOption - Regs' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific28")}]' Var='TopOptionDep' Field= 'TopOption - Depositors' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific29")}]' Var='TopOptionClck' Field= 'TopOption - Clicks' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific30")}]' Var='TopOptionRev' Field= 'TopOption - Revenue' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific31")}]' Var='RBOptionsClck' Field= 'RB Options - Clicks' />
+
 
 
 </Object>
