@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>	
+<Mappings>
+<Object Type="GenericMetricsUnit">
+<Map To='SegmentDimensions[{GetSegment("Tracker")}]' >
+<Read Var="tracker" Field='ID' Required='true'/>
+<Map To='Value' Value='{tracker}'/>
+</Map>
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Var='TotalPlansRegistrations' Field= 'TotalPlansRegistrations' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Var='TotalPlansPurchases' Field= 'TotalPlansPurchases' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var='TotalPlansSelected' Field= 'TotalPlansSelected' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Var='Lead' Field= 'Lead' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Var='SelectFreePlan' Field= 'SelectFreePlan' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='SelectProPlan' Field= 'SelectProPlan' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Var='SelectSuperPlan' Field= 'SelectSuperPlan' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Var='FreePlanRegs' Field= 'FreePlanRegs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Var='ProPlanRegs' Field= 'ProPlanRegs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Var='SuperPlanRegs' Field= 'SuperPlanRegs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Var='ProPlanPurchase' Field= 'ProPlanPurchase' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Var='SuperPlanPurchase' Field= 'SuperPlanPurchase' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Var='ProPlanPayout' Field= 'ProPlanPayout' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Var='SuperPlanPayout' Field= 'SuperPlanPayout' />
+
+
+</Object>
+</Mappings>
