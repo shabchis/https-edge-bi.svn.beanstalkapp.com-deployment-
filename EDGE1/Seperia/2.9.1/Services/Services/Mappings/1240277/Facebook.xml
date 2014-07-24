@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>						
 <Mappings>
 <Object Type="Ad">
-<Read Var="t1" Field="link_url" Regex="(\bedgetrackerid=(?{tracker}\w+)\b)" Required='false'/>
-<Read Var="t2" Field="object_url" Regex="(\bedgetrackerid=(?{tracker}\w+)\b)" Required='false'/>
-<Read Var="t3" Field="url_tags" Regex="(\bedgetrackerid=(?{tracker}\w+)\b)" Required='false'/>
+<Read Var="t1" Field="link_url" Regex="(\bedgetrackerid=(?{tracker}\s?\w+\{*[a-z]*\}*))" Required='false'/>
+<Read Var="t2" Field="object_url" Regex="(\bedgetrackerid=(?{tracker}\s?\w+\{*[a-z]*\}*))" Required='false'/>
+<Read Var="t3" Field="url_tags" Regex="(\bedgetrackerid=(?{tracker}\s?\w+\{*[a-z]*\}*))" Required='false'/>
 <Read Var="ad_id" Field='id' Required='true'/>
 
 <Map To='Segments[{GetSegment("Tracker")}]'>
