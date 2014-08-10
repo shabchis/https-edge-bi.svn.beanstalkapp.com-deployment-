@@ -37,7 +37,7 @@
 								<Map To='MeasureValues[{GetMeasure("Cost")}]' Field="Cost" Required="false"/>
 							</Object>
 							<Object Type="Edge.Data.Objects.Signature">
-							<Read Var="dayCode" Field="Date" Regex="(?{m}[0-9]{2})/(?{d}[0-9]{2})/(?{y}[0-9]{4})"/>
+							<Read Var="dayCode" Field="Date" Regex="(?{d}[0-9]{2}).(?{m}[0-9]{2}).(?{y}[0-9]{4})"/>
 							<Read Var="AccountName" Field="AccountName"/>
 							<Read Var="Channel" Field='Channel'/>
 							<Map To='Value' Value='{dayCode.y}{dayCode.m}{dayCode.d}_{AccountName}_{Channel}' />
