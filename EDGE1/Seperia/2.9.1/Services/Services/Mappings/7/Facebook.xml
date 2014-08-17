@@ -3,7 +3,7 @@
 <Object Type="Ad">
 <Read Var="t1" Field="link_url" Regex="(\bgid=(?{tracker}\w+)\b)" Required='false'/>
 <Read Var="t2" Field="object_url" Regex="(\bgid=(?{tracker}\w+)\b)" Required='false'/>
-<Read Var="t3" Field="url_tags" Regex="(\bgid=(?{tracker}\w+)\b)" Required='false'/>
+<Read Var="t3" Field="link" Regex="(\bgid=(?{tracker}\w+)\b)" Required='false'/>
 <Read Var="ad_id" Field='id' Required='true'/>
 
 <Map To='Segments[{GetSegment("Tracker")}]'>
