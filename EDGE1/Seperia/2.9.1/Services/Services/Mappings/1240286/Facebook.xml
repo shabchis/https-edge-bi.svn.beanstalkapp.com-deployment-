@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>						
+<Mappings>
+<Object Type="Ad">
+<Read Var="t1" Field="link_url" Regex="(\bad_id=(?{tracker}\w+)\b)" Required='false'/>
+<Read Var="t2" Field="object_url" Regex="(\bad_id=(?{tracker}\w+)\b)" Required='false'/>
+<Read Var="t3" Field="link" Regex="(\bad_id=(?{tracker}\w+)\b)" Required='false'/>
+<Read Var="ad_id" Field='id' Required='true'/>
+
+<Map To='Segments[{GetSegment("Tracker")}]'>
+
+<Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='t1 == null &amp;&amp; t2 == null &amp;&amp; t3 == null' Required="false"/>
+<Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='t1 == null &amp;&amp; t2 == null &amp;&amp; t3 == null' Required="false"/>
+
+<Map To='Value' Condition='t1 != null &amp;&amp; t2 == null &amp;&amp; t3 == null' Value="{t1.tracker}" Required="false"/>
+<Map To='Value' Condition='t2 != null &amp;&amp; t1 == null &amp;&amp; t3 == null' Value="{t2.tracker}" Required="false"/>
+<Map To='Value' Condition='t3 != null &amp;&amp; t1 == null &amp;&amp; t2 == null' Value="{t3.tracker}" Required="false"/>
+<Map To='OriginalID' Condition='t1 != null &amp;&amp; t2 == null &amp;&amp; t3 == null' Value="{t1.tracker}" Required="false"/>
+<Map To='OriginalID' Condition='t2 != null &amp;&amp; t1 == null &amp;&amp; t3 == null' Value="{t2.tracker}" Required="false"/>
+<Map To='OriginalID' Condition='t3 != null &amp;&amp; t1 == null &amp;&amp; t2 == null' Value="{t3.tracker}" Required="false"/>
+</Map>
+</Object>
+</Mappings>
