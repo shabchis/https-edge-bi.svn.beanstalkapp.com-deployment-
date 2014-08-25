@@ -20,6 +20,7 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Var='SuperPlanPurchase' Field= 'SuperPlanPurchase' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Var='ProPlanPayout' Field= 'ProPlanPayout' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Var='SuperPlanPayout' Field= 'SuperPlanPayout' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Var='CampaignCreated' Field= 'CampaignCreated' />
 
 
 </Object>
