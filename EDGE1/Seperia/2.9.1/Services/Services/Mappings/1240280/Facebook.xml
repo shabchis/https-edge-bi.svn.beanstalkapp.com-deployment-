@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>						
+<Mappings>
+<Object Type="Ad">
+<Read Var="destUrl" Field='object_url' Regex='(\bsId=(?{tracker}\w+\{*[_-a-zA-Z0-9]*\}*))' Required='false'/>
+
+<Read Var="destUrl2" Field='object_url' Regex='(\bsubId=(?{tracker}\w+\{*[_-a-zA-Z0-9]*\}*))' Required='false'/>	
+
+<Read Var="ad_id" Field='id' Required='true'/>
+
+<Map To='Segments[{GetSegment("Tracker")}]'>
+
+<Map To='Value'  Value="No Tracker For Ad {ad_id}" Condition='destUrl == null &amp;&amp; destUrl2 == null' Required="false"/>
+<Map To='OriginalID' Value="No Tracker For Ad {ad_id}" Condition='destUrl == null &amp;&amp; destUrl2 == null' Required="false"/>
+
+<Map To='Value' Condition='destUrl != null' Value="{destUrl.tracker}" />									
+<Map To='OriginalID' Condition='destUrl != null' Value="{destUrl.tracker}" />
+
+<Map To='Value' Condition='destUrl2 != null' Value="{destUrl.tracker}" />									
+<Map To='OriginalID' Condition='destUrl2 != null' Value="{destUrl.tracker}" />
+
+</Map>
+</Object>
+</Mappings>
