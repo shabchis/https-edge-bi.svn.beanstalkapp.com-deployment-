@@ -37,6 +37,7 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]' Var='OptionWebRegs' Field= 'OptionWeb - Regs' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' Var='OptionWebDepositors' Field= 'OptionWeb - Depositors' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific21")}]' Var='OptionWebClicks' Field= 'OptionWeb - Clicks' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific22")}]' Var='PowerOptionRegs' Field= 'PowerOption - Regs' />
 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific23")}]' Var='CedarRegs' Field= 'Cedar - Regs' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific24")}]' Var='CedarDepositors' Field= 'Cedar - Depositors' />
