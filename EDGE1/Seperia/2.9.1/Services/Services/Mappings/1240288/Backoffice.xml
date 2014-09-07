@@ -7,8 +7,8 @@
 </Map>
 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Field= 'Signup' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field= 'Export' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Field='Purchase' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field= 'Purchase' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Field='Export' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Field='Amount'/>
 
 
