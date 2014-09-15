@@ -23,6 +23,7 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Field= 'CampaignCreated' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Field= 'LandingPage1' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Field= 'LandingPage2' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]' Field= 'WelcomeButtonPressed' />
 
 
 </Object>
