@@ -14,7 +14,7 @@
 <Map To='Text' Var='Desc1' Field='AD LINE'/>
 
 </Map>								
-<Map To='DestinationUrl' Field='destUrl'/>
+<Map To='DestinationUrl' Var='destUrl' Field='CLICK URL'/>
 <Map To='Segments[{GetSegment("Campaign")}]::Campaign.Name' Var='Campaign' Field='CAMPAIGN NAME'/>
 <Map To='Segments[{GetSegment("AdGroup")}]::AdGroup'>
 <Read Var='Adgroup' Field='ADGROUP NAME'/>
