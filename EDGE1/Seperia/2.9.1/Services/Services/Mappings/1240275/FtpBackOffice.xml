@@ -15,8 +15,8 @@
 </Map>
 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Var='Registrations' Field= 'Registrations' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Var='NewDepositingAcc' Field= 'New Depositing Acc' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var='NewAccounts' Field= 'New Accounts' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Var='NewAccounts' Field= 'New Accounts' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var='NewDepositingAcc' Field= 'New Depositing Acc' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Var='FirstDepositCount' Field= 'First Deposit Count' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Var='GrossPlayer' Field= 'Gross / Player' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='NetPlayer' Field= 'Net / Player' />
