@@ -10,6 +10,23 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field= 'Purchase' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Field='Export' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Field='Amount'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Field='Purchase-professional_monthly'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Field='Amount-professional_monthly'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Field='Purchase-professional_yearly'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Field='Amount-professional_yearly'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Field='Purchase-business_monthly'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Field='Amount-business_monthly'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Field='Purchase-business_yearly'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Field='Amount-business_yearly'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Field='Purchase-classroom'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Field='Amount-classroom'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Field='Purchase-publish_25'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Field='Amount-publish_25'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Field='Purchase-publish_10'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]' Field='Amount-publish_10'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]' Field='Purchase-publish_5'/>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' Field='Amount-publish_5'/>
+
 
 
 
