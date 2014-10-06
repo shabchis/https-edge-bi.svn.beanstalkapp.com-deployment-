@@ -23,7 +23,7 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='BBinaryClck' Field= 'BBinary - Clicks' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Var='OptionWebRegs' Field= 'OptionWeb - Regs' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Var='OptionWebDep' Field= 'OptionWeb - Depositors' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Var='OptionWeb' Field= 'OptionWeb - Clicks' /> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Var='OptionWebClck' Field= 'OptionWeb - Clicks' /> 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Var='AnyoptionRegs' Field= 'AnyOption - Regs' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Var='AnyoptionDep' Field= 'AnyOption - Depositors' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Var='AnyoptionClck' Field= 'AnyOption - Clicks' />
@@ -33,8 +33,8 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Var='OpteckRegs' Field=  'Opteck - Regs' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Var='OpteckDep' Field= 'Opteck - Depositors' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]' Var='OpteckClck' Field= 'Opteck - Clicks' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]' Var='OptionWebRegs' Field= 'OptionWeb - Regs' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' Var='OptionWebDep' Field= 'OptionTime - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]' Var='OptionTimeRegs' Field= 'OptionTime - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' Var='OptionTimeDep' Field= 'OptionTime - Depositors' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific21")}]' Var='OptionWebClck' Field= 'OptionTime - Clicks' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific22")}]' Var='PowerOptionRegs' Field= 'PowerOption - Regs' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific23")}]' Var='PowerOptionDep' Field= 'PowerOption - Depositors' />
