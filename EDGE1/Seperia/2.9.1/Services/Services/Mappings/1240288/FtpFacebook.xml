@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>	
+						<Mappings>
+							<Object Type="Ad">
+								<Map To="OriginalID" Value='{Guid.NewGuid().ToString("N")}'/>
+								<Map To="Account" Field='AccountName' Var='AccountName' Value="{GetAccount(AccountName)}"/>
+								<Map To="Channel" Field='Channel' Var='ChannelName' Value='{GetChannel(ChannelName)}'/>
+								<Map To='Creatives[]::TextCreative'>
+									<Map To='TextType' Value='Title'/>
+									<Map To='Text' Field='Headline'/>
+								</Map>
+								<Map To='Creatives[]::TextCreative'>
+									<Map To='TextType' Value='Body'/>
+									<Map To='Text' Field='Desc1' Required="false" />
+									<Map To='Text2' Field='Desc2' Required="false" />
+								</Map>								
+								<Map To='DestinationUrl' Field='destUrl'/>
+								<Map To='Segments[{GetSegment("Campaign")}]::Campaign.Name' Field='Campaign'/>
+								<Map To='Segments[{GetSegment("AdGroup")}]::AdGroup'>
+									<Read Field='Adgroup'/>
+									<Read Field='Campaign'/>
+									<Map To='Name' Field='Adgroup' />
+									<Map To='Campaign.Name' Field='Campaign'/>
+									<Map To='OriginalID' Value='{Campaign}_{Adgroup}'/>
+								</Map>
+								<Map To='Segments[{GetSegment("Tracker")}]'  >
+									<Read Field='gateway' Var='gateway' ></Read>
+									<Map To='Value' Value="{gateway}"/>
+									<Map To='OriginalID' Value="{gateway}"/>
+								</Map>
+							</Object>
+							<Object Type="AdMetricsUnit">
+								<Read Var="dayCode" Field="Date" Regex="(?{y}[0-9]{4})(?{m}[0-9]{2})(?{d}[0-9]{2})"/>
+								<Map To="TimePeriodStart" Value='{CreatePeriodStart(dayCode.y, dayCode.m, dayCode.d)}'/>
+								<Map To="TimePeriodEnd" Value="{CreatePeriodEnd(dayCode.y, dayCode.m, dayCode.d)}"/>
+								<Map To='MeasureValues[{GetMeasure("Impressions")}]' Field="Imps" Required="false"/>
+								<Map To='MeasureValues[{GetMeasure("Clicks")}]' Field="Clicks" Required="false"/>
+								<Map To='MeasureValues[{GetMeasure("Cost")}]' Field="Cost" Required="false"/>
+								<Map To='MeasureValues[{GetMeasure("TotalConversionsManyPerClick")}]' Var = "TotalConv" Field="transactions" />
+								<Map To='MeasureValues[{GetMeasure("UniqueClicks")}]' Var = "Uniqueclicks" Field="Unique_clicks" />								
+								<Map To='MeasureValues[{GetMeasure("SocialClicks")}]' Var = "SocialClicks" Field="SocialClicks" /> 						
+								<Map To='MeasureValues[{GetMeasure("SocialCost")}]' Var = "SocialCost" Field="SocialCost" />
+								<Map To='MeasureValues[{GetMeasure("SocialImpressions")}]' Var = "SocialImpressions" Field="SocialImpressions" />
+								<Map To='MeasureValues[{GetMeasure("SocialUniqueImpressions")}]' Var = "Socialuniqueimps" Field="Social_unique_impressions" />
+								<Map To='MeasureValues[{GetMeasure("SocialUniqueClicks")}]' Var = "Socialuniqueclicks" Field="Social_unique_clicks" />
+								<Map To='MeasureValues[{GetMeasure("UniqueImpressions")}]' Var = "UniqueImpressions" Field="Unique_impressions" />
+							</Object>
+							<Object Type="Edge.Data.Objects.Signature">
+							<Read Var="dayCode" Field="Date" Regex="(?{y}[0-9]{4})(?{m}[0-9]{2})(?{d}[0-9]{2})"/>
+							<Read Var="AccountName" Field="AccountName"/>
+							<Read Var="Channel" Field='Channel'/>
+							<Map To='Value' Value='{dayCode.y}{dayCode.m}{dayCode.d}_{AccountName}_{Channel}' />
+							</Object>
+						</Mappings>
