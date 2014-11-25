@@ -10,7 +10,7 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var='TotalLeads' Field= 'leads' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Var='FailedOrders' Field= 'FailedOrders' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Var='SuccessOrders' Field= 'SuccessOrders' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='TotalDeposit' Field= 'TotalDepositsUSD' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='TotalDeposit' Field= 'TotalDeposits' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Var='TotalInsuranceUSD' Field= 'TotalInsuranceUSD' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Var='TotalPassengers' Field= 'TotalPassengers' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Var='Flights' Field= 'Flights' />
