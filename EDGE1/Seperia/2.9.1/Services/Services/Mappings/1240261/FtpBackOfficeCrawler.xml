@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>         
+<Mappings>
+<Object Type="GenericMetricsUnit">
+<Map To='SegmentDimensions[{GetSegment("Tracker")}]' >
+<Read Var="tracker" Field='Tracker' />
+<Map To='Value' Value="{UrlEncode(tracker)}"/>
+</Map>
+
+
+<Read Var="dayCode" Field="Date" Regex="(?{d}[0-9]{2})/(?{m}[0-9]{2})/(?{y}[0-9]{4})"/>
+<Map To="TimePeriodStart" Value='{CreatePeriodStart(dayCode.y, dayCode.m, dayCode.d)}'/>
+<Map To="TimePeriodEnd" Value="{CreatePeriodEnd(dayCode.y, dayCode.m, dayCode.d)}"/>                                                                        
+<Map To="Account" Value="{GetAccount(AccountName)}" Field="AccountName"/>
+<Map To="Channel">
+<Map To="ID" Value="-1"/>
+</Map>
+
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var='OptionRegs' Field= '24Option - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Var='OptionDepositors' Field= '24Option - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Var='OptionClicks' Field= '24Option - Clicks' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Var='BBinaryRegs' Field= 'BBinary - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Var='BBinaryDepositors' Field= 'BBinary - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Var='BBinaryClicks' Field= 'BBinary - Clicks' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Var='StockPairRegs' Field= 'StockPair - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Var='StockPairDepositors' Field= 'StockPair - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Var='StockPairClicks' Field= 'StockPair - Clicks' />
+
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]' Var='OptionWebRegs' Field= 'OptionWeb - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' Var='OptionWebDepositors' Field= 'OptionWeb - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific21")}]' Var='OptionWebClicks' Field= 'OptionWeb - Clicks' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific35")}]' Var='TopOptionRegs' Field= 'TopOption - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific36")}]' Var='TopOptionDepositors' Field= 'TopOption - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific37")}]' Var='TopOptionClicks' Field= 'TopOption - Clicks' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific38")}]' Var='TopOptionRevenue' Field= 'TopOption - Revenue' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='PowerDepositors' Field= 'PowerOption - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]' Var='PowerRevenue' Field= 'PowerOption - Revenue' />
+
+</Object>
+<Object Type="Edge.Data.Objects.Signature">
+<Read Var="dayCode" Field="Date" Regex="(?{d}[0-9]{2})/(?{m}[0-9]{2})/(?{y}[0-9]{4})"/>
+<Read Var="AccountName" Field="AccountName"/>
+<Map To='Value' Value='{dayCode.y}{dayCode.m}{dayCode.d}_{AccountName}}' />
+</Object>
+</Mappings>
