@@ -4,6 +4,7 @@
 <Using Namespace="Edge.Data.Objects.{0}, Edge.Data.Pipeline"/>
 <Object Type="Ad">
 
+
 <Read Var="destUrl" Field='DestinationUrl' Regex='(\butm_content=(?{edgetrackerid}\w+\{*[a-z]*\}*))' Required="false"/>
 <Read Var="ad_id" Field='AdId' Required="true"/>
 
