@@ -60,9 +60,9 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]' Var='NoOneOptionReg' Field= 'NoOneOption - Regs' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific22")}]' Var='NoOneOptionDep' Field= 'NoOneOption - Depositors' />
 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific23")}]' Var='' Field= 'OptionRally - Regs' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific24")}]' Var='' Field= 'OptionRally - Depositors' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific25")}]' Var='' Field= 'OptionRally - Clicks' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific23")}]' Var='OptionRallyReg' Field= 'OptionRally - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific24")}]' Var='OptionRallyDep' Field= 'OptionRally - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific25")}]' Var='OptionRallyClks' Field= 'OptionRally - Clicks' />
 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='WinnerCPAReg' Field= 'WinnerOptionCPA - Regs' /> 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific26")}]' Var='WinnerCPADep' Field= 'WinnerOptionCPA - Depositors' /> 
