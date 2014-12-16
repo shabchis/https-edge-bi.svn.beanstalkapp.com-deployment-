@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>         
+<Mappings>
+<Object Type="GenericMetricsUnit">
+<Map To='SegmentDimensions[{GetSegment("Tracker")}]' >
+<Read Var="tracker" Field='Tracker' />
+<Map To='Value' Value="{UrlEncode(tracker)}"/>
+</Map>
+
+
+<Read Var="dayCode" Field="Date" Regex="(?{d}[0-9]{2})/(?{m}[0-9]{2})/(?{y}[0-9]{4})"/>
+<Map To="TimePeriodStart" Value='{CreatePeriodStart(dayCode.y, dayCode.m, dayCode.d)}'/>
+<Map To="TimePeriodEnd" Value="{CreatePeriodEnd(dayCode.y, dayCode.m, dayCode.d)}"/>                                                                        
+<Map To="Account" Value="{GetAccount(AccountName)}" Field="AccountName"/>
+<Map To="Channel">
+<Map To="ID" Value="-1"/>
+</Map>
+
+<!-- <Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Var='OptionsRegs' Field= '24Option - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Var='OptionsDep' Field= '24Option - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Var='OptionsClck' Field= '24Option - Clicks' />
+ -->
+<Map To='MeasureValues[{GetMeasure("ClientSpecific4")}]' Var='BBinaryRegs' Field= 'BBinary - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Var='BBinaryDep' Field= 'BBinary - Depositors' /> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Var='BBinaryClck' Field= 'BBinary - Clicks' />
+
+<!-- <Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Var='OptionWebRegs' Field= 'OptionWeb - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Var='OptionWebDep' Field= 'OptionWeb - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Var='OptionWebClck' Field= 'OptionWeb - Clicks' /> 
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Var='AnyoptionRegs' Field= 'AnyOption - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Var='AnyoptionDep' Field= 'AnyOption - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Var='AnyoptionClck' Field= 'AnyOption - Clicks' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Var='BinaryTiltCPARegs' Field= 'BinaryTiltCPA - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Var='BinaryTiltCPADep' Field= 'BinaryTiltCPA - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Var='BinaryTiltCPAClck' Field= 'BinaryTiltCPA - Clicks' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Var='OpteckRegs' Field=  'Opteck - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Var='OpteckDep' Field= 'Opteck - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]' Var='OpteckClck' Field= 'Opteck - Clicks' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]' Var='OptionTimeRegs' Field= 'OptionTime - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' Var='OptionTimeDep' Field= 'OptionTime - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific21")}]' Var='OptionWebClck' Field= 'OptionTime - Clicks' />
+
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific25")}]' Var='RBOptionsRegs' Field= 'RB Options - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific26")}]' Var='RBOptionsDep' Field= 'RB Options - Depositors' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific27")}]' Var='TopOptionRegs' Field= 'TopOption - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific28")}]' Var='TopOptionDep' Field= 'TopOption - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific29")}]' Var='TopOptionClck' Field= 'TopOption - Clicks' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific30")}]' Var='TopOptionRev' Field= 'TopOption - Revenue' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific22")}]' Var='BinaryTiltCPCClck' Field= 'BinaryTiltCPC - Clicks' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific23")}]' Var='FMTraderReg' Field= 'FMTrader - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific24")}]' Var='FMTraderDep' Field= 'FMTrader - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific31")}]' Var='FMTraderClck' Field= 'FMTrader - Clicks' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific32")}]' Var='WinnerOptionCPAReg' Field= 'WinnerOptionCPA - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific33")}]' Var='WinnerOptionCPADep' Field= 'WinnerOptionCPA - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific34")}]' Var='WinnerOptionCPAClk' Field= 'WinnerOptionCPA - Clicks' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific35")}]' Var='OptionRallyReg' Field= 'OptionRally - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific36")}]' Var='OptionRallyDep' Field= 'OptionRally - Depositors' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific37")}]' Var='OptionRallyClk' Field= 'OptionRally - Clicks' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific38")}]' Var='NoOneOptionReg' Field= 'NoOneOption - Regs' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific39")}]' Var='NoOneOptionDep' Field= 'NoOneOption - Depositors' />
+
+<Map To='MeasureValues[{GetMeasure("ClientSpecific40")}]' Var='WinnerOptionCPCClk' Field= 'WinnerOptionCPC - Clicks' /> -->
+
+</Object>
+<Object Type="Edge.Data.Objects.Signature">
+<Read Var="dayCode" Field="Date" Regex="(?{d}[0-9]{2})/(?{m}[0-9]{2})/(?{y}[0-9]{4})"/>
+<Read Var="AccountName" Field="AccountName"/>
+<Map To='Value' Value='{dayCode.y}{dayCode.m}{dayCode.d}_{AccountName}}' />
+</Object>
+</Mappings>
