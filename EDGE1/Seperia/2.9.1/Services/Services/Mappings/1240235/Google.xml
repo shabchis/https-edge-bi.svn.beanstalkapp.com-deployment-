@@ -47,12 +47,9 @@ Condition='(destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()=="100{
 <Map To='OriginalID'  Value="{ad_id}" Condition='(destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()=="{creative}") || (destUrl2 != null &amp;&amp; destUrl2.edgetrackerid.ToString()=="{creative}")' Required="false"/>
 
 <!-- If tracker = 100 (olgs_tr=/Ecid=)-->
-<Map To='Value'  Value="{ad_id}" Condition='(destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()=="100 || 
-(destUrl2 != null &amp;&amp; destUrl2.edgetrackerid.ToString()=="100")' Required="false"/>
+<Map To='Value'  Value="100{ad_id}" Condition='(destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()=="100") || (destUrl2 != null &amp;&amp; destUrl2.edgetrackerid.ToString()=="100")' Required="false"/>
 
-<Map To='OriginalID'  Value="100{ad_id}" 
-Condition='(destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()=="100") || 
-(destUrl2 != null &amp;&amp; destUrl2.edgetrackerid.ToString()=="100")' Required="false"/>
+<Map To='OriginalID'  Value="100{ad_id}" Condition='(destUrl1 != null &amp;&amp; destUrl1.edgetrackerid.ToString()=="100") || (destUrl2 != null &amp;&amp; destUrl2.edgetrackerid.ToString()=="100")' Required="false"/>
 
 </Map>
 
