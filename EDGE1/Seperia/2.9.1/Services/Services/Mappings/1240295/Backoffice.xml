@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>	
+<Mappings>
+<Object Type="GenericMetricsUnit">
+<Map To='SegmentDimensions[{GetSegment("Tracker")}]' >
+<Read Var="tracker" Field='trackerid' Required='true'/>
+<Map To='Value' Value='{tracker}'/>
+</Map>
+<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Field='unqualified' /> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field='offer_made' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Field='in_discussion' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Field='travel_preparation' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific13")}]' Field='travel_confirmed' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific7")}]' Field='departure' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific6")}]' Field='sales' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific8")}]' Field='arrival' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Field='closed_lost' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Field='closed_won' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Field='lost_customer' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific12")}]' Field='rejected' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Field='rejected_duplicate' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Field='rejected_no_phone_number' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Field='rejected_not_interested' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Field='rejected_hospital_declined' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]' Field='rejected_not_relevant' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]' rejected_no_money' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' rejected_cannot_fly' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific21")}]' rejected_unreachable' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific22")}]' rejected_wrong_contact_info' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific23")}]' rejected_autofiltered_spam' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific24")}]' rejected_too_late' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific25")}]' rejected_israeli_patient' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific26")}]' rejected_no_treatment' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific27")}]' rejected_bizz_offer' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific28")}]' rejected_forwarded_to_galina_and_marta' />
+
+
+
+</Object>
+</Mappings>
+
