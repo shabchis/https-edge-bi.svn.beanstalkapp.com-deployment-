@@ -2,7 +2,7 @@
 						<Mappings>
 							<Object Type="Ad">							
 								<Map To="OriginalID" Value='{Guid.NewGuid().ToString("N")}'/>
-								<Map To="Account" Field='AccountName' Var='AccountName' Value="{GetAccount(AccountName)}"/>
+								<Map To="Account" Var='AccountName'  Value='{GetAccount("HMC")}' />
 								<Map To="Channel" Field='ChannelName' Var='ChannelName' Value='{GetChannel(ChannelName)}'/>
 								<Map To='Creatives[]::TextCreative'>
 									<Map To='TextType' Value='Title'/>
@@ -25,8 +25,8 @@
 								<Map To='Segments[{GetSegment("Tracker")}]'  >
 									<Read Field='banner_url' Var='banner_url' Regex='(\baff_sub5=(?{tracker}\w*\{*[::;;-a-z]*\}*))'/>
 									<Read Field='banner_id' Var='bannerid'/>
-									<Map To='Value' Value="{bannerid}" Condition='banner_url.tracker.ToString()=="{ad_id}"' Required="true"/>
-									<Map To='OriginalID' Value="{bannerid}" Condition='banner_url.tracker.ToString()=="{ad_id}"' Required="true"/>
+									<Map To='Value' Field="banner_id" Required="true"/>
+									<Map To='OriginalID' Field="banner_id" />
 								</Map>
 							</Object>
 							<Object Type="AdMetricsUnit">
