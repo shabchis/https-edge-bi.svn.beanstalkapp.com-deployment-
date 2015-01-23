@@ -23,7 +23,7 @@
 									<Map To='OriginalID' Value='{campaign_name}_{adgroup_name}'/>
 								</Map>
 								<Map To='Segments[{GetSegment("Tracker")}]'  >
-									<Read Field='banner_url' Var='banner_url' Regex='(\baff_sub5=(?{tracker}\w*\{*[::;;-a-z]*\}*))'/>
+									<Read Field='banner_url' Var='banner_url' Regex='(\baff_sub5=(?{tracker}\w*\{*[::;;-a-z]*\}*))' Required='false'/>
 									<Read Field='banner_id' Var='bannerid'/>
 									<Map To='Value' Field="banner_id" Required="true"/>
 									<Map To='OriginalID' Field="banner_id" />
