@@ -14,7 +14,7 @@
 <Map To="ID" Value="-1"/>
 </Map>
 
-<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Field='unqualified' /> 
+<Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Field='Unqualified' /> 
 <Map To='MeasureValues[{GetMeasure("ClientSpecific2")}]' Field='offer_made' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific3")}]' Field='in_discussion' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific5")}]' Field='travel_preparation' />
