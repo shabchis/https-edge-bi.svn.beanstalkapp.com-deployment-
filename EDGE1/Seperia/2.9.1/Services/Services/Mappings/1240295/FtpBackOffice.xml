@@ -43,7 +43,7 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific28")}]' Field='rejected_forwarded_to_galina_and_marta' />						
 </Object>
 <Object Type="Edge.Data.Objects.Signature">
-<Read Var="dayCode" Field="Date" Regex="(?{y}[0-9]{4})-(?{m}[0-9]{2})-(?{d}[0-9]{2})"/>
+<Read Var="dayCode" Field="Date" Regex="(?{m}[0-9]{2})/(?{d}[0-9]{2})/(?{y}[0-9]{4})"/>
 <Read Var="AccountName" Field="AccountName"/>
 <Map To='Value' Value='{dayCode.y}{dayCode.m}{dayCode.d}_{AccountName}}' />
 </Object>
