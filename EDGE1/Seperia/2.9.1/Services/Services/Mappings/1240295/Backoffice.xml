@@ -22,16 +22,16 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Field='rejected_not_interested' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Field='rejected_hospital_declined' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]' Field='rejected_not_relevant' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]' rejected_no_money' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' rejected_cannot_fly' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific21")}]' rejected_unreachable' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific22")}]' rejected_wrong_contact_info' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific23")}]' rejected_autofiltered_spam' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific24")}]' rejected_too_late' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific25")}]' rejected_israeli_patient' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific26")}]' rejected_no_treatment' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific27")}]' rejected_bizz_offer' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific28")}]' rejected_forwarded_to_galina_and_marta' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]' Field='rejected_no_money' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' Field='rejected_cannot_fly' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific21")}]' Field='rejected_unreachable' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific22")}]' Field='rejected_wrong_contact_info' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific23")}]' Field='rejected_autofiltered_spam' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific24")}]' Field='rejected_too_late' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific25")}]' Field='rejected_israeli_patient' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific26")}]' Field='rejected_no_treatment' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific27")}]' Field='rejected_bizz_offer' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific28")}]' Field='rejected_forwarded_to_galina_and_marta' />
 
 
 
