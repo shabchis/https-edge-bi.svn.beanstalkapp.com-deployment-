@@ -2,7 +2,7 @@
 <Mappings>
 <Object Type="GenericMetricsUnit">
 <Map To='SegmentDimensions[{GetSegment("Tracker")}]' >
-<Read Var="tracker" Field='trackerid' Required='true'/>
+<Read Var="tracker" Field='ID' Required='true'/>
 <Map To='Value' Value='{tracker}'/>
 </Map>
 <Map To='MeasureValues[{GetMeasure("ClientSpecific1")}]' Field='unqualified' /> 
@@ -16,12 +16,11 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific9")}]' Field='closed_lost' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific10")}]' Field='closed_won' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific11")}]' Field='lost_customer' />
-
 <Map To='MeasureValues[{GetMeasure("ClientSpecific14")}]' Field='rejected_duplicate' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific15")}]' Field='rejected_no_phone_number' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific16")}]' Field='rejected_not_interested' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Field='rejected_hospital_declined' />
-<Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]' Field='rejected_not_relevant' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]' Field='rejected_not_relevant_spam' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]' Field='rejected_no_money' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' Field='rejected_cannot_fly' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific21")}]' Field='rejected_unreachable' />
