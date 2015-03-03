@@ -25,6 +25,8 @@
 <Map To='MeasureValues[{GetMeasure("ClientSpecific17")}]' Field= 'LandingPage2' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific18")}]' Field= 'WelcomeButtonPressed' />
 <Map To='MeasureValues[{GetMeasure("ClientSpecific19")}]' Field= 'SaveButtonPressed' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific20")}]' Field= 'Ads' />
+<Map To='MeasureValues[{GetMeasure("ClientSpecific21")}]' Field= 'GoogleAnalyticsUniqueUsers' />
 
 
 </Object>
