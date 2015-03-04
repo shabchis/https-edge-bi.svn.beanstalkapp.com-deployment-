@@ -14,7 +14,7 @@
 <Read Var="userID" Field='user_id__c' Required='true'/>
 <Read Var="TotalFund" Field='total_successful_funding__c' Required='true'/> 
 <Read Var="CreditLine" Field='client_credit_line__c' Required='true'/> 
-<Read Var="TotalFundHistory" Field='client_total_funding_history_c' Required='true'/>
+<Read Var="TotalFundHistory" Field='client_total_funding_history__c' Required='true'/>
 
 
 <!--Totals-->
